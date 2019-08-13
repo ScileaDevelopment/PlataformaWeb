@@ -1,20 +1,17 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
+name: Sprint issue
+about: Tarea de una iteracion de Sprint
+title: 'HU0:'
+labels: 'Sprint issue'
 assignees: ''
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Describa la tarea a desarrollar**
+<!-- Si se necesita utilice listas para poder explicar cada una de las problematicas.--->
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Describa la solucion para la tarea a desarrollar**
+<!-- Una descripcion clara y concisa de lo que quiere que pase. --->
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**Contenido adicional**
+<!-- Añada contenido adiccional que se necesite para entender mejor el problema. --->
