@@ -2,7 +2,7 @@
 name: Sprint issue
 about: Tarea de una iteracion de Sprint
 title: 'HU0:'
-labels: 'Sprint issue'
+labels: 'Sprint issue, enhancement'
 assignees: ''
 projects: 'PlataformaWeb'
 ---
