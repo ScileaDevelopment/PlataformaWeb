@@ -4,7 +4,7 @@ about: Tarea de una iteracion de Sprint
 title: 'HU0:'
 labels: 'Sprint issue'
 assignees: ''
-
+projects: 'PlataformaWeb'
 ---
 
 **Describa la tarea a desarrollar**
