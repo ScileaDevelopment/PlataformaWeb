@@ -1,10 +1,11 @@
 ---
 name: Sprint issue
 about: Tarea de una iteracion de Sprint
-title: 'HU0:'
+title: ''
 labels: 'Sprint issue, enhancement'
 assignees: ''
 projects: 'PlataformaWeb'
+
 ---
 
 **Describa la tarea a desarrollar**
