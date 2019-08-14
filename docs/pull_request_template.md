@@ -1,4 +1,4 @@
-## Pull request type :tada:
+## Tipo de Pull request :tada:
 
 <!-- Limitarse a escojer solo un tipo de PR, crear multiples PR si es necesario. --> 
 Elija el tipo de cambio que introduce este PR:
@@ -10,7 +10,7 @@ Elija el tipo de cambio que introduce este PR:
 - [ ] Other (please describe): 
 
 
-## Priority :rotating_light:
+## Prioridad :rotating_light:
 
 - [ ] :boom: Inmediata 
 - [ ] :ambulance: Urgente 
