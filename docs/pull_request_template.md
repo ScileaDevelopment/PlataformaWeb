@@ -1,9 +1,8 @@
 ## Pull request type :tada:
 
-<!-- Please try to limit your pull request to one type, submit multiple pull requests if needed. --> 
-
-Please check the type of change your PR introduces:
-- [ ] Bugfix
+<!-- Limitarse a escojer solo un tipo de PR, crear multiples PR si es necesario. --> 
+Elija el tipo de cambio que introduce este PR:
+- [ ] Bugfix 
 - [ ] Change Request
 - [ ] Feature Request
 - [ ] Refactoring (no functional changes, no api changes)
@@ -13,29 +12,28 @@ Please check the type of change your PR introduces:
 
 ## Priority :rotating_light:
 
-- [ ] :boom: Immediate 
-- [ ] :ambulance: Urgent 
-- [ ] :flushed: High 
+- [ ] :boom: Inmediata 
+- [ ] :ambulance: Urgente 
+- [ ] :flushed: Alta 
 - [ ] :smirk: Normal 
-- [ ] :relieved: Low 
+- [ ] :relieved: Baja 
 
 
-## What is the current behavior of this feature? (if any) :mag:
-<!-- Please describe the current behavior of the feature you are modifying, and link the relevant issue. -->
-- Mantis ticket : [#0000](https://10.1.1.14/mantis/my_view_page.php)
-- Issue Number: 
+## Cuál es el comportamiento actual de esta funcionalidad? (Si existe) :mag:
+<!-- Describa la funcionalidad que se aumentara o como cambiara el comportamiento actual del sistema. Coloque el issue al que se refiere para que se cierre el momento de termine este PR. Coloque un Link si es necesario. -->
+- Issue Number: This closes #
  
 
-## What is the update we are aiming to achieve?:bulb:
-<!-- Please describe the behavior or changes that are being added by this PR. -->
+## Que es lo que se intenta lograr?:bulb:
+<!-- Describa todos los cambios que se haran en el sistema. Ya sea puntos o checkboxes para ver el avance. -->
 -
 -
 
 
 ## Related Issues :pushpin:
-<!--If this PR has related issues in the closed PR, please link the related issues. -->
- - Related to : # 
+<!--Si este PR se relaciona a otro issue o a otro PR(Ya sea activo o terminado) colocarlos. -->
+ - Relacionado a : # 
 
 
-## Description :clipboard:
-<!-- Any other information that is important to this PR such as screenshots of how the component looks before and after the change. -->
+## Descripcion :clipboard:
+<!-- Cualquier otra informacion relevante para este PR como screenshots o documentacion extra. -->
