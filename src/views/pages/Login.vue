@@ -20,8 +20,8 @@
                         <div class="vx-col sm:w-full md:w-full lg:w-1/2 d-theme-dark-bg">
                             <div class="p-8">
                                 <div class="vx-card__title mb-8">
-                                    <h4 class="mb-4">Login</h4>
-                                    <p>Welcome back, please login to your account.</p>
+                                    <h4 class="mb-4">Iniciar Sesion</h4>
+                                    <p>Acceda a su cuenta para comenzar.</p>
                                 </div>
                                 <vs-input
                                     v-validate="'required|email|min:3'"
@@ -47,11 +47,11 @@
                                 <span class="text-danger text-sm">{{ errors.first('password') }}</span>
 
                                 <div class="flex flex-wrap justify-between my-5">
-                                    <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Remember Me</vs-checkbox>
-                                    <router-link to="/pages/forgot-password">Forgot Password?</router-link>
+                                    <!-- <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Remember Me</vs-checkbox> -->
+                                    <router-link to="/pages/forgot-password">¿Has olvidado la contraseña?</router-link>
                                 </div>
-                                <vs-button  type="border" @click="registerUser">Register</vs-button>
-                                <vs-button class="float-right" :disabled="!validateForm" @click="login">Login</vs-button>
+                                <vs-button  type="border" @click="registerUser">Registrate</vs-button>
+                                <vs-button class="float-right" :disabled="!validateForm" @click="login">Iniciar Sesion</vs-button>
 
                                 <vs-divider>OR</vs-divider>
 

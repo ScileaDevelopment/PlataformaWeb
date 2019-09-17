@@ -46,7 +46,7 @@ const router = new Router({
         // =============================================================================
                 {
                     path: '/',
-                    redirect: '/dashboard/analytics'
+                    redirect: '/pages/knowledge-base'
                 },
                 {
                     path: '/dashboard/analytics',

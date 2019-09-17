@@ -20,16 +20,36 @@
                         <div class="vx-col sm:w-full md:w-full lg:w-1/2 mx-auto self-center  d-theme-dark-bg">
                             <div class="p-8">
                                 <div class="vx-card__title">
-                                    <h4 class="mb-4">Create Account</h4>
-                                    <p>Fill the below form to create a new account.</p>
+                                    <h4 class="mb-4">Inscribete y comienza a explorar.</h4>
+                                    <p>Llene todos los campos para crear una nueva cuenta.</p>
                                 </div>
                                 <div class="clearfix">
+                                    <vs-input
+                                        v-validate="'required|min:4'"
+                                        data-vv-validate-on="blur"
+                                        label-placeholder="nombre"
+                                        name="nombre"
+                                        placeholder="Nombre(s)"
+                                        v-model="nombre"
+                                        class="w-full" />
+                                    <span class="text-danger text-sm">{{ errors.first('nombre') }}</span>
+
+                                    <vs-input
+                                        v-validate="'required|min:4'"
+                                        data-vv-validate-on="blur"
+                                        label-placeholder="apellido"
+                                        name="apellido"
+                                        placeholder="Apellidos"
+                                        v-model="apellido"
+                                        class="w-full" />
+                                    <span class="text-danger text-sm">{{ errors.first('apellido') }}</span>
+
                                     <vs-input
                                         v-validate="'required|alpha_dash|min:3'"
                                         data-vv-validate-on="blur"
                                         label-placeholder="Username"
                                         name="username"
-                                        placeholder="Username"
+                                        placeholder="Usuario"
                                         v-model="username"
                                         class="w-full" />
                                     <span class="text-danger text-sm">{{ errors.first('username') }}</span>
@@ -40,7 +60,7 @@
                                         name="email"
                                         type="email"
                                         label-placeholder="Email"
-                                        placeholder="Email"
+                                        placeholder="Correo electronico"
                                         v-model="email"
                                         class="w-full mt-6" />
                                     <span class="text-danger text-sm">{{ errors.first('email') }}</span>
@@ -52,7 +72,7 @@
                                         v-validate="'required|min:6|max:10'"
                                         name="password"
                                         label-placeholder="Password"
-                                        placeholder="Password"
+                                        placeholder="Contraseña"
                                         v-model="password"
                                         class="w-full mt-6" />
                                     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
@@ -64,14 +84,14 @@
                                         data-vv-as="password"
                                         name="confirm_password"
                                         label-placeholder="Confirm Password"
-                                        placeholder="Confirm Password"
+                                        placeholder="Confirmar Contraseña"
                                         v-model="confirm_password"
                                         class="w-full mt-6" />
                                     <span class="text-danger text-sm">{{ errors.first('confirm_password') }}</span>
 
-                                    <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">I accept the terms & conditions.</vs-checkbox>
-                                    <vs-button  type="border" to="/pages/login" class="mt-6">Login</vs-button>
-                                    <vs-button class="float-right mt-6" @click="registerUser" :disabled="!validateForm">Register</vs-button>
+                                    <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">Acepto los terminos y condiciones</vs-checkbox>
+                                    <vs-button  type="border" to="/pages/login" class="mt-6">Iniciar Sesion</vs-button>
+                                    <vs-button class="float-right mt-6" @click="registerUser" :disabled="!validateForm">Registrar</vs-button>
                                 </div>
                             </div>
                         </div>
@@ -86,6 +106,8 @@
 export default {
     data() {
         return {
+            nombre: '',
+            apellido: '',
             username: '',
             email: '',
             password: '',
@@ -95,7 +117,7 @@ export default {
     },
     computed: {
         validateForm() {
-            return !this.errors.any() && this.username != '' && this.email != '' && this.password != '' && this.confirm_password != '' && this.isTermsConditionAccepted === true;
+            return !this.errors.any() && this.nombre != '' && this.apellido != '' && this.username != '' && this.email != '' && this.password != '' && this.confirm_password != '' && this.isTermsConditionAccepted === true;
         }
     },
     methods: {
@@ -107,6 +129,8 @@ export default {
             }
             const payload = {
               userDetails: {
+                nombre: this.nombre,
+                apellido: this.apellido,
                 email: this.email,
                 password: this.password,
                 username: this.username

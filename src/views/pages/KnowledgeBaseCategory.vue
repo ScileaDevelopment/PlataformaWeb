@@ -35,11 +35,11 @@ export default{
             sections: [
                 {
                     "id": 0,
-                    "title": 'Buying',
+                    "title": 'Inteligencia Artificial',
                     "questions": [
                     {
                         "id": 0,
-                        "question": 'Cake icing gummi bears?',
+                        "question": 'Watson',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
@@ -70,7 +70,7 @@ export default{
                 },
                 {
                     "id": 1,
-                    "title": 'Item Support',
+                    "title": 'Machine Learning',
                     "questions": [
                     {
                         "id": 0,
@@ -95,21 +95,21 @@ export default{
                 },
                 {
                     "id": 2,
-                    "title": 'Payments',
+                    "title": 'Desarrollo movil',
                     "questions": [
                     {
                         "id": 0,
-                        "question": 'Oat cake lemon drops sweet sweet?',
+                        "question": 'Android',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 1,
-                        "question": 'Cotton candy brownie ice cream wafer roll?',
+                        "question": 'Flutter',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 2,
-                        "question": 'Chocolate bonbon cake sugar plum?',
+                        "question": 'Swift',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
@@ -125,16 +125,16 @@ export default{
                 },
                 {
                     "id": 3,
-                    "title": 'Downloads',
+                    "title": 'Desarrollo web',
                     "questions": [
                     {
                         "id": 0,
-                        "question": 'Marshmallow jelly beans oat cake?',
+                        "question": 'HTML5',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 1,
-                        "question": 'Cake ice cream jujubes cookie?',
+                        "question": 'CSS',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
@@ -160,16 +160,16 @@ export default{
                 },
                 {
                     "id": 4,
-                    "title": 'Licenses',
+                    "title": 'Frameworks',
                     "questions": [
                     {
                         "id": 0,
-                        "question": 'Macaroon tootsie roll?',
+                        "question": 'Laravel',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 1,
-                        "question": 'Cheesecake sweet soufflé jelly tiramisu chocolate?',
+                        "question": 'Spring',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
@@ -195,26 +195,26 @@ export default{
                 },
                 {
                     "id": 5,
-                    "title": 'Documents',
+                    "title": 'Lenguajes de programacion',
                     "questions": [
                     {
                         "id": 0,
-                        "question": 'Brownie dessert gummies?',
+                        "question": 'PHP',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 1,
-                        "question": 'Cookie tiramisu lollipop?',
+                        "question": 'JavaScript',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 2,
-                        "question": 'Bonbon sugar plum jelly-o?',
+                        "question": 'Python',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     },
                     {
                         "id": 3,
-                        "question": 'Halvah chupa chups chupa chups?',
+                        "question": 'C++',
                         "answerUrl": "/pages/knowledge-base/category/question"
                     }]
                 },

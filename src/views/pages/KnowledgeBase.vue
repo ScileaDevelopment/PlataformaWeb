@@ -13,8 +13,8 @@
         <!-- JUMBOTRON -->
         <div class="knowledge-base-jumbotron">
             <div class="knowledge-base-jumbotron-content lg:p-32 md:p-24 sm:p-16 py-8 rounded-lg mb-base">
-                <h1 class="mb-1 text-white">Dedicated Source Used on Website</h1>
-                <p class="text-white">Bonbon sesame snaps lemon drops marshmallow ice cream carrot cake croissant wafer.</p>
+                <h1 class="mb-1 text-white">Codigo al alcance de todos</h1>
+                <p class="text-white">Explora cursos, codigo abierto, investigaciones y mas hechos por tus propios compañeros.</p>
                 <vs-input placeholder="Search Topic or Keyword" v-model="knowledgeBaseSearchQuery" icon-pack="feather" icon="icon-search" size="large" class="w-full no-icon-border mt-6" />
             </div>
         </div>
@@ -28,7 +28,7 @@
                         <small>{{ item.description }}</small>
                     </vx-card>
                 </div>
-            </div>  
+            </div>
     </div>
 </template>
 
@@ -39,17 +39,17 @@ export default{
         return {
             knowledgeBaseSearchQuery: '',
             kb: [
-                { id: 1, title: 'Sales Automation', description: 'Muffin lemon drops chocolate carrot cake chocolate bar sweet roll.', graphic: 'graphic-1.png' ,url: '/pages/knowledge-base/category'},
-                { id: 2, title: 'Marketing Automation', description: 'Gingerbread sesame snaps wafer soufflé. Macaroon brownie ice cream', graphic: 'graphic-2.png' ,url: '/pages/knowledge-base/category'},
-                { id: 3, title: 'Marketing BI', description: 'cotton candy caramels danish chocolate cake pie candy. Lemon drops tart.', graphic: 'graphic-3.png' ,url: '/pages/knowledge-base/category'},
-                { id: 4, title: 'Personalization', description: 'Pudding oat cake carrot cake lemon drops gummies marshmallow.', graphic: 'graphic-4.png' ,url: '/pages/knowledge-base/category'},
-                { id: 5, title: 'Email Marketing', description: 'Gummi bears pudding icing sweet caramels chocolate', graphic: 'graphic-5.png' ,url: '/pages/knowledge-base/category'},
-                { id: 6, title: 'Demand Generation', description: 'Dragée jelly beans candy canes pudding cake wafer. Muffin croissant.', graphic: 'graphic-6.png' ,url: '/pages/knowledge-base/category'},
+                { id: 1, title: 'Articulos cientificos', description: 'Articulos cientificos nacionales e internacionales.', graphic: 'graphic-1.png' ,url: '/pages/knowledge-base/category'},
+                { id: 2, title: 'Noticias', description: 'Al dia con las noticias facultativas, nacionales e internacionales de la tecnologias emergentes.', graphic: 'graphic-2.png' ,url: '/pages/knowledge-base/category'},
+                { id: 3, title: 'Proyectos', description: 'Proyectos terminados para ayudar a comenzar a desarrollar con ML, IA, IoT y mas.', graphic: 'graphic-3.png' ,url: '/pages/knowledge-base/category'},
+                { id: 4, title: 'Publicaciones', description: 'La ayuda que necesitas esta aqui! Tenemos la respuesta que necesitas.', graphic: 'graphic-4.png' ,url: '/pages/knowledge-base/category'},
+                { id: 5, title: 'Eventos', description: 'Quieres ser parte del siguiente Hackaton? Aqui encontraras toda la informacion necesaria para inscribirte!', graphic: 'graphic-5.png' ,url: '/pages/knowledge-base/category'},
+                { id: 6, title: 'Competencias', description: 'Quieren probar que tienen lo que se necesita para ser el mejor programador? Llegaron al lugar adecuado!', graphic: 'graphic-6.png' ,url: '/pages/knowledge-base/category'},
             ]
         }
     },
     computed: {
-        filteredKB() { 
+        filteredKB() {
             return this.kb.filter((item) => item.title.toLowerCase().includes(this.knowledgeBaseSearchQuery.toLowerCase()) || item.description.toLowerCase().includes(this.knowledgeBaseSearchQuery.toLowerCase()));
         }
     },
