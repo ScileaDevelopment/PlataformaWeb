@@ -20,21 +20,23 @@
                         <div class="vx-col sm:w-full md:w-full lg:w-1/2 mx-auto self-center  d-theme-dark-bg">
                             <div class="px-8 pt-8 register-tabs-container">
                                 <div class="vx-card__title mb-4">
-                                    <h4 class="mb-4">Create Account</h4>
-                                    <p>Fill the below form to create a new account.</p>
+                                    <h4 class="mb-4">Inscríbete creando una nueva cuenta</h4>
+                                    <p>Llena todos los campos a continuación</p>
                                 </div>
                                 <vs-tabs>
-                                  <vs-tab label="JWT">
+                                  <vs-tab label="Registro">
                                     <register-jwt></register-jwt>
                                   </vs-tab>
 
-                                  <vs-tab label="Firebase">
+                              <!-- Aqui entra los registros con Google/Facebook -->
+                                  <!-- <vs-tab label="Firebase">
                                     <register-firebase></register-firebase>
-                                  </vs-tab>
-
-                                  <vs-tab label="Auth0">
+                                  </vs-tab> -->
+                              <!-- Aqui entra los registros con Github -->
+                                  <!-- <vs-tab label="Auth0">
                                     <register-auth0></register-auth0>
-                                  </vs-tab>
+                                  </vs-tab> -->
+
                                 </vs-tabs>
                             </div>
                         </div>

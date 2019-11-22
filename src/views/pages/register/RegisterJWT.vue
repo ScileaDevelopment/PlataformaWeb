@@ -15,10 +15,20 @@ Author URL: http://www.themeforest.net/user/pixinvent
       data-vv-validate-on="blur"
       label-placeholder="Name"
       name="displayName"
-      placeholder="Name"
+      placeholder="Nombre completo"
       v-model="displayName"
       class="w-full" />
     <span class="text-danger text-sm">{{ errors.first('displayName') }}</span>
+
+    <vs-input
+      v-validate="'required|alpha_dash|min:3'"
+      data-vv-validate-on="blur"
+      label-placeholder="Username"
+      name="username"
+      placeholder="Nombre de usuario"
+      v-model="username"
+      class="w-full" />
+    <span class="text-danger text-sm">{{ errors.first('username') }}</span>
 
     <vs-input
       v-validate="'required|email'"
@@ -38,7 +48,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
       v-validate="'required|min:6|max:10'"
       name="password"
       label-placeholder="Password"
-      placeholder="Password"
+      placeholder="Contraseña"
       v-model="password"
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
@@ -50,14 +60,14 @@ Author URL: http://www.themeforest.net/user/pixinvent
       data-vv-as="password"
       name="confirm_password"
       label-placeholder="Confirm Password"
-      placeholder="Confirm Password"
+      placeholder="Confirmar contraseña"
       v-model="confirm_password"
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('confirm_password') }}</span>
 
-    <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">I accept the terms & conditions.</vs-checkbox>
-    <vs-button  type="border" to="/pages/login" class="mt-6">Login</vs-button>
-    <vs-button class="float-right mt-6" @click="registerUserJWt" :disabled="!validateForm">Register</vs-button>
+    <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">He leído y acepto los términos y condiciones.</vs-checkbox>
+    <vs-button  type="border" to="/pages/login" class="mt-6">Iniciar sesión</vs-button>
+    <vs-button class="float-right mt-6" @click="registerUserJWt" :disabled="!validateForm">Regístrate</vs-button>
   </div>
 </template>
 
