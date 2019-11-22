@@ -2,7 +2,7 @@
     File Name: AlertClosable.vue
     Description: Create closable alert
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Closable" code-toggler>
-        
+
         <p class="mb-2">You can show and hide the alert by means of <code>active.sync</code> and a Boolean bind as value</p>
         <p>The property to determine if the alert can be closed is <code>closable</code></p>
 
@@ -22,7 +22,7 @@
         </vs-alert>
 
         <p class="my-5">You can also change the icon used for the close buton on the alerts</p>
-        
+
         <div class="mt-5"></div>
         <vs-alert :active.sync="active2" closable close-icon="icon-x-circle" icon-pack="feather">
             Chupa chups topping bonbon. Jelly-o toffee I love. Sweet I love wafer I love wafer.

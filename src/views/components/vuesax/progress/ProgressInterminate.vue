@@ -2,7 +2,7 @@
     File Name: ProgressInterminate.vue
     Description: Interminate progreebar
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,8 +10,8 @@
 
 <template>
     <vx-card title="Interminate" code-toggler>
-        
-        <p>You can have a progress bar with indeterminate value with the property indeterminate</p> 
+
+        <p>You can have a progress bar with indeterminate value with the property indeterminate</p>
 
         <div class="mt-5">
             <vs-progress indeterminate color="primary"></vs-progress>

@@ -2,7 +2,7 @@
     File Name: CollapseType.vue
     Description: Collapse with accrodion and extra styles
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Type" code-toggler>
-        
+
         <p>You can easily change the style of the accordion with the <code>type</code> property, the supported styles are:</p>
         <vs-list :list="['shadow', 'border', 'margin']"></vs-list>
 

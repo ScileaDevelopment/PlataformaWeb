@@ -2,7 +2,7 @@
     File Name: ButtonRouter.vue
     Description: pass string or object to directive 'to'. Button + vue-router
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Router" code-toggler>
-        
+
         <p>You can send a string or object to directive to. This directive wrap a $router.push() vue method, you can use all programmatic navigation on vue router.</p>
 
         <div class="demo-alignment">

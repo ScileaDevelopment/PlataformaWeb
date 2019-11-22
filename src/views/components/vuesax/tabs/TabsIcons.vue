@@ -2,13 +2,13 @@
     File Name: TabsIcons.vue
     Description: Display Tabs with Icons
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 
-<template lang="html">
+<template>
   <vx-card title="Icons" code-toggler>
     <vs-tabs>
       <vs-tab label="Home" icon-pack="feather" icon="icon-home">

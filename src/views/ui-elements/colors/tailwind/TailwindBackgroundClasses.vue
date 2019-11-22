@@ -3,7 +3,7 @@
     Description: Background Colors classes
     Note: If you added more colors then you can use it using 'bg-{colorName}'
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -25,7 +25,7 @@
             <li class="bg-black">black</li>
             <li class="bg-transparent text-dark">transparent</li>
         </ul>
-        
+
         <template slot="codeContainer">
 
 &lt;ul class=&quot;demo-alignment text-white&quot;&gt;

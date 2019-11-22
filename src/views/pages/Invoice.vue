@@ -2,7 +2,7 @@
     File Name: Invoice.vue
     Description: Invoice Page
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,12 +10,29 @@
 
 <template>
     <div id="invoice-page">
-        <vx-card>
+
+        <div class="flex flex-wrap items-center justify-between">
+          <vx-input-group class="mb-base mr-3">
+            <vs-input v-model="mailTo" placeholder="Email" />
+
+            <template slot="append">
+              <div class="append-text btn-addon">
+                <vs-button type="border" @click="mailTo = ''" class="whitespace-no-wrap">Send Invoice</vs-button>
+              </div>
+            </template>
+          </vx-input-group>
+          <div class="flex items-center">
+            <vs-button class="mb-base mr-3" type="border" icon-pack="feather" icon="icon icon-download">Download</vs-button>
+            <vs-button class="mb-base mr-3" icon-pack="feather" icon="icon icon-file" @click="printInvoice">Print</vs-button>
+          </div>
+        </div>
+
+        <vx-card id="invoice-container">
 
             <!-- INVOICE METADATA -->
             <div class="vx-row leading-loose p-base">
                 <div class="vx-col w-full md:w-1/2 mt-base">
-                    <img src="../../assets/images/logo/logo.png" alt="vuesax-logo">
+                    <img src="@/assets/images/logo/logo.png" alt="vuexy-logo">
                 </div>
                 <div class="vx-col w-full md:w-1/2 text-right">
                     <h1>Invoice</h1>
@@ -124,6 +141,7 @@
 export default{
     data() {
         return {
+            mailTo: "",
             companyDetails: {
                 name: 'Microsion Technologies Pvt. Ltd.',
                 addressLine1: '9 N. Sherwood Court',
@@ -169,9 +187,41 @@ export default{
         }
     },
     computed: {
-        
+
     },
-    methods: {},
-    components: {}
+    methods: {
+      printInvoice() {
+        window.print()
+      }
+    },
+    components: {},
+    mounted() {
+      this.$emit("setAppClasses", "invoice-page")
+    }
 }
 </script>
+
+<style lang="scss">
+@media print {
+  .invoice-page {
+    * {
+      visibility: hidden;
+    }
+
+    #content-area {
+      margin: 0 !important;
+    }
+
+    #invoice-container,
+    #invoice-container * {
+      visibility: visible;
+    }
+    #invoice-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      box-shadow: none;
+    }
+  }
+}
+</style>

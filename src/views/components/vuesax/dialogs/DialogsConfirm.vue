@@ -2,7 +2,7 @@
     File Name: DialogsConfirm.vue
     Description: Create Confirm dialogs
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,9 +10,9 @@
 
 <template>
     <vx-card title="Confirm" code-toggler>
-        
+
         <p>If you need a dialog of type confirm you can do it just by changing the type as a parameter inside the main function</p>
-        
+
         <vs-alert color="primary" icon="new_releases" active="true" class="my-4">
             <p>To do some action when the user approves or confirms we have the property accept:<code>myFunctionAccept</code></p>
         </vs-alert>

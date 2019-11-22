@@ -2,7 +2,7 @@
     File Name: SwitchColor.vue
     Description: Change color of switch
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -46,7 +46,7 @@
                 <input v-model="color" type="color">
             </li>
         </ul>
-        
+
         <template slot="codeContainer">
 &lt;template lang=&quot;html&quot;&gt;
   &lt;ul class=&quot;con-s&quot;&gt;

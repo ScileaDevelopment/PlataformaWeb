@@ -2,7 +2,7 @@
     File Name: ColorCustomization.vue
     Description: Change theme's main colors(primary, success etc.)
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Customize Theme Colors" code-toggler code-language="js">
-        
+
         <p>We almost always need a personalized application with own colors. In Vuesax, you can change the main colors to those that you need and the branding that your application has.</p>
 
         <p>You can change default colors using <code>themeColors.js</code> file. You can find this file in src folder.</p>

@@ -2,7 +2,7 @@
     File Name: Loading.vue
     Description: Loading - Imports all page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -32,10 +32,10 @@ export default{
         LoadingColor,
         LoadingBackground,
         LoadingContained,
-    }   
+    }
 }
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/pages/loading.scss";
+@import "@/assets/scss/vuexy/pages/loading.scss";
 </style>

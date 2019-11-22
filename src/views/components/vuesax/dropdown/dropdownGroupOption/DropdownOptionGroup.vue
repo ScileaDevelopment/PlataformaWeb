@@ -2,7 +2,7 @@
     File Name: DropdownOptionGroup.vue
     Description: Option 1 - Option Grouping
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -40,7 +40,7 @@
                 <vs-dropdown-item divider> Option 3 </vs-dropdown-item>
             </vs-dropdown-menu>
         </vs-dropdown>
-        
+
         <template slot="codeContainer">
 &lt;template&gt;
 

@@ -2,7 +2,7 @@
     File Name: GridColumnOrder.vue
     Description: Change the order of columns
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -19,7 +19,7 @@
                 <div class="w-full md:w-1/4 bg-grey-light p-4 text-center text-grey-darker">2</div>
             </div>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;div class=&quot;flex md:flex-row-reverse flex-wrap&quot;&gt;
   &lt;div class=&quot;w-full md:w-3/4 bg-grey p-4 text-center text-grey-lighter&quot;&gt;1&lt;/div&gt;

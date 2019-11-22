@@ -2,7 +2,7 @@
     File Name: tableFilterSorter.vue
     Description: Add filter and sorting functionality to table
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -15,7 +15,7 @@
 
         <p>if you need a property to be sorted you just have to add the <code>sort-key</code> property and the value you need to be sorted.</p>
 
-        <vs-table search :data="users">
+        <vs-table pagination :max-items="4" search :data="users">
 
             <template slot="thead">
                 <vs-th sort-key="email">Email</vs-th>

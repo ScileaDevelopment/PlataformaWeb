@@ -2,7 +2,7 @@
     File Name: PopupFullscreen.vue
     Description: Open popup in fullscreen
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,9 +10,9 @@
 
 <template>
     <vx-card title="Fullscreen" code-toggler>
-        
+
         <p>the popup can be full screen you just have to add the property <code>fullscreen</code></p>
-        
+
         <div class="demo-alignment">
             <vs-button @click="popupActive=true" color="primary">Open fullscreen popup</vs-button>
             <vs-popup fullscreen title="fullscreen" :active.sync="popupActive">

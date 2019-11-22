@@ -1,10 +1,10 @@
 <!-- =========================================================================================
-    File Name: ECommerceShop.vue
-    Description: eCommerce Shop Page
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
+  File Name: ECommerceShop.vue
+  Description: eCommerce Shop Page
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 <template>
@@ -169,7 +169,7 @@
                         <vs-divider />
 
                         <ais-clear-refinements class="flex justify-center">
-                            <vs-button slot-scope="{ canRefine, refine, createURL }" @click.prevent="refine" :disabled="!canRefine">CLEAR ALL FILTERS</vs-button>
+                            <vs-button class="w-full" slot-scope="{ canRefine, refine, createURL }" @click.prevent="refine" :disabled="!canRefine">Remove Filters</vs-button>
                         </ais-clear-refinements>
                     </div>
                 </vs-sidebar>
@@ -186,7 +186,10 @@
                                 <vs-input class="w-full vs-input-shadow-drop vs-input-no-border d-theme-input-dark-bg" placeholder="Search here" v-model="currentRefinement" @input="refine($event)" @keyup.esc="refine('')" size="large" />
 
                                 <!-- SEARCH LOADING -->
-                                <span :hidden="!isSearchStalled">Loading...</span>
+                                <p :hidden="!isSearchStalled" class="mt-4 text-grey">
+                                  <feather-icon icon="ClockIcon" svgClasses="w-4 h-4" class="mr-2 align-middle" />
+                                  <span>Loading...</span>
+                                </p>
 
                                 <!-- SEARCH ICON -->
                                 <div slot="submit-icon" class="absolute top-0 right-0 py-4 px-6" v-show="!currentRefinement">
@@ -244,7 +247,7 @@
 
                             <!-- LIST VIEW -->
                             <template v-else>
-                                <div class="items-list-view" v-for="item in items" :key="item.objectID">
+                                <div class="items-list-view mb-base" v-for="item in items" :key="item.objectID">
 
                                     <item-list-view :item="item">
 
@@ -304,188 +307,184 @@
 
 <script>
 import {
-  AisInstantSearch,
-  AisSearchBox,
-  AisConfigure,
-  AisStats,
-  AisHits,
-  AisPagination,
   AisClearRefinements,
-  AisNumericMenu,
-  AisSortBy,
-  AisRangeInput,
+  AisConfigure,
   AisHierarchicalMenu,
+  AisHits,
+  AisInstantSearch,
+  AisNumericMenu,
+  AisPagination,
+  AisRangeInput,
   AisRatingMenu,
-  AisRefinementList
+  AisRefinementList,
+  AisSearchBox,
+  AisSortBy,
+  AisStats
 } from 'vue-instantsearch'
 import algoliasearch from 'algoliasearch/lite'
 
 export default {
-    components: {
-        ItemGridView: () => import("./components/ItemGridView.vue"),
-        ItemListView: () => import("./components/ItemListView.vue"),
-        AisInstantSearch,
-        AisSearchBox,
-        AisConfigure,
-        AisStats,
-        AisHits,
-        AisPagination,
-        AisClearRefinements,
-        AisNumericMenu,
-        AisSortBy,
-        AisRangeInput,
-        AisHierarchicalMenu,
-        AisRatingMenu,
-        AisRefinementList
+  components: {
+    ItemGridView: () => import("./components/ItemGridView.vue"),
+    ItemListView: () => import("./components/ItemListView.vue"),
+    AisClearRefinements,
+    AisConfigure,
+    AisHierarchicalMenu,
+    AisHits,
+    AisInstantSearch,
+    AisNumericMenu,
+    AisPagination,
+    AisRangeInput,
+    AisRatingMenu,
+    AisRefinementList,
+    AisSearchBox,
+    AisSortBy,
+    AisStats
+  },
+  data() {
+    return {
+      searchClient: algoliasearch(
+        'latency',
+        '6be0576ff61c053d5f9a3225e2a90f76'
+      ),
+      // Filter Sidebar
+      isFilterSidebarActive: true,
+      clickNotClose: true,
+      currentItemView: 'item-grid-view',
+      numericItems: [
+        { label: 'All' },
+        { label: '<= $10', end: 10 },
+        { label: '$10 - $100', start: 10, end: 100 },
+        { label: '$100 - $500', start: 100, end: 500 },
+        { label: '>= $500', start: 500 },
+      ],
+      algoliaCategories: [
+        'hierarchicalCategories.lvl0',
+        'hierarchicalCategories.lvl1',
+        'hierarchicalCategories.lvl2',
+        'hierarchicalCategories.lvl3',
+      ]
+    }
+  },
+  computed: {
+    toValue() {
+      return (value, range) => [
+        value.min !== null ? value.min : range.min,
+        value.max !== null ? value.max : range.max,
+      ]
     },
-    data() {
-        return {
-            searchClient: algoliasearch(
-                'latency',
-                '6be0576ff61c053d5f9a3225e2a90f76'
-            ),
-            // Filter Sidebar
-            isFilterSidebarActive: true,
-            clickNotClose: true,
-            windowWidth: window.innerWidth,
-            currentItemView: 'item-grid-view',
-            numericItems: [
-              { label: 'All' },
-              { label: '<= $10', end: 10 },
-              { label: '$10 - $100', start: 10, end: 100 },
-              { label: '$100 - $500', start: 100, end: 500 },
-              { label: '>= $500', start: 500 },
-            ],
-            algoliaCategories: [
-              'hierarchicalCategories.lvl0',
-              'hierarchicalCategories.lvl1',
-              'hierarchicalCategories.lvl2',
-              'hierarchicalCategories.lvl3',
-            ]
-        }
-    },
-    computed: {
-        toValue() {
-            return (value, range) =>
-                [
-                    value.min !== null ? value.min : range.min,
-                    value.max !== null ? value.max : range.max,
-                ]
-        },
 
-        // GRID VIEW
-        isInCart() {
-            return (itemId) => this.$store.getters['eCommerce/isInCart'](itemId)
-        },
-        isInWishList() {
-            return (itemId) => this.$store.getters['eCommerce/isInWishList'](itemId)
-        },
+    // GRID VIEW
+    isInCart() {
+      return (itemId) => this.$store.getters['eCommerce/isInCart'](itemId)
     },
-    methods: {
-        handleWindowResize(event) {
-            this.windowWidth = event.currentTarget.innerWidth
-            this.setSidebarWidth()
-        },
-        setSidebarWidth() {
-            if(this.windowWidth < 992) {
-                this.isFilterSidebarActive = this.clickNotClose = false
-            }else {
-                this.isFilterSidebarActive = this.clickNotClose = true
-            }
-        },
+    isInWishList() {
+      return (itemId) => this.$store.getters['eCommerce/isInWishList'](itemId)
+    },
+    windowWidth() { return this.$store.state.windowWidth }
+  },
+  watch: {
+    windowWidth() {
+      this.setSidebarWidth()
+    }
+  },
+  methods: {
+    setSidebarWidth() {
+      if (this.windowWidth < 992) {
+        this.isFilterSidebarActive = this.clickNotClose = false
+      } else {
+        this.isFilterSidebarActive = this.clickNotClose = true
+      }
+    },
 
-        // GRID VIEW - ACTIONS
-        toggleFilterSidebar() {
-            if(this.clickNotClose) return
-            this.isFilterSidebarActive = !this.isFilterSidebarActive
-        },
-        toggleItemInWishList(item) {
-            this.$store.dispatch('eCommerce/toggleItemInWishList', item)
-        },
-        additemInCart(item) {
-            this.$store.dispatch('eCommerce/additemInCart', item)
-        },
-        cartButtonClicked(item) {
-            if(this.isInCart(item.objectID)) this.$router.push('/apps/eCommerce/checkout')
-            else this.additemInCart(item)
-        }
+    // GRID VIEW - ACTIONS
+    toggleFilterSidebar() {
+      if (this.clickNotClose) return
+      this.isFilterSidebarActive = !this.isFilterSidebarActive
     },
-    created() {
-        this.$nextTick(() => {
-            window.addEventListener('resize', this.handleWindowResize)
-        })
-        this.setSidebarWidth()
+    toggleItemInWishList(item) {
+      this.$store.dispatch('eCommerce/toggleItemInWishList', item)
     },
-    beforeDestroy: function() {
-        window.removeEventListener('resize', this.handleWindowResize)
+    additemInCart(item) {
+      this.$store.dispatch('eCommerce/additemInCart', item)
     },
+    cartButtonClicked(item) {
+      this.isInCart(item.objectID) ? this.$router.push('/apps/eCommerce/checkout').catch(() => {}) : this.additemInCart(item)
+    }
+  },
+  created() {
+    this.setSidebarWidth()
+  }
 }
+
 </script>
+
 
 <style lang="scss">
 #algolia-instant-search-demo {
-    .algolia-header {
-        .algolia-filters-label {
-            width: calc(260px + 2.4rem);
-        }
+  .algolia-header {
+    .algolia-filters-label {
+      width: calc(260px + 2.4rem);
     }
+  }
 
-    #algolia-content-container {
+  #algolia-content-container {
 
-        .vs-sidebar {
-          position: relative;
-          float: left;
-        }
+    .vs-sidebar {
+      position: relative;
+      float: left;
     }
+  }
 
-    .algolia-search-input-right-aligned-icon {
-        padding: 1rem 1.5rem;
-    }
+  .algolia-search-input-right-aligned-icon {
+    padding: 1rem 1.5rem;
+  }
 
-    .algolia-price-slider {
-        min-width: unset;
-    }
+  .algolia-price-slider {
+    min-width: unset;
+  }
 
-    // .item-list-view {
-    //     .algolia-result-img {
+  .item-view-primary-action-btn {
+    color: #2c2c2c !important;
+    background-color: #f6f6f6;
+    min-width: 50%;
+  }
 
-    //     }
-    // }
-
-    .item-view-primary-action-btn {
-        color: #2c2c2c !important;
-        background-color: #f6f6f6;
-        min-width: 50%;
-    }
-
-    .item-view-secondary-action-btn {
-        min-width: 50%;
-    }
+  .item-view-secondary-action-btn {
+    min-width: 50%;
+  }
 }
 
 .theme-dark {
-    #algolia-instant-search-demo {
-        #algolia-content-container {
-            .vs-sidebar {
-                background-color: #10163a;
-            }
-        }
+  #algolia-instant-search-demo {
+    #algolia-content-container {
+      .vs-sidebar {
+        background-color: #10163a;
+      }
     }
+  }
 }
 
 @media (min-width: 992px) {
-    .vs-sidebar-rounded {
-        .vs-sidebar { border-radius: .5rem; }
-        .vs-sidebar--items {border-radius: .5rem; }
+  .vs-sidebar-rounded {
+    .vs-sidebar {
+      border-radius: .5rem;
     }
+
+    .vs-sidebar--items {
+      border-radius: .5rem;
+    }
+  }
 }
 
 @media (max-width: 992px) {
-    #algolia-content-container {
-      .vs-sidebar {
-        position: absolute !important;
-        float: none !important;
-      }
+  #algolia-content-container {
+    .vs-sidebar {
+      position: absolute !important;
+      float: none !important;
     }
+  }
 }
+
 </style>
+

@@ -2,7 +2,7 @@
     File Name: ListIcon.vue
     Description: Give icon to list item
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Icon" code-toggler>
-        
+
         <p>The list items and the headers can have a <code>icon</code> as well</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
@@ -39,7 +39,7 @@
     &lt;vs-list-header icon-pack=&quot;feather&quot; icon=&quot;icon-users&quot; title=&quot;Group 1&quot;&gt;&lt;/vs-list-header&gt;
     &lt;vs-list-item icon-pack=&quot;feather&quot; icon=&quot;icon-check&quot; title=&quot;Snickerdoodle&quot; subtitle=&quot;An excellent companion&quot;&gt;&lt;/vs-list-item&gt;
     &lt;vs-list-item icon-pack=&quot;feather&quot; icon=&quot;icon-check&quot; title=&quot;Sapporo Haru&quot; subtitle=&quot;An excellent polish restaurant, quick delivery and hearty, filling meals&quot;&gt;&lt;/vs-list-item&gt;
-    
+
     &lt;vs-list-header icon-pack=&quot;feather&quot; icon=&quot;icon-user-plus&quot; title=&quot;Group 2&quot; color=&quot;success&quot;&gt;&lt;/vs-list-header&gt;
     &lt;vs-list-item icon-pack=&quot;feather&quot; icon=&quot;icon-shield&quot; title=&quot;Enid's&quot; subtitle=&quot;At night a bar, during the day a delicious brunch spot.&quot;&gt;&lt;/vs-list-item&gt;
     &lt;vs-list-item icon-pack=&quot;feather&quot; icon=&quot;icon-shield&quot; title=&quot;Veronika Ossi&quot; subtitle=&quot;Has not watched anything recently&quot;&gt;&lt;/vs-list-item&gt;

@@ -2,7 +2,7 @@
     File Name: GridSimpleOffset.vue
     Description: Add offset to columns
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;div class=&quot;flex flex-wrap&quot;&gt;
   &lt;div class=&quot;w-1/3 ml-auto bg-grid-color h-12&quot;&gt;&lt;/div&gt;

@@ -2,7 +2,7 @@
     File Name: ToolptipDelay.vue
     Description: Add delay to tooltip using delay prop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Delay" code-toggler>
-        
+
         <p>You can change the delay in appearing the tooltip with the property <code>delay</code></p>
 
         <div class="demo-alignment">
@@ -34,7 +34,7 @@
   &lt;vx-tooltip delay=&quot;.5s&quot; text=&quot;Tooltip delay 0.5s&quot;&gt;
     &lt;vs-button&gt;Delay 0.5s&lt;/vs-button&gt;
   &lt;/vx-tooltip&gt;
-  
+
   &lt;vx-tooltip delay=&quot;2s&quot; text=&quot;Tooltip delay 2s&quot;&gt;
     &lt;vs-button&gt;Delay 2s&lt;/vs-button&gt;
   &lt;/vx-tooltip&gt;

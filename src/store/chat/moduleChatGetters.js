@@ -2,31 +2,39 @@
   File Name: moduleChatGetters.js
   Description: Chat Module Getters
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
 
-import contacts from '@/views/apps/chat/contacts'
+// import contacts from '@/views/apps/chat/contacts'
 
 export default {
     chatDataOfUser: state => id => {
         return state.chats[Object.keys(state.chats).find(key => key == id)]
     },
-    chats: (state, getters) => {
-        const chatArray = contacts.filter((contact) => {
-            if(getters.chatDataOfUser(contact.id)) return (contact.name.toLowerCase().includes(state.chatSearchQuery.toLowerCase()) && (getters.chatDataOfUser(contact.id).msg.length > 0));
-        });
-        return chatArray.sort((x,y) => {
-            let timeX = getters.chatLastMessaged(x.id).time
-            let timeY = getters.chatLastMessaged(y.id).time
-            return (new Date(timeY) - new Date(timeX))
-        });
+    chatContacts: (state, getters) => {
+      let chatContacts = state.chatContacts.filter((contact) => contact.displayName.toLowerCase().includes(state.chatSearchQuery.toLowerCase()))
+
+      chatContacts.sort((x,y) => {
+        let timeX = getters.chatLastMessaged(x.uid).time
+        let timeY = getters.chatLastMessaged(y.uid).time
+        return (new Date(timeY) - new Date(timeX))
+      })
+
+      return chatContacts.sort((x,y) => {
+        const chatDataX = getters.chatDataOfUser(x.uid)
+        const chatDataY = getters.chatDataOfUser(y.uid)
+        if(chatDataX && chatDataY) return (chatDataY.isPinned - chatDataX.isPinned)
+        else return 0
+      })
     },
-    chatcontacts: (state) => contacts.filter((contact) => {
-        return contact.name.toLowerCase().includes(state.chatSearchQuery.toLowerCase())
-    }),
+    contacts: (state) => state.contacts.filter((contact) => contact.displayName.toLowerCase().includes(state.chatSearchQuery.toLowerCase())),
+    contact: (state) => contactId => state.contacts.find((contact) => contact.uid == contactId),
+    chats: (state) => state.chats,
+    chatUser: (state, getters, rootState) => id => state.contacts.find((contact) => contact.uid == id) || rootState.AppActiveUser,
+
     chatLastMessaged: (state, getters) => id => {
         if(getters.chatDataOfUser(id)) return getters.chatDataOfUser(id).msg.slice(-1)[0];
         else return false

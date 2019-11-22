@@ -2,7 +2,7 @@
 	File Name: SidebarReduceExpand.vue
 	Description: Creating reduce and expanding sidebar
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,13 +10,13 @@
 
 <template>
 	<vx-card title="Reduce and Expand" code-toggler>
-		
+
 		<p>You can have a reduced sidebar with the <code>reduce</code> property which by default makes the sidebar look reduced and when hover expands, if you do not want the functionality to expand when hovering you can remove it with the <code>reduce-not-hover-expand</code> property</p>
 
 		<vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
 			<p>You can remove the bounce animation by opening the sidebar with the prop <code>reduce-not-rebound</code></p>
 		</vs-alert>
-		
+
 		<div class="mt-5">
 
 			<div id="parentx-demo-6">
@@ -61,7 +61,7 @@
   &lt;div id=&quot;parentx-demo-6&quot;&gt;
     &lt;vs-button @click=&quot;active=!active, notExpand = false&quot; color=&quot;success&quot; type=&quot;filled&quot;&gt;Open Sidebar Reduce-expand&lt;/vs-button&gt;
     &lt;vs-button @click=&quot;active=!active, notExpand = true&quot; color=&quot;success&quot; type=&quot;filled&quot;&gt;Open Sidebar Reduce-only&lt;/vs-button&gt;
-    
+
     &lt;vs-sidebar :reduce=&quot;reduce&quot; :reduce-not-hover-expand=&quot;notExpand&quot; parent=&quot;body&quot; default-index=&quot;1&quot;  color=&quot;success&quot; class=&quot;sidebarx&quot; spacer v-model=&quot;active&quot;&gt;
 
       &lt;div class=&quot;header-sidebar&quot; slot=&quot;header&quot;&gt;

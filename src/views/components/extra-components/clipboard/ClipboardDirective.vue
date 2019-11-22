@@ -2,19 +2,19 @@
 	File Name: ClipboardDirective.vue
 	Description: Clipboard demo
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 <template>
-	<vx-card title="Using Directive" subtitle="Use directive on button to copy text." code-toggler>
+	<vx-card title="Using Directive" subtitle="Use directive on button to copy text" code-toggler>
 		<vs-input v-model="text" class="inline-flex mb-2 mr-2" />
 		<vs-button
 			v-clipboard:copy="text"
 			v-clipboard:success="onCopy"
 			v-clipboard:error="onError">
-			Copy!
+			Copy
 		</vs-button>
 		<template slot="codeContainer">
 &lt;template&gt;
@@ -23,7 +23,7 @@
         v-clipboard:copy=&quot;text&quot;
         v-clipboard:success=&quot;onCopy&quot;
         v-clipboard:error=&quot;onError&quot;&gt;
-        Copy!
+        Copy
     &lt;/vs-button&gt;
 &lt;/template&gt;
 
@@ -37,8 +37,8 @@ export default {
     methods: {
         onCopy() {
             this.$vs.notify({
-                title: 'Success!',
-                text: 'Text copied successfully.',
+                title: 'Success',
+                text: 'Text copied successfully',
                 color: 'success',
                 iconPack: 'feather',
                 position: 'top-center',
@@ -47,8 +47,8 @@ export default {
         },
         onError() {
             this.$vs.notify({
-                title: 'Failed!',
-                text: 'Error in copying text.',
+                title: 'Failed',
+                text: 'Error in copying text',
                 color: 'danger',
                 iconPack: 'feather',
                 position: 'top-center',
@@ -66,14 +66,14 @@ export default {
 export default {
     data() {
         return {
-            text: 'Copy Me!',
+            text: 'Copy Me',
         }
     },
     methods: {
         onCopy() {
             this.$vs.notify({
-                title: 'Success!',
-                text: 'Text copied successfully.',
+                title: 'Success',
+                text: 'Text copied successfully',
                 color: 'success',
                 iconPack: 'feather',
                 position: 'top-center',
@@ -82,8 +82,8 @@ export default {
         },
         onError() {
             this.$vs.notify({
-                title: 'Failed!',
-                text: 'Error in copying text.',
+                title: 'Failed',
+                text: 'Error in copying text',
                 color: 'danger',
                 iconPack: 'feather',
                 position: 'top-center',

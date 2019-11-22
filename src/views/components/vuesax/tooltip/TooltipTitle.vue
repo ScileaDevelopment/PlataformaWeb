@@ -2,7 +2,7 @@
     File Name: ToolptipTitle.vue
     Description: Create tooltip with title
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Title" code-toggler>
-        
+
         <p>If necessary, you can add a title to the tooltip with the property <code>title</code></p>
 
         <div class="demo-alignment">
@@ -29,7 +29,7 @@
     title=&quot;Are you sure?&quot;
     color=&quot;warning&quot;
     text=&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque non neque sed aliquet.&quot;&gt;
-    
+
     &lt;vs-button color=&quot;warning&quot; type=&quot;flat&quot;&gt;Title Tooltip&lt;/vs-button&gt;
   &lt;/vx-tooltip&gt;
 &lt;/template&gt;

@@ -2,41 +2,58 @@
   File Name: moduleTodoActions.js
   Description: Todo Module Actions
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
+import axios from "@/axios.js"
 
 export default {
-    addTodo({ commit }, payload) {
-        commit('ADD_TODO', payload);
-    },
-    toggleIsDone({ commit }, payload) {
-        commit('TOGGLE_IS_DONE', payload);
-    },
-    toggleIsImportant({ commit }, payload) {
-        commit('TOGGLE_IS_IMPORTANT', payload);
-    },
-    toggleIsStarred({ commit }, payload) {
-        commit('TOGGLE_IS_STARRED', payload);
-    },
-    updateTags({ commit }, payload) {
-        commit('UPDATE_TAGS', payload);
-    },
-    moveToTrash({ commit }, payload) {
-        commit('MOVE_TO_TRASH', payload);
-    },
-    applyTodoFilter({ commit }, filterName) {
-        commit('APPLY_TODO_FILTER', filterName);
-    },
     setTodoSearchQuery({ commit }, query){
         commit('SET_TODO_SEARCH_QUERY', query)
     },
-    setTodoTitle({ commit }, payload){
-        commit('SET_TODO_TITLE', payload)
+    fetchTasks({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        axios.get("/api/apps/todo/tasks", { params: {filter: payload.filter} })
+          .then((response) => {
+            commit('SET_TASKS', response.data)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
-    setTodoDesc({ commit }, payload){
-        commit('SET_TODO_DESC', payload)
+
+    fetchTags({ commit }) {
+      return new Promise((resolve, reject) => {
+        axios.get("/api/apps/todo/tags")
+          .then((response) => {
+            commit('SET_TAGS', response.data)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
+
+    addTask({ commit }, task) {
+      return new Promise((resolve, reject) => {
+        axios.post("/api/apps/todo/tasks/", {task: task})
+          .then((response) => {
+            commit('ADD_TASK', Object.assign(task, {id: response.data.id}))
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
+    },
+
+    updateTask({ commit }, task) {
+      return new Promise((resolve, reject) => {
+        axios.post(`/api/apps/todo/task/${task.id}`, {task: task})
+          .then((response) => {
+            commit('UPDATE_TASK', response.data)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
+    }
 }

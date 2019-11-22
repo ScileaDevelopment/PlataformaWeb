@@ -2,7 +2,7 @@
     File Name: Faq.vue
     Description: FAQ Page
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -34,7 +34,7 @@
                     <ul class="faq-supporters mt-4">
                         <li v-for="supporter in supporters" :key="supporter.id" class="mt-4">
                             <div class="flex items-center">
-                                <vs-avatar class="mr-3" :src="require(`@/assets/images/portrait/small/${supporter.img}`)" size="35px" />
+                                <vs-avatar class="mr-3" :src="supporter.img" size="35px" />
                                 <div class="leading-tight">
                                     <p class="font-semibold">{{ supporter.name }}</p>
                                     <small>{{ supporter.profession }}</small>
@@ -53,7 +53,7 @@
                         <p>{{ que.ans }}</p>
                     </vs-collapse-item>
                 </vs-collapse>
-                
+
             </div>
         </div>
     </div>
@@ -176,31 +176,31 @@ export default{
             supporters: [
                 {
                     id: 1,
-                    img: 'avatar-s-1.png',
+                    img: require("@/assets/images/portrait/small/avatar-s-1.jpg"),
                     name: 'Boyce Shene',
                     profession: 'Web Developer'
                 },
                 {
                     id: 2,
-                    img: 'avatar-s-2.png',
+                    img: require("@/assets/images/portrait/small/avatar-s-2.jpg"),
                     name: 'Margie Sevy',
                     profession: 'Web Designer'
                 },
                 {
                     id: 3,
-                    img: 'avatar-s-3.png',
+                    img: require("@/assets/images/portrait/small/avatar-s-3.jpg"),
                     name: 'Cyndi Navas',
                     profession: 'Web Developer'
                 },
                 {
                     id: 4,
-                    img: 'avatar-s-4.png',
+                    img: require("@/assets/images/portrait/small/avatar-s-4.jpg"),
                     name: 'Chi Petrusky',
                     profession: 'Web Developer'
                 },
                 {
                     id: 5,
-                    img: 'avatar-s-5.png',
+                    img: require("@/assets/images/portrait/small/avatar-s-5.jpg"),
                     name: 'Shanel Dumag',
                     profession: 'Web Designer'
                 },
@@ -208,7 +208,7 @@ export default{
         }
     },
     computed: {
-        filteredFaq() { 
+        filteredFaq() {
             return this.faqs.filter((faq) => {
                 if (this.faqFilter == 1) return (faq.question.toLowerCase().includes(this.faqSearchQuery.toLowerCase()) || faq.ans.toLowerCase().includes(this.faqSearchQuery.toLowerCase()));
                 else if (this.faqFilter == 2) return faq.categoryId == 2 && (faq.question.toLowerCase().includes(this.faqSearchQuery.toLowerCase()) || faq.ans.toLowerCase().includes(this.faqSearchQuery.toLowerCase()));
@@ -234,6 +234,6 @@ export default{
 
     .faq-bg {
         background-color: #fff;
-    }   
+    }
 }
 </style>

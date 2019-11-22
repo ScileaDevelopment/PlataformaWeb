@@ -2,7 +2,7 @@
     File Name: DatepickerOpenProgramatically.vue
     Description: opening datepicker programatically
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
 <template>
     <vx-card title="Open Programatically" code-toggler>
         <p>Open datepicker programatically using <strong>ref</strong> and <strong>click-event</strong></p>
-        
+
         <div class="mt-5">
             <vs-button class="mb-4" @click="$refs.programaticOpen.showCalendar()">Open Picker</vs-button>
             <datepicker ref="programaticOpen"></datepicker>

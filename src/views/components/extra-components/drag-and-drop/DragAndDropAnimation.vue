@@ -2,7 +2,7 @@
     File Name: DragAndDropAnimation.vue
     Description: Add animation to drag and drop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
 <template>
     <vx-card title="With Animation" code-toggler>
         <p>Add animation to changes using <code>transition-group</code>.</p>
-        
+
         <div class="mt-5">
             <vs-list>
                 <vs-list-header title="People Group" color="primary"></vs-list-header>
@@ -23,7 +23,7 @@
             </vs-list>
         </div>
 
-        <prism language="js" class="rounded-lg">            
+        <prism language="js" class="rounded-lg">
 {{ list }}
         </prism>
 
@@ -39,7 +39,7 @@
         &lt;/vs-list-item&gt;
       &lt;/transition-group&gt;
     &lt;/draggable&gt;
-    
+
   &lt;/vs-list&gt;
 &lt;/template&gt;
 &lt;script&gt;

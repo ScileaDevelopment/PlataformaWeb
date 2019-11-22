@@ -2,7 +2,7 @@
 	File Name: ECommerceCheckout.vue
 	Description: eCommerce Checkout page
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -25,12 +25,14 @@
                     <!-- LEFT COL -->
                     <div class="vx-col lg:w-2/3 w-full relative">
                         <div class="items-list-view" v-for="(item, index) in cartItems" :key="item.objectID">
-                            <item-list-view :item="item">
+                            <item-list-view :item="item" class="mb-base">
 
                                 <!-- SLOT: ITEM META -->
                                 <template slot="item-meta">
-                                    <h6 class="item-name font-semibold mb-1">{{ item.name }}</h6>
-                                    <p class="text-sm mb-2 cursor-pointer">By <span class="text-primary font-semibold">{{ item.brand }}</span></p>
+                                    <h6
+                                      class="item-name font-semibold mb-1 cursor-pointer hover:text-primary"
+                                      @click="$router.push({name: 'ecommerce-item-detail-view', params: {item_id: item.objectID }}).catch(() => {})">{{ item.name }}</h6>
+                                    <p class="text-sm mb-2">By <span class="font-semibold cursor-pointer">{{ item.brand }}</span></p>
                                     <p class="text-success text-sm">In Stock</p>
 
                                     <p class="mt-4 font-bold text-sm">Quantity</p>
@@ -107,7 +109,7 @@
 
                 <!-- IF NO ITEMS IN CART -->
                 <vx-card title="You don't have any items in your cart." v-else>
-                    <vs-button @click="$router.push('/apps/eCommerce/shop')">Browse Shop</vs-button>
+                    <vs-button @click="$router.push('/apps/eCommerce/shop').catch(() => {})">Browse Shop</vs-button>
                 </vx-card>
 
             </tab-content>
@@ -391,7 +393,7 @@ export default {
         },
         wishListButtonClicked(item) {
             // Toggle in Wish List
-            if (this.isInWishList(item.objectID)) this.$router.push('/apps/eCommerce/wish-list')
+            if (this.isInWishList(item.objectID)) this.$router.push('/apps/eCommerce/wish-list').catch(() => {})
             else {
                 this.toggleItemInWishList(item)
                 this.removeItemFromCart(item)
@@ -474,13 +476,20 @@ export default {
     }
 
     .vue-form-wizard {
-        /deep/ .wizard-header {
+        padding-bottom: 0;
+
+        ::v-deep .wizard-header {
             padding: 0;
         }
 
-        /deep/ .wizard-tab-content {
+        ::v-deep .wizard-tab-content {
             padding-right: 0;
             padding-left: 0;
+            padding-bottom: 0;
+
+            .wizard-tab-container{
+              margin-bottom: 0 !important;
+            }
         }
     }
 }

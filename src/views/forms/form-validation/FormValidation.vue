@@ -2,7 +2,7 @@
     File Name: FormValidation.vue
     Description: Form validation (third-party) - Imports page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 <template>
     <div id="extra-component-form-validation-demo">
 
-        <p class="mb-4"><a href="https://baianat.github.io/vee-validate/" target="_blank" rel="nofollow">vee-validate</a> is a Template Based Validation Framework for Vue.js. Read full documentation <a href="https://baianat.github.io/vee-validate/guide/" target="_blank" rel="nofollow">here</a></p>
+        <p class="mb-4"><a href="https://logaretm.github.io/vee-validate/guide/" target="_blank" rel="nofollow">vee-validate</a> is a Template Based Validation Framework for Vue.js. Read full documentation <a href="https://baianat.github.io/vee-validate/guide/" target="_blank" rel="nofollow">here</a></p>
 
         <form-validation-simple></form-validation-simple>
         <form-validation-multiple-rules></form-validation-multiple-rules>

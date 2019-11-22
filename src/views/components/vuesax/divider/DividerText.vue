@@ -2,7 +2,7 @@
     File Name: DividerText.vue
     Description: Divider with text added between the line
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Text" code-toggler>
-        
+
         <p>You can add a text between the line to delimit two elements and have a description for the user</p>
 
         <div class="op-block mt-5">

@@ -2,7 +2,7 @@
     File Name: CarouselResponsiveBreakpoints.vue
     Description: Carousel with responsive breakpoints
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,17 +11,37 @@
 <template>
     <vx-card title="Responsive Breakpoints" class="carousel-example" code-toggler>
           <!-- swiper -->
-          <swiper :options="swiperOption">
-            <swiper-slide>Slide 1</swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
-            <swiper-slide>Slide 4</swiper-slide>
-            <swiper-slide>Slide 5</swiper-slide>
-            <swiper-slide>Slide 6</swiper-slide>
-            <swiper-slide>Slide 7</swiper-slide>
-            <swiper-slide>Slide 8</swiper-slide>
-            <swiper-slide>Slide 9</swiper-slide>
-            <swiper-slide>Slide 10</swiper-slide>
+          <swiper :options="swiperOption" :dir="$vs.rtl ? 'rtl' : 'ltr'" :key="$vs.rtl">
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-31.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-32.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-33.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-29.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-35.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-23.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-37.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-38.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-39.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-40.jpg" alt="banner">
+            </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
           </swiper>
 
@@ -29,17 +49,37 @@
 &lt;template&gt;
     &lt;div class=&quot;carousel-example&quot;&gt;
         &lt;!-- swiper --&gt;
-        &lt;swiper :options=&quot;swiperOption&quot;&gt;
-            &lt;swiper-slide&gt;Slide 1&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 2&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 3&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 4&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 5&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 6&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 7&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 8&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 9&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 10&lt;/swiper-slide&gt;
+        &lt;swiper :options=&quot;swiperOption&quot; :dir=&quot;$vs.rtl ? 'rtl' : 'ltr'&quot; :key=&quot;$vs.rtl&quot;&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-31.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-32.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-33.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-29.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-35.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-23.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-37.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-38.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-39.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-40.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
             &lt;div class=&quot;swiper-pagination&quot; slot=&quot;pagination&quot;&gt;&lt;/div&gt;
         &lt;/swiper&gt;
     &lt;/div&gt;
@@ -83,25 +123,6 @@ export default {
     }
 }
 &lt;/script&gt;
-
-&lt;style lang=&quot;scss&quot;&gt;
-.carousel-example .swiper-container .swiper-slide {
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    background-color: #eee;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-height: 300px;
-}
-&lt;/style&gt;
           </template>
       </vx-card>
 </template>

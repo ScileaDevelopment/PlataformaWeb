@@ -2,7 +2,7 @@
     File Name: SidebarDefault.vue
     Description: Rendering of default sidebar
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>One of the most common features is to have the hidden sidebar to show it when the user presses a button or makes an action, to add a sidebar we have the component vs-sidebar</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="my-5">
@@ -22,7 +22,7 @@
         <vs-alert color="primary" icon="new_releases" active="true" class="mb-1">
             <p>To make the link is in an active state we have the property <code>v-model</code></p>
         </vs-alert>
-        
+
         <div class="mt-5">
 
             <div id="parentx-demo-1">

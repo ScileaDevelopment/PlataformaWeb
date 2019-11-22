@@ -2,7 +2,7 @@
     File Name: CardActions.vue
     Description: Card with actions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Remove -->
-        <div class="vx-col w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
+        <div class="vx-col w-full md:w-1/2 lg:w-1/2 xl:w-1/2 mb-base">
             <vx-card title="Remove Card" remove-card-action>
                 <p class="mb-3">You can add remove card action by setting <code>remove-card-action</code> prop to <code>true</code>. By default it is set to false.</p>
                 <p class="mb-3">You can also get this action if you set <code>action-buttons</code> prop to <code>true</code>.</p>
@@ -66,7 +66,7 @@
         </div>
 
         <!-- All Actions -->
-        <div class="vx-col w-full md:w-1/2 lg:w-1/2 xl:w-1/2 md:mt-0 mt-base">
+        <div class="vx-col w-full md:w-1/2 lg:w-1/2 xl:w-1/2 md:mt-0">
             <vx-card title="Action Buttons" action-buttons @refresh="closeCardAnimationDemo">
                 <p class="mb-2">You can add all three action by setting <code>action-buttons</code> prop to <code>true</code>. By default it is set to false.</p>
                 <p class="mb-1">Click on <feather-icon icon="ChevronDownIcon" svgClasses="h-5 w-5" class="align-middle" /> icon to see card collapse in action.</p>

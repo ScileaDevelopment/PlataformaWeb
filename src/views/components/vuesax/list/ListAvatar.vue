@@ -2,7 +2,7 @@
     File Name: ListAvatar.vue
     Description: You can add avatar to list also
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Avatar" code-toggler>
-        
+
         <p>You can implement an avatar in the list with the <code>slot="avatar"</code> by putting a [vs-avatar] component</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
@@ -31,12 +31,12 @@
 
                 <vs-list-item title="Matt" subtitle="11 Points">
                     <template slot="avatar">
-                        <vs-avatar vs-text="Vuesax" />
+                        <vs-avatar vs-text="Vuexy" />
                     </template>
                 </vs-list-item>
 
                 <vs-list-header title="Profile photo" color="warning"></vs-list-header>
-                
+
                 <vs-list-item title="Xian Famous Foods" subtitle="A taste of Shaanxi's delicious culinary traditions, with delights like spicy cold noodles and lamb burgers.">
                     <template slot="avatar">
                         <vs-avatar vs-text="Vue" />
@@ -58,12 +58,12 @@
 
   &lt;vs-list-item title=&quot;Matt&quot; subtitle=&quot;11 Points&quot;&gt;
     &lt;template slot=&quot;avatar&quot;&gt;
-      &lt;vs-avatar vs-text=&quot;Vuesax&quot;/&gt;
+      &lt;vs-avatar vs-text=&quot;Vuexy&quot;/&gt;
     &lt;/template&gt;
   &lt;/vs-list-item&gt;
 
   &lt;vs-list-header title=&quot;Profile photo&quot; color=&quot;warning&quot;&gt;&lt;/vs-list-header&gt;
-  
+
   &lt;vs-list-item title=&quot;Xian Famous Foods&quot; subtitle=&quot;A taste of Shaanxi&apos;s delicious culinary traditions, with delights like spicy cold noodles and lamb burgers.&quot;&gt;
     &lt;template slot=&quot;avatar&quot;&gt;
       &lt;vs-avatar vs-text=&quot;Vue&quot;/&gt;

@@ -2,14 +2,14 @@
     File Name: Grid.vue
     Description: Theme Grid System - Imports page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 
 <template>
-    <div id="vuesax-grid-demo">
+    <div id="vuexy-grid-demo">
         <grid-overview></grid-overview>
         <grid-design-concept></grid-design-concept>
         <grid-column-offset></grid-column-offset>
@@ -43,5 +43,5 @@ export default{
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/pages/grid.scss";
+@import "@/assets/scss/vuexy/pages/grid.scss";
 </style>

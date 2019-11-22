@@ -2,7 +2,7 @@
     File Name: Switch.vue
     Description: Switch element - Imports all page portion
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -37,5 +37,5 @@ export default{
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/pages/switch.scss";
+@import "@/assets/scss/vuexy/pages/switch.scss";
 </style>

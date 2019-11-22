@@ -2,7 +2,7 @@
     File Name: DropdownDefault.vue
     Description: Rendering of default dropdown
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>To add the Dropdown we have three types of components the main <code>vs-dropdown</code> that contains the element that makes the <code>vs-dropdown-menu</code> appear and to add each item within it we have the component <code>vs-dropdown-item</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
@@ -120,7 +120,7 @@
       &lt;vs-dropdown-item disabled&gt;
         Option 2
       &lt;/vs-dropdown-item&gt;
-      
+
       &lt;vs-dropdown-item disabled divider&gt;
         Option 3
       &lt;/vs-dropdown-item&gt;
@@ -138,6 +138,6 @@ import Prism from 'vue-prism-component'
     export default{
         components: {
             Prism
-        }   
+        }
     }
 </script>

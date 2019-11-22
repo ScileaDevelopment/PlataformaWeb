@@ -2,7 +2,7 @@
     File Name: MailItem.vue
     Description: Mail Item - Displays mail item
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -12,7 +12,7 @@
 
         <!-- MAIL ROW 1 : META -->
         <div class="flex w-full">
-            <vs-avatar class="sender__avatar flex-shrink-0 mr-3 border-2 border-solid border-white" :src="require(`@/assets/images/portrait/small/${mail.img}`)" size="40px"></vs-avatar>
+            <vs-avatar class="sender__avatar flex-shrink-0 mr-3 border-2 border-solid border-white" :src="mail.img" size="40px"></vs-avatar>
 
             <div class="flex w-full justify-between items-start">
                 <div class="mail__details">
@@ -23,7 +23,7 @@
 
                 <div class="mail-item__meta flex items-center">
                     <div class="email__labels hidden sm:flex items-center">
-                        <div class="h-3 w-3 rounded-full mr-2" :class="'bg-' + labelColor(label)" v-for="(label, index) in mail.labels" :key="index"></div>
+                        <div class="h-2 w-2 rounded-full mr-2" :class="'bg-' + labelColor(label)" v-for="(label, index) in mail.labels" :key="index"></div>
                     </div>
                     <span>{{ mail.time | date }}</span>
                 </div>
@@ -46,49 +46,47 @@
 </template>
 
 <script>
-export default{
-    props: {
-        mail: {
-            type: Object,
-            required: true,
-        },
-        isMailOpen: {
-            type: Boolean,
-        },
-        isSelected: {
-            type: Boolean,
-            required: true,
-        }
+export default {
+  props: {
+    mail: {
+      type: Object,
+      required: true,
     },
-    data() {
-        return {
-            isSelectedMail: this.isSelected,
-        }
-    },
-    watch: {
-        isSelected(value) {
-            this.isSelectedMail = value
-        },
-        isSelectedMail(val) {
-          if(val) this.$emit('addToSelected', this.mail.id)
-          else this.$emit('removeSelected', this.mail.id)
-        }
-    },
-    computed: {
-        labelColor() {
-            return (label) => {
-                const tags = this.$store.state.email.mailTags;
-                return tags.find((tag) => {
-                    return tag.value == label
-                }).color
-            }
-        },
-    },
-    methods: {
-        toggleIsStarred() {
-            const payload = {mailId: this.mail.id, value : !this.mail.isStarred}
-            this.$store.dispatch('email/toggleIsMailStarred', payload)
-        }
+    isSelected: {
+      type: Boolean,
+      required: true,
     }
+  },
+  data() {
+    return {
+      isSelectedMail: this.isSelected,
+    }
+  },
+  watch: {
+    isSelected(value) {
+      this.isSelectedMail = value
+    },
+    isSelectedMail(val) {
+      val ? this.$emit('addToSelected', this.mail.id) : this.$emit('removeSelected', this.mail.id)
+    }
+  },
+  computed: {
+    labelColor() {
+      return (label) => {
+        const tags = this.$store.state.email.mailTags
+        return tags.find((tag) => {
+          return tag.value == label
+        }).color
+      }
+    },
+  },
+  methods: {
+    toggleIsStarred() {
+      const payload = { mailId: this.mail.id, value: !this.mail.isStarred }
+      this.$store.dispatch('email/toggleIsMailStarred', payload)
+    }
+  }
 }
+
 </script>
+

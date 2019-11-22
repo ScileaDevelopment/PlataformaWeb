@@ -2,7 +2,7 @@
   File Name: ButtonGroupSize.vue.vue
   Description: Buttons Group Size
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -14,40 +14,40 @@
     <p class="mb-4">You can use <code>size</code> prop of button component to change the size of button group.</p>
 
     <div class="btn-group">
-      <vs-button size="large">Left</vs-button>
-      <vs-button size="large">Middle</vs-button>
-      <vs-button size="large">Right</vs-button>
+      <vs-button size="large">First</vs-button>
+      <vs-button size="large">Second</vs-button>
+      <vs-button size="large">Third</vs-button>
     </div>
 
     <div class="btn-group my-4">
-      <vs-button>Left</vs-button>
-      <vs-button>Middle</vs-button>
-      <vs-button>Right</vs-button>
+      <vs-button>First</vs-button>
+      <vs-button>Second</vs-button>
+      <vs-button>Third</vs-button>
     </div>
 
     <div class="btn-group">
-      <vs-button size="small">Left</vs-button>
-      <vs-button size="small">Middle</vs-button>
-      <vs-button size="small">Right</vs-button>
+      <vs-button size="small">First</vs-button>
+      <vs-button size="small">Second</vs-button>
+      <vs-button size="small">Third</vs-button>
     </div>
 
     <template slot="codeContainer">
 &lt;div class=&quot;btn-group&quot;&gt;
-  &lt;vs-button size=&quot;large&quot;&gt;Left&lt;/vs-button&gt;
-  &lt;vs-button size=&quot;large&quot;&gt;Middle&lt;/vs-button&gt;
-  &lt;vs-button size=&quot;large&quot;&gt;Right&lt;/vs-button&gt;
+  &lt;vs-button size=&quot;large&quot;&gt;First&lt;/vs-button&gt;
+  &lt;vs-button size=&quot;large&quot;&gt;Second&lt;/vs-button&gt;
+  &lt;vs-button size=&quot;large&quot;&gt;Third&lt;/vs-button&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;btn-group my-4&quot;&gt;
-  &lt;vs-button&gt;Left&lt;/vs-button&gt;
-  &lt;vs-button&gt;Middle&lt;/vs-button&gt;
-  &lt;vs-button&gt;Right&lt;/vs-button&gt;
+  &lt;vs-button&gt;First&lt;/vs-button&gt;
+  &lt;vs-button&gt;Second&lt;/vs-button&gt;
+  &lt;vs-button&gt;Third&lt;/vs-button&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;btn-group&quot;&gt;
-  &lt;vs-button size=&quot;small&quot;&gt;Left&lt;/vs-button&gt;
-  &lt;vs-button size=&quot;small&quot;&gt;Middle&lt;/vs-button&gt;
-  &lt;vs-button size=&quot;small&quot;&gt;Right&lt;/vs-button&gt;
+  &lt;vs-button size=&quot;small&quot;&gt;First&lt;/vs-button&gt;
+  &lt;vs-button size=&quot;small&quot;&gt;Second&lt;/vs-button&gt;
+  &lt;vs-button size=&quot;small&quot;&gt;Third&lt;/vs-button&gt;
 &lt;/div&gt;
     </template>
   </vx-card>

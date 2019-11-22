@@ -2,7 +2,7 @@
     File Name: ButtonGradient.vue
     Description: Give gradient to button background
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,17 +10,17 @@
 
 <template>
     <vx-card title="Gradient" code-toggler>
-        
+
         <p>To add a type of button with edges we change the value of <code>type</code> by: <code>gradient</code></p>
 
         <div class="demo-alignment">
 
-            <vs-button type="gradient">primary</vs-button>
-            <vs-button color="success" type="gradient">success</vs-button>
-            <vs-button color="danger" type="gradient">danger</vs-button>
-            <vs-button color="warning" type="gradient">warning</vs-button>
-            <vs-button color="dark" type="gradient">dark</vs-button>
-            <vs-button color="#3dd495" gradient-color-secondary="rgb(130, 207, 23)" type="gradient">dark</vs-button>
+            <vs-button type="gradient">Primary</vs-button>
+            <vs-button color="success" type="gradient">Success</vs-button>
+            <vs-button color="danger" type="gradient">Danger</vs-button>
+            <vs-button color="warning" type="gradient">Warning</vs-button>
+            <vs-button color="dark" type="gradient">Dark</vs-button>
+            <vs-button color="#3dd495" gradient-color-secondary="rgb(130, 207, 23)" type="gradient">Dark</vs-button>
             <vs-button disabled type="gradient">Disabled</vs-button>
 
         </div>

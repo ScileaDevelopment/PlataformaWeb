@@ -2,7 +2,7 @@
     File Name: DragAndDrop.vue
     Description: Drag and Drop (third-party) - Imports page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
     <div id="extra-component-drag-and-drop-demo">
 
         <p class="mb-4"><a href="https://github.com/SortableJS/Vue.Draggable" target="_blank" rel="nofollow">Vue.Draggable</a> - Vue component allowing drag-and-drop and synchronization with view model array. Based on and offering all features of Sortable.js</p>
-        
+
         <drag-and-drop-simple></drag-and-drop-simple>
         <drag-and-drop-multiple-lists></drag-and-drop-multiple-lists>
         <drag-and-drop-clone-list></drag-and-drop-clone-list>

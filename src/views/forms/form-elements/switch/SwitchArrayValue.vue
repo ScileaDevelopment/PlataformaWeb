@@ -2,7 +2,7 @@
     File Name: Switch.vue
     Description: Create array using switch
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -41,7 +41,7 @@
         </ul>
 
         <p class="op-block mt-5">{{ switchArray }}</p>
-        
+
         <template slot="codeContainer">
 &lt;template&gt;
   &lt;ul class=&quot;con-s&quot;&gt;

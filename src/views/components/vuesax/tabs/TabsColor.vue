@@ -2,7 +2,7 @@
     File Name: TabsColor.vue
     Description: Change color color of underline in tabs
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
+
         <p>You can change the color of the component with the property color, the parameter allows the main colors and HEX or RGB</p>
 
         <vs-alert icon="warning" active="true" color="warning" class="mt-5">
@@ -78,7 +78,7 @@
       &lt;div class=&quot;con-tab-ejemplo&quot;&gt;
       &lt;span&gt;Macaroon ....&lt;/span&gt;&lt;/div&gt;
     &lt;/vs-tab&gt;
-    
+
     &lt;vs-tab @click=&quot;colorx = 'rgb(16, 233, 179)'&quot; label=&quot;RGB | HEX&quot;&gt;
       &lt;div class=&quot;con-tab-ejemplo&quot;&gt;
       &lt;span&gt;Cupcake ....&lt;/span&gt;&lt;/div&gt;

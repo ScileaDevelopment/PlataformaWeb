@@ -2,7 +2,7 @@
     File Name: CardBasic.vue
     Description: Basic Cards
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -13,13 +13,13 @@
             <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base">
                 <vx-card>
                     <div slot="no-body">
-                        <img :src="require(`@/assets/images/pages/${card_1.contentImg1}`)" alt="content-img" class="responsive card-img-top">
+                        <img :src="card_1.img" alt="content-img" class="responsive card-img-top">
                     </div>
                     <h5 class="mb-2">{{ card_1.title }}</h5>
                     <p class="text-grey">{{ card_1.subtitle }}</p>
                     <p class="text-grey">{{ card_1.subtitle_2 }}</p>
                     <div class="flex justify-between flex-wrap">
-                        <vs-button class="mt-4 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">Download</vs-button>
+                        <vs-button class="mt-4 mr-2 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">Download</vs-button>
                         <vs-button class="mt-4" type="border" color="#b9b9b9">View All</vs-button>
                     </div>
                 </vx-card>
@@ -27,7 +27,7 @@
 
             <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base">
                 <vx-card>
-                    <img :src="require(`@/assets/images/pages/${card_2.contentImg2}`)" alt="content-img" class="responsive rounded-lg">
+                    <img :src="card_2.img" alt="content-img" class="responsive rounded-lg">
                     <div class="my-6">
                         <h5 class="mb-2">{{ card_2.title }}</h5>
                         <p class="text-grey">{{ card_2.subtitle }}</p>
@@ -49,7 +49,7 @@
             <!-- CONTENT CARD - PROGRESS BAR/GOAL -->
             <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base">
                 <vx-card>
-                    <img :src="require(`@/assets/images/pages/${card_3.contentImg3}`)" alt="content-img" class="responsive rounded-lg">
+                    <img :src="card_3.img" alt="content-img" class="responsive rounded-lg">
                     <div class="my-6">
                         <h5 class="mb-2">{{ card_3.title }}</h5>
                     </div>
@@ -61,7 +61,7 @@
                         <vs-progress :percent="card_3.progress_done_per" class="block mt-1 shadow-md"></vs-progress>
                     </div>
                     <div class="flex justify-between flex-wrap">
-                        <vs-button class="mt-4 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">{{ card_3.btn_left_text }}</vs-button>
+                        <vs-button class="mt-4 mr-2 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">{{ card_3.btn_left_text }}</vs-button>
                         <vs-button class="mt-4" type="border" color="#b9b9b9">{{ card_3.btn_right_text }}</vs-button>
                     </div>
                 </vx-card>
@@ -70,13 +70,13 @@
             <!-- USER PROFILE CARD 2 - MINIMAL -->
             <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base">
                 <vx-card class="p-2">
-                    <vs-avatar class="mx-auto mb-6 block" size="80px" :src="require(`@/assets/images/portrait/small/${card_4.userImg}`)" />
+                    <vs-avatar class="mx-auto mb-6 block" size="80px" :src="card_4.userImg" />
                     <div class="text-center">
                         <h4>{{ card_4.name }}</h4>
                         <p class="text-grey">{{ card_4.profession }}</p>
                     </div>
                     <div class="flex justify-between flex-wrap">
-                        <vs-button class="mt-4 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">{{ card_4.btn_1_text }}</vs-button>
+                        <vs-button class="mt-4 mr-2 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">{{ card_4.btn_1_text }}</vs-button>
                         <vs-button class="mt-4" type="border" color="#b9b9b9">{{ card_4.btn_2_text }}</vs-button>
                     </div>
                     <template slot="footer">
@@ -103,7 +103,7 @@
                         <h4>{{ card_5.name }}</h4>
                         <p class="text-grey">{{ card_5.profession }}</p>
                     </div>
-                    <vs-avatar class="mx-auto my-6 block" size="80px" :src="require(`@/assets/images/portrait/small/${ card_5.userImg }`)" />
+                    <vs-avatar class="mx-auto my-6 block" size="80px" :src="card_5.userImg" />
                     <div class="flex justify-between text-center">
                         <span>
                             <p class="text-xl font-semibold">{{ card_5.user_meta_1_title }}</p>
@@ -125,7 +125,7 @@
             <!-- USER PROFILE CARD - SCORE -->
             <div class="vx-col w-full lg:w-1/3 sm:w-1/2 mb-base">
                 <vx-card class="p-2">
-                    <vs-avatar class="mx-auto mb-6 block" size="80px" :src="require(`@/assets/images/portrait/small/${ card_6.userImg }`)" />
+                    <vs-avatar class="mx-auto mb-6 block" size="80px" :src="card_6.userImg" />
                     <div class="text-center">
                         <h4>{{ card_6.name }}</h4>
                         <p class="text-grey">{{ card_6.profession }}</p>
@@ -138,7 +138,7 @@
                         <vs-progress :percent="card_6.progress_done_per" class="block mt-1 shadow-md"></vs-progress>
                     </div>
                     <div class="flex justify-between flex-wrap">
-                        <vs-button class="mt-4 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">{{ card_6.btn_left_text }}</vs-button>
+                        <vs-button class="mt-4 mr-2 shadow-lg" type="gradient" color="#7367F0" gradient-color-secondary="#CE9FFC">{{ card_6.btn_left_text }}</vs-button>
                         <vs-button class="mt-4" type="border" color="#b9b9b9">{{ card_6.btn_right_text }}</vs-button>
                     </div>
                 </vx-card>
@@ -148,7 +148,7 @@
             <div class="vx-col w-full lg:w-1/3 sm:w-1/2 mb-base">
                 <vx-card class="overlay-card overflow-hidden">
                     <template slot="no-body">
-                        <img :src="require(`@/assets/images/pages/${card_7.overlay_img}`)" alt="user-profile-cover" class="responsive">
+                        <img :src="card_7.overlay_img" alt="user-profile-cover" class="responsive">
                         <div class="card-overlay text-white flex flex-col justify-between">
                             <h4 class="text-white mb-4">{{ card_7.title }}</h4>
                             <p>{{ card_7.text }}</p>
@@ -161,29 +161,24 @@
             <div class="vx-col w-full lg:w-1/3 sm:w-1/2 mb-base">
                 <vx-card class="overlay-card overflow-hidden">
                     <template slot="no-body">
-                        <img :src="require('@/assets/images/pages/card-image-5.jpg')" alt="user-profile-cover" class="responsive blur-1">
+                        <img :src="card_8.overlay_img" alt="user-profile-cover" class="responsive blur-1">
                         <div class="card-overlay text-white">
                             <div class="flex flex-col justify-between h-full">
                                 <div class="text-center mt-8 w-full">
-                                    <h3 class="text-white mb-2 tracking-wide">Snowy</h3>
-                                    <p class="mb-6">New York</p>
+                                    <h3 class="text-white mb-2 tracking-wide">{{ card_8.weather }}</h3>
+                                    <p class="mb-6">{{ card_8.place_name }}</p>
                                     <div class="flex justify-around">
-                                        <feather-icon icon="CloudSnowIcon" svgClasses="w-24 h-24 text-white"></feather-icon>
-                                        <h2 class="text-white text-big">-6 <sup class="text-2xl">o</sup> </h2>
+                                        <feather-icon :icon="card_8.weather_icon" svgClasses="w-24 h-24 text-white" />
+                                        <h2 class="text-white text-big">{{ card_8.temperature }} <sup class="text-2xl">o</sup> </h2>
                                     </div>
                                 </div>
                                 <div class="text-center w-full">
-                                    <div class="flex justify-between px-8 mb-8 text-xl">
-                                        <span>Precipitation</span>
-                                        <span>48%</span>
-                                    </div>
-                                    <div class="flex justify-between px-8 mb-8 text-xl">
-                                        <span>Humidity</span>
-                                        <span>60%</span>
-                                    </div>
-                                    <div class="flex justify-between px-8 mb-8 text-xl">
-                                        <span>Wind</span>
-                                        <span>23 km/h</span>
+                                    <div
+                                      class="flex justify-between px-8 mb-8 text-xl"
+                                      v-for="meta in card_8.meta"
+                                      :key="meta.label">
+                                        <span>{{ meta.label }}</span>
+                                        <span>{{ meta.value }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -197,10 +192,10 @@
                 <vx-card title="Chat" class="overflow-hidden">
                     <template slot="no-body">
                         <div class="chat-card-log">
-                            <VuePerfectScrollbar ref="chatLogPS" class="scroll-area pt-6 px-6" :settings="settings">
+                            <VuePerfectScrollbar ref="chatLogPS" class="scroll-area pt-6 px-6" :settings="settings" :key="$vs.rtl">
                                 <ul ref="chatLog">
-                                        <li class="flex items-start" :class="{'flex-row-reverse': msg.isSent, 'mt-4': index}" v-for="(msg, index) in chatMsg" :key="index">
-                                            <vs-avatar size="40px" class="m-0 flex-shrink-0" :class="msg.isSent ? 'ml-3' : 'mr-3'" :src="require(`@/assets/images/portrait/small/${msg.senderImg}`)"></vs-avatar>
+                                        <li class="flex items-start" :class="{'flex-row-reverse': msg.isSent, 'mt-4': index}" v-for="(msg, index) in chatLog" :key="index">
+                                            <vs-avatar size="40px" class="m-0 flex-shrink-0" :class="msg.isSent ? 'ml-3' : 'mr-3'" :src="msg.senderImg"></vs-avatar>
                                             <div class="msg relative bg-white shadow-md py-3 px-4 mb-2 rounded-lg max-w-md" :class="{'chat-sent-msg bg-primary-gradient text-white': msg.isSent, 'border border-solid d-theme-border-grey-light': !msg.isSent}">
                                                 <span>{{ msg.msg }}</span>
                                             </div>
@@ -218,15 +213,24 @@
 
             <!-- CONTENT CARD - ICONS -->
             <div class="vx-col w-full lg:w-1/3 sm:w-1/2 mb-base">
-                <vx-card :title="card_9.title" :subtitle="card_9.subtitle">
+                <vx-card :title="card_9.title" :subtitle="card_9.subtitle" v-if="card_9.title">
                     <template slot="actions">
                         <feather-icon icon="MoreVerticalIcon" svgClasses="w-6 h-6 text-grey"></feather-icon>
                     </template>
-                    <img :src="require(`@/assets/images/pages/${card_9.img}`)" alt="content-img" class="responsive rounded-lg">
+                    <img :src="card_9.img" alt="content-img" class="responsive rounded-lg">
                     <div class="flex mt-6 flex-wrap">
-                        <span class="flex mr-6"><feather-icon class="cursor-pointer" icon="ThumbsUpIcon" svgClasses="text-success stroke-current h-6 w-6"></feather-icon><span class="ml-2">368</span></span>
-                        <span class="flex mr-6"><feather-icon class="cursor-pointer" icon="MessageSquareIcon" svgClasses="text-primary stroke-current h-6 w-6"></feather-icon><span class="ml-2">341</span></span>
-                        <span class="flex mr-6"><feather-icon class="cursor-pointer" icon="ThumbsDownIcon" svgClasses="text-danger stroke-current h-6 w-6"></feather-icon><span class="ml-2">53</span></span>
+                        <span class="flex mr-6">
+                          <feather-icon class="cursor-pointer" icon="ThumbsUpIcon" svgClasses="text-success stroke-current h-6 w-6" />
+                          <span class="ml-2">{{ card_9.meta.likes }}</span>
+                        </span>
+                        <span class="flex mr-6">
+                          <feather-icon class="cursor-pointer" icon="MessageSquareIcon" svgClasses="text-primary stroke-current h-6 w-6" />
+                          <span class="ml-2">{{ card_9.meta.comments }}</span>
+                        </span>
+                        <span class="flex mr-6">
+                          <feather-icon class="cursor-pointer" icon="ThumbsDownIcon" svgClasses="text-danger stroke-current h-6 w-6" />
+                          <span class="ml-2">{{ card_9.meta.dislikes }}</span>
+                        </span>
                     </div>
                 </vx-card>
             </div>
@@ -242,38 +246,7 @@
             <!-- ACTIVITY TIMELINE -->
             <div class="vx-col w-full sm:w-1/2 md:w-1/2 mb-base">
                 <vx-card title="Activity Timeline">
-                    <ul class="activity-timeline">
-                        <li>
-                            <div class="timeline-icon bg-primary">
-                                <feather-icon icon="PlusIcon" svgClasses="text-white stroke-current w-5 h-5"></feather-icon>
-                            </div>
-                            <div class="timeline-info">
-                                <p class="font-semibold">Task Added</p>
-                                <span class="activity-desc">Bonbon macaroon jelly beans gummi bears jelly lollipop apple</span>
-                            </div>
-                            <small class="text-grey activity-e-time">25 days ago</small>
-                        </li>
-                        <li>
-                            <div class="timeline-icon bg-warning">
-                                <feather-icon icon="AlertCircleIcon" svgClasses="text-white stroke-current w-5 h-5"></feather-icon>
-                            </div>
-                            <div class="timeline-info">
-                                <p class="font-semibold">Task Updated</p>
-                                <span class="activity-desc">Cupcake gummi bears soufflé caramels candy</span>
-                            </div>
-                            <small class="text-grey activity-e-time">15 days ago</small>
-                        </li>
-                        <li>
-                            <div class="timeline-icon bg-success">
-                                <feather-icon icon="CheckIcon" svgClasses="text-white stroke-current w-5 h-5"></feather-icon>
-                            </div>
-                            <div class="timeline-info">
-                                <p class="font-semibold">Task Completed</p>
-                                <span class="activity-desc">Candy ice cream cake. Halvah gummi bears</span>
-                            </div>
-                            <small class="text-grey activity-e-time">20 mins ago</small>
-                        </li>
-                    </ul>
+                    <vx-timeline :data="timelineData"></vx-timeline>
                 </vx-card>
             </div>
 
@@ -396,137 +369,127 @@
 
 <script>
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import { videoPlayer } from 'vue-video-player'
+import { videoPlayer }     from 'vue-video-player'
+import VxTimeline          from "@/components/timeline/VxTimeline.vue"
 import 'video.js/dist/video-js.css'
+
 
 export default{
     data() {
         return {
             // card 1
-            card_1: {
-                contentImg1: 'content-img-1.jpg',
-                title: 'Vuesax Admin',
-                subtitle: 'By Pixinvent Creative Studio',
-                subtitle_2: 'Elite Author',
-            },
+            card_1: {},
+            card_2: {},
+            card_3: {},
+            card_4: {},
+            card_5: {},
+            card_6: {},
+            card_7: {},
+            card_8: {},
 
-            // card 2
-            card_2: {
-                contentImg2: 'content-img-2.jpg',
-                title: 'Vuesax Admin',
-                subtitle: 'By Pixinvent Creative Studio',
-                footer_text_left_value: '$ 4785.78',
-                footer_text_left_label: 'Income',
-                footer_text_right_value: '12 June 2019',
-                footer_text_right_label: 'Delivery Date',
-            },
+            chatLog: [],
+            chatMsgInput: '',
 
-            // card 3
-            card_3: {
-                contentImg3: 'content-img-3.jpg',
-                title: 'Vuesax Admin',
-                progress_done_per: 75,
-                current_progress: '$ 5975',
-                progress_goal: '$ 8000',
-                btn_left_text: 'Add More',
-                btn_right_text: 'Remove'
+            card_9: {},
 
-            },
+            timelineData: [
+              {
+                color : "primary",
+                icon  : "PlusIcon",
+                title : "New Task Added",
+                desc  : "Bonbon macaroon jelly beans gummi bears jelly lollipop apple",
+                time  : "25 Days Ago"
+              },
+              {
+                color : "warning",
+                icon  : "AlertCircleIcon",
+                title : "Task Update Found",
+                desc  : "Cupcake gummi bears soufflé caramels candy",
+                time  : "15 Days Ago"
+              },
+              {
+                color : "success",
+                icon  : "CheckIcon",
+                title : "Task Finished",
+                desc  : "Candy ice cream cake. Halvah gummi bears",
+                time  : "20 mins ago"
+              }
+            ],
 
-            // card 4
-            card_4: {
-                userImg: 'avatar-s-12.png',
-                name: 'Zoila Legore',
-                profession: 'Backend Dev',
-                btn_1_text: 'Follow',
-                btn_2_text: 'Message',
-                footer_text_1_icon: 'StarIcon',
-                footer_text_1: '4.9',
-                footer_text_2_icon: 'BriefcaseIcon',
-                footer_text_2: '37 Projects',
-            },
+            name  : '',
+            email : '',
+            msg   : '',
 
-            // card_5
-            card_5: {
-                userImg: 'avatar-s-12.png',
-                name: 'Wilhelmina Jamal',
-                profession: 'Frontend Dev',
-                user_meta_1_title: 568,
-                user_meta_1_label: 'Uploads',
-                user_meta_2_title: '78.6K',
-                user_meta_2_label: 'Followers',
-                user_meta_3_title: 112,
-                user_meta_3_label: 'Following',
-                btn_text: 'Follow'
-            },
-
-
-            // card 6
-            card_6: {
-                userImg: 'avatar-s-1.png',
-                name: 'Jonell Binion',
-                profession: 'Designer',
-                progress_done_per: 72,
-                current_progress: '720 Points',
-                progress_goal: '1000',
-                btn_left_text: 'Follow',
-                btn_right_text: 'Message'
-            },
-
-            card_7: {
-                overlay_img: 'card-image-6.jpg',
-                title: 'Beautiful Overlay',
-                text: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop.',
-            },
-
-            // card 9
-            card_9: {
-                title: 'Vuesax Admin',
-                subtitle: 'by Pixinvent Creative Studio',
-                img: 'content-img-4.jpg',
-                footer_text_1_icon: 'ThumbsUpIcon',
-                footer_text_1: 368,
-                footer_text_2_icon: 'MessageSquareIcon',
-                footer_text_2: 341,
-                footer_text_3_icon: 'ThumbsDownIcon',
-                footer_text_3: 23,
-            },
-
-            name: '',
-            email: '',
-            msg: '',
-
-            playerOptions: {
-                height: '460',
-                fluid: true,
-                autoplay: false,
-                muted: true,
-                language: 'en',
-                playbackRates: [0.7, 1.0, 1.5, 2.0],
-                sources: [ { type: "video/mp4", src: "http://vjs.zencdn.net/v/oceans.mp4" } ],
-                poster: 'https://goo.gl/xcCsDd',
-            },
+            playerOptions: {},
             settings: { // perfectscrollbar settings
                 maxScrollbarLength: 60,
                 wheelSpeed: .60,
             },
-            chatMsgInput: '',
-            chatMsg: [
-                { senderImg: 'avatar-s-2.png', msg: 'Cake sesame snaps cupcake gingerbread', isSent: false },
-                { senderImg: 'avatar-s-5.png', msg: 'Apple pie pie jujubes chupa chups muffin', isSent: true },
-                { senderImg: 'avatar-s-2.png', msg: 'Chocolate cake', isSent: false },
-                { senderImg: 'avatar-s-5.png', msg: 'Donut sweet pie oat cake dragée fruitcake', isSent: true },
-                { senderImg: 'avatar-s-2.png', msg: 'Liquorice chocolate bar jelly beans icing', isSent: false },
-                { senderImg: 'avatar-s-5.png', msg: 'Pudding candy', isSent: true },
-            ]
         }
     },
     components: {
         VuePerfectScrollbar,
-        videoPlayer
+        videoPlayer,
+        VxTimeline
     },
     mounted() {
         this.$refs.chatLogPS.$el.scrollTop = this.$refs.chatLog.scrollHeight;
+    },
+    created() {
+      // Card 1
+      this.$http.get("/api/users/pixinvent/product/1")
+        .then((response) => { this.card_1 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 2
+      this.$http.get("/api/users/pixinvent/product/sales/1")
+        .then((response) => { this.card_2 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 3
+      this.$http.get("/api/users/pixinvent/product/goals/1")
+        .then((response) => { this.card_3 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 4
+      this.$http.get("/api/users/89")
+        .then((response) => { this.card_4 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 5
+      this.$http.get("/api/users/58")
+        .then((response) => { this.card_5 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 6
+      this.$http.get("/api/users/16")
+        .then((response) => { this.card_6 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 7
+      this.$http.get("/api/place/18")
+        .then((response) => { this.card_7 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 8
+      this.$http.get("/api/place/76/weather")
+        .then((response) => { this.card_8 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Chat Log
+      this.$http.get("/api/chat/demo-1/log")
+        .then((response) => { this.chatLog = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Card 9
+      this.$http.get("/api/item/12/review")
+        .then((response) => { this.card_9 = response.data })
+        .catch((error)   => { console.log(error) })
+
+      // Player Options
+      this.$http.get("/api/card/card-basic/player-option")
+        .then((response) => { this.playerOptions = response.data })
+        .catch((error)   => { console.log(error) })
     }
 }
 </script>

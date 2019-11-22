@@ -2,7 +2,7 @@
     File Name: CollapseChangeArrowIcon.vue
     Description: Change arrow icon of collpase
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Change Arrow Icon" code-toggler>
-        
+
         <p>You can customise the arrow on the component <code>vs-collapse-item</code> by passing the string name of an icon to the <code>icon-arrow</code> property</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
@@ -84,7 +84,7 @@
       &lt;/div&gt;
       Suspendisse....eu
     &lt;/vs-collapse-item&gt;
-    
+
     &lt;vs-collapse-item icon-pack=&quot;feather&quot; icon-arrow=&quot;icon-chevrons-down&quot;&gt;
       &lt;div slot=&quot;header&quot;&gt;
         Collapse item 4

@@ -2,7 +2,7 @@
     File Name: PopupDefault.vue
     Description: Rendering of default pagination
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,9 +10,9 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>To implement the popup we have the component <code>vs-popup</code></p>
-        
+
         <div class="demo-alignment">
 
             <vs-button @click="popupActive=true" color="primary" type="filled">Open Default popup</vs-button>

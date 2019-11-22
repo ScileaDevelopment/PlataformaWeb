@@ -2,7 +2,7 @@
     File Name: NavbarCollapse.vue
     Description: Rendering of Navbar collapsed
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,14 +10,14 @@
 
 <template>
     <vx-card title="Collapse" code-toggler>
-        
+
         <p><code>collapse</code> property determines if the component starts hidden and with the option of clicking on the menu to open or show the options</p>
 
         <div class="mt-5">
             <vs-navbar collapse v-model="activeItem" class="p-2">
 
                 <div slot="title">
-                    <vs-navbar-title><span>Vuesax</span></vs-navbar-title>
+                    <vs-navbar-title><span>Vuexy</span></vs-navbar-title>
                 </div>
 
                 <vs-navbar-item index="0">
@@ -37,10 +37,10 @@
         <template slot="codeContainer">
 &lt;template&gt;
   &lt;vs-navbar collapse v-model=&quot;activeItem&quot; class=&quot;p-2&quot;&gt;
-  
+
     &lt;div slot=&quot;title&quot;&gt;
       &lt;vs-navbar-title&gt;
-        &lt;span&gt;Vuesax&lt;/span&gt;
+        &lt;span&gt;Vuexy&lt;/span&gt;
       &lt;/vs-navbar-title&gt;
     &lt;/div&gt;
 

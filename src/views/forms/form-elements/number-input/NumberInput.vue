@@ -2,7 +2,7 @@
     File Name: NumberInput.vue
     Description: Number input element- Imports all page portions.
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -16,6 +16,7 @@
         <number-input-size></number-input-size>
         <number-input-step></number-input-step>
         <number-input-decimal></number-input-decimal>
+        <number-input-label></number-input-label>
     </div>
 </template>
 
@@ -26,6 +27,7 @@ import NumberInputMinMax from './NumberInputMinMax.vue'
 import NumberInputSize from './NumberInputSize.vue'
 import NumberInputStep from './NumberInputStep.vue'
 import NumberInputDecimal from './NumberInputDecimal.vue'
+import NumberInputLabel from './NumberInputLabel.vue'
 
 export default{
     components: {
@@ -35,6 +37,7 @@ export default{
         NumberInputSize,
         NumberInputStep,
         NumberInputDecimal,
+        NumberInputLabel,
     }
 }
 </script>

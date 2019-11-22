@@ -2,7 +2,7 @@
     File Name: DatepickerTranslation.vue
     Description: Create datepicker for other languages
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
 <template>
     <vx-card title="Translation" code-toggler>
         <p>Date picker language: {{ languages[language].language }}</p>
-        
+
         <div class="mt-5">
             <vs-select v-model="language" class="mb-4 w-1/3">
                 <vs-select-item :key="key" :value="key" :text="language.language" v-for="(language, key) in languages" />

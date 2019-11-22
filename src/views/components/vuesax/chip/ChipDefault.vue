@@ -2,7 +2,7 @@
     File Name: ChipDefault.vue
     Description: Rendering of default chip
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>Helps you represent simple data with colorful options</p>
 
         <div class="demo-alignment">

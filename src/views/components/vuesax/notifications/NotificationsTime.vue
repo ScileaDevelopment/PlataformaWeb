@@ -2,7 +2,7 @@
     File Name: NotificationsTime.vue
     Description: Chnage the duration of notifications
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Time" code-toggler>
-        
+
         <p>You can change the total time that the notification stays on the screen with the <code>time</code> property. Example: <code>time: 4000</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
@@ -65,7 +65,7 @@
         iconPack: &apos;feather&apos;,
         icon: &apos;icon-clock&apos;
         })&quot; color=&quot;primary&quot; type=&quot;flat&quot;&gt;Time 4s (4000)&lt;/vs-button&gt;
-        
+
     &lt;vs-button @click=&quot;$vs.notify({
         time:8000,
         title:&apos;Time 8s (8000)&apos;,

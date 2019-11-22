@@ -1,6 +1,6 @@
 <template>
   <div id="simple-calendar-app">
-    <div class="vx-card app-fixed-height">
+    <div class="vx-card no-scroll-content">
       <calendar-view
         ref="calendar"
         :displayPeriodUom="calendarView"
@@ -26,29 +26,49 @@
             </div>
 
             <!-- Current Month -->
-            <div class="vx-col sm:w-1/3 w-full sm:my-0 my-3 flex justify-end order-last">
+            <div class="vx-col sm:w-1/3 w-full sm:my-0 my-3 flex sm:justify-end justify-center order-last">
               <div class="flex items-center">
-                <feather-icon icon="ChevronLeftIcon" @click="updateMonth(-1)" svgClasses="w-5 h-5 m-1" class="cursor-pointer bg-primary text-white rounded-full" />
+                <feather-icon
+                  :icon="$vs.rtl ? 'ChevronRightIcon' : 'ChevronLeftIcon'"
+                  @click="updateMonth(-1)"
+                  svgClasses="w-5 h-5 m-1"
+                  class="cursor-pointer bg-primary text-white rounded-full" />
+
                 <span class="mx-3 text-xl font-medium whitespace-no-wrap">{{ showDate | month }}</span>
-                <feather-icon icon="ChevronRightIcon" @click="updateMonth(1)" svgClasses="w-5 h-5 m-1" class="cursor-pointer bg-primary text-white rounded-full" />
+
+                <feather-icon
+                  :icon="$vs.rtl ? 'ChevronLeftIcon' : 'ChevronRightIcon'"
+                  @click="updateMonth(1)"
+                  svgClasses="w-5 h-5 m-1"
+                  class="cursor-pointer bg-primary text-white rounded-full" />
               </div>
             </div>
 
             <div class="vx-col sm:w-1/3 w-full flex justify-center">
-              <vs-button
-                class="rounded-r-none p-3 md:px-8 md:py-3"
-                @click="calendarView = 'month'">Month</vs-button>
-              <vs-button
-                class="rounded-r-none rounded-l-none p-3 md:px-8 md:py-3"
-                @click="calendarView = 'week'">Week</vs-button>
-              <vs-button
-                class="rounded-l-none p-3 md:px-8 md:py-3"
-                @click="calendarView = 'year'">Year</vs-button>
+              <template v-for="(view, index) in calendarViewTypes">
+                <vs-button
+                  v-if="calendarView === view.val"
+                  :key="String(view.val) + 'filled'"
+                  type="filled"
+                  class="p-3 md:px-8 md:py-3"
+                  :class="{'border-l-0 rounded-l-none': index, 'rounded-r-none': calendarViewTypes.length !== index+1}"
+                  @click="calendarView = view.val"
+                  >{{ view.label }}</vs-button>
+                <vs-button
+                  v-else
+                  :key="String(view.val) + 'border'"
+                  type="border"
+                  class="p-3 md:px-8 md:py-3"
+                  :class="{'border-l-0 rounded-l-none': index, 'rounded-r-none': calendarViewTypes.length !== index+1}"
+                  @click="calendarView = view.val"
+                  >{{ view.label }}</vs-button>
+              </template>
+
             </div>
           </div>
 
           <div class="vx-row sm:flex hidden mt-4">
-            <div class="vx-col w-full flex justify-end">
+            <div class="vx-col w-full flex">
               <!-- Labels -->
               <div class="flex flex-wrap sm:justify-start justify-center">
                   <div v-for="(label, index) in calendarLabels" :key="index" class="flex items-center mr-4 mb-2">
@@ -101,11 +121,11 @@
         <vs-input name="event-name" v-validate="'required'" class="w-full" label-placeholder="Event Title" v-model="title"></vs-input>
         <div class="my-4">
             <small class="date-label">Start Date</small>
-            <datepicker name="start-date" v-model="startDate" :disabled="disabledFrom"></datepicker>
+            <datepicker :language="$vs.rtl ? langHe : langEn" name="start-date" v-model="startDate" :disabled="disabledFrom"></datepicker>
         </div>
         <div class="my-4">
             <small class="date-label">End Date</small>
-            <datepicker :disabledDates="disabledDatesTo" name="end-date" v-model="endDate"></datepicker>
+            <datepicker :language="$vs.rtl ? langHe : langEn" :disabledDates="disabledDatesTo" name="end-date" v-model="endDate"></datepicker>
         </div>
         <vs-input name="event-url" v-validate="'url'" class="w-full mt-6" label-placeholder="Event URL" v-model="url" :color="!errors.has('event-url') ? 'success' : 'danger'"></vs-input>
 
@@ -149,11 +169,11 @@
         <vs-input name="event-name" v-validate="'required'" class="w-full" label-placeholder="Event Title" v-model="title"></vs-input>
         <div class="my-4">
             <small class="date-label">Start Date</small>
-            <datepicker :disabledDates="disabledDatesFrom" name="start-date" v-model="startDate"></datepicker>
+            <datepicker :language="$vs.rtl ? langHe : langEn" :disabledDates="disabledDatesFrom" name="start-date" v-model="startDate"></datepicker>
         </div>
         <div class="my-4">
             <small class="date-label">End Date</small>
-            <datepicker :disabledDates="disabledDatesTo" name="end-date" v-model="endDate"></datepicker>
+            <datepicker :language="$vs.rtl ? langHe : langEn" :disabledDates="disabledDatesTo" name="end-date" v-model="endDate"></datepicker>
         </div>
         <vs-input name="event-url" v-validate="'url'" class="w-full mt-6" label-placeholder="Event URL" v-model="url" :color="!errors.has('event-url') ? 'success' : 'danger'"></vs-input>
 
@@ -163,9 +183,11 @@
 
 <script>
 import { CalendarView, CalendarViewHeader } from "vue-simple-calendar"
+import moduleCalendar from '@/store/calendar/moduleCalendar.js'
 require("vue-simple-calendar/static/css/default.css")
 
-import Datepicker from 'vuejs-datepicker';
+import Datepicker from 'vuejs-datepicker'
+import { en, he } from "vuejs-datepicker/src/locale"
 
 export default {
   components: {
@@ -183,16 +205,34 @@ export default {
       endDate: '',
       labelLocal: 'none',
 
+      langHe: he,
+      langEn: en,
+
       url: '',
       calendarView: 'month',
 
       activePromptAddEvent: false,
       activePromptEditEvent: false,
+
+      calendarViewTypes: [
+        {
+          label: "Month",
+          val: "month"
+        },
+        {
+          label: "Week",
+          val: "week"
+        },
+        {
+          label: "Year",
+          val: "year"
+        },
+      ]
     }
   },
   computed: {
     simpleCalendarEvents() {
-        return this.$store.state.calendar.simpleCalendarEvents
+        return this.$store.state.calendar.events
     },
     validForm() {
         return this.title != '' && this.startDate != '' && this.endDate != '' && (Date.parse(this.endDate) - Date.parse(this.startDate)) >= 0 && !this.errors.has('event-url');
@@ -204,7 +244,7 @@ export default {
         return { from: new Date(this.endDate) }
     },
     calendarLabels() {
-        return this.$store.state.calendar.calendarLabels
+        return this.$store.state.calendar.eventLabels
     },
     labelColor() {
         return (label) => {
@@ -222,7 +262,7 @@ export default {
     addEvent() {
         const obj = { title: this.title, startDate: this.startDate, endDate: this.endDate, label: this.labelLocal, url: this.url }
         obj.classes = "event-" + this.labelColor(this.labelLocal)
-        this.$store.dispatch('calendar/addEventToSimpleCalendar', obj);
+        this.$store.dispatch('calendar/addEvent', obj);
     },
     updateMonth(val) {
       this.showDate = this.$refs.calendar.getIncrementedPeriod(val);
@@ -247,7 +287,7 @@ export default {
         this.addNewEventDialog(date);
     },
     openEditEvent(event) {
-      const e = this.$store.getters['calendar/simpleCalendareventById'](event.id)
+      const e = this.$store.getters['calendar/getEvent'](event.id)
       this.id = e.id
       this.title = e.title
       this.startDate = e.startDate
@@ -259,18 +299,26 @@ export default {
     editEvent() {
       const obj = { id: this.id, title: this.title, startDate: this.startDate, endDate: this.endDate, label: this.labelLocal, url: this.url }
       obj.classes = "event-" + this.labelColor(this.labelLocal)
-      this.$store.dispatch('calendar/editSimpleCalendarEvent', obj)
+      this.$store.dispatch('calendar/editEvent', obj)
     },
     removeEvent() {
-      this.$store.dispatch('calendar/removeSimpleCalendarEvent', this.id)
+      this.$store.dispatch('calendar/removeEvent', this.id)
     },
     eventDragged(event, date) {
-      this.$store.dispatch('calendar/simpleCalendarEventDragged', {event: event, date: date})
+      this.$store.dispatch('calendar/eventDragged', {event: event, date: date})
     }
+  },
+  created() {
+    this.$store.registerModule('calendar', moduleCalendar)
+    this.$store.dispatch("calendar/fetchEvents")
+    this.$store.dispatch("calendar/fetchEventLabels")
+  },
+  beforeDestroy() {
+    this.$store.unregisterModule('calendar')
   }
 }
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/apps/simple-calendar.scss";
+@import "@/assets/scss/vuexy/apps/simple-calendar.scss";
 </style>

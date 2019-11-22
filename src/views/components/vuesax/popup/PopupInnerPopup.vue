@@ -2,7 +2,7 @@
     File Name: PopupInnerPopup.vue
     Description: create inner popup
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,9 +10,9 @@
 
 <template>
     <vx-card title="Inner Popup" code-toggler>
-        
+
         <p>You can add one popup inside another</p>
-        
+
         <div class="demo-alignment">
 
             <vs-button @click="popupActive2=true" color="primary" type="filled">Open Popup</vs-button>

@@ -2,7 +2,7 @@
     File Name: Sidebar.vue
     Description: Sidebar - Imports all page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -43,5 +43,5 @@ export default{
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/pages/sidebar.scss";
+@import "@/assets/scss/vuexy/pages/sidebar.scss";
 </style>

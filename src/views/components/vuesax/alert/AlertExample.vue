@@ -2,14 +2,14 @@
     File Name: AlertExample.vue
     Description: Example of validation using alert
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 <template>
     <vx-card title="Example" code-toggler>
-        
+
         <p>An example would be to have an input and when a condition is met show the <strong>vs-alert</strong></p>
 
         <vs-input label="Enter only numbers" placeholder="0123456789" v-model="value1" class="my-4" />

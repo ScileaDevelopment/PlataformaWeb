@@ -80,7 +80,7 @@ export default {
 &lt;/script&gt;
 
 &lt;style lang=&quot;scss&quot;&gt;
-@import &quot;@/assets/scss/vuesax/extraComponents/tree.scss&quot;;
+@import &quot;@/assets/scss/vuexy/extraComponents/tree.scss&quot;;
 
 button.btn-async{
   background: rgba(var(--vs-warning),0.15);
@@ -163,7 +163,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/extraComponents/tree.scss";
+@import "@/assets/scss/vuexy/extraComponents/tree.scss";
 
 button.btn-async{
   background: rgba(var(--vs-warning),0.15);

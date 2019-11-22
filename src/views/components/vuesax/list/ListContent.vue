@@ -2,7 +2,7 @@
     File Name: ListContent.vue
     Description: Add custom content to list items
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Content" code-toggler>
-        
+
         <p>You can add custom content to the item. It will be pushed to the right side</p>
 
         <div class="demo-alignment">
@@ -28,7 +28,7 @@
 
                 <vs-list-header title="Group 2" color="success"></vs-list-header>
                 <vs-list-item title="Enid's" subtitle="At night a bar, during the day a delicious brunch spot.">
-                    <vs-chip color="warning">Another component</vs-chip>
+                    <vs-chip color="warning mr-0">Another component</vs-chip>
                 </vs-list-item>
 
                 <vs-list-item title="Veronika Ossi" subtitle="Has not watched anything recently">
@@ -54,7 +54,7 @@
   &lt;vs-list-item title=&quot;Enid&apos;s&quot; subtitle=&quot;At night a bar, during the day a delicious brunch spot.&quot;&gt;
     &lt;vs-chip color=&quot;warning&quot;&gt;Another component&lt;/vs-chip&gt;
   &lt;/vs-list-item&gt;
-  
+
   &lt;vs-list-item title=&quot;Veronika Ossi&quot; subtitle=&quot;Has not watched anything recently&quot;&gt;
     &lt;vs-switch color=&quot;warning&quot; v-model=&quot;val&quot;/&gt;
   &lt;/vs-list-item&gt;

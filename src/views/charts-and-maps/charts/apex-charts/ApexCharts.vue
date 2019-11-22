@@ -2,7 +2,7 @@
     File Name: ApexCharts.vue
     Description: Apex Charts Demo
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 <template>
     <div id="extra-component-chartist-demo">
         <p class="mb-4">A Vue.js component for ApexCharts. Read full documnetation <a href="https://apexcharts.com/docs/installation/" target="_blank" rel="nofollow">here</a></p>
-        
+
         <div class="vx-row">
             <div class="vx-col md:w-1/2 w-full mb-base">
                 <vx-card title="Line Chart" code-toggler>
@@ -122,7 +122,7 @@
             </div>
 
             <!-- RADIAL BAR CHART -->
-            <div class="vx-col md:w-1/2 w-full">
+            <div class="vx-col md:w-1/2 w-full mb-base">
                 <vx-card title="Radial Bar Chart" code-toggler>
                     <vue-apex-charts type="radialBar" height="350" :options="apexChatData.radialBarChart.chartOptions" :series="apexChatData.radialBarChart.series"></vue-apex-charts>
                     <template slot="codeContainer">

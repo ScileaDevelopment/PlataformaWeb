@@ -2,18 +2,18 @@
     File Name: ChatLog.vue
     Description: Chat Application - Log of chat
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
-<!-- hasSentPreviousMsg -->
+
 <template>
     <div id="component-chat-log" class="m-8" v-if="chatData">
         <div v-for="(msg, index) in chatData.msg" class="msg-grp-container" :key="index">
 
-            <!-- If previouse msg is older than current time -->
+            <!-- If previous msg is older than current time -->
             <template v-if="chatData.msg[index-1]">
-                <vs-divider v-if="!isSameDay(msg.time, chatData.msg[index-1].time)">
+                <vs-divider v-if="!isSameDay(msg.time, chatData.msg[index-1].time)" class="msg-time">
                     <span>{{ toDate(msg.time) }}</span>
                 </vs-divider>
                 <div class="spacer mt-8" v-if="!hasSentPreviousMsg(chatData.msg[index-1].isSent, msg.isSent)"></div>
@@ -44,8 +44,6 @@
 </template>
 
 <script>
-import contacts from './contacts'
-
 export default{
     props: {
         userId: {
@@ -53,28 +51,17 @@ export default{
             required: true,
         }
     },
-    data() {
-        return {
-            contacts: contacts,
-        }
-    },
     computed: {
         chatData() {
             return this.$store.getters['chat/chatDataOfUser'](this.userId);
         },
-        contactIndex() {
-            return contacts.findIndex(contact => contact.id == this.userId);
-        },
-        userImg() {
-            if(this.contactIndex !== -1) return this.contacts[this.contactIndex].img;
-        },
         activeUserImg() {
-            return this.$store.state.AppActiveUser.img;
+            return this.$store.state.AppActiveUser.photoURL;
         },
         senderImg() {
             return (isSentByActiveUser) => {
-                if (isSentByActiveUser) return require(`@/assets/images/portrait/small/${this.$store.state.AppActiveUser.img}`);
-                else return require(`@/assets/images/portrait/small/${this.contacts[this.contactIndex].img}`);
+                if (isSentByActiveUser) return this.$store.state.AppActiveUser.photoURL
+                else return this.$store.getters['chat/contact'](this.userId).photoURL
             }
         },
         hasSentPreviousMsg() {

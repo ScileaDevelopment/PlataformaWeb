@@ -2,7 +2,7 @@
     File Name: Charts.vue
     Description: Chartjs (third-party) - Imports page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,13 +10,13 @@
 <template>
     <div id="extra-component-chartjs-demo">
         <p class="mb-4">You can easily create reuseable chart components. <a href="https://vue-chartjs.org/" target="_blank" rel="nofollow">vue-chartjs</a> is a wrapper for Chart.js. Read full documnetation <a href="https://vue-chartjs.org/guide/" target="_blank" rel="nofollow">here</a></p>
-    
+
         <div class="vx-row">
             <div class="vx-col w-full md:w-1/2">
                 <chartjs-line-chart></chartjs-line-chart>
             </div>
             <div class="vx-col w-full md:w-1/2">
-                <chartjs-bar-chart></chartjs-bar-chart>                 
+                <chartjs-bar-chart></chartjs-bar-chart>
             </div>
             <div class="vx-col w-full md:w-1/2">
                 <chartjs-horizontal-bar-chart></chartjs-horizontal-bar-chart>

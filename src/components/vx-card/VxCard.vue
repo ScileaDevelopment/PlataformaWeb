@@ -3,7 +3,7 @@
     Description: Card Component
     Component Name: VxCard
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -14,7 +14,8 @@
         {'no-shadow': noShadow},
         {'rounded-none': noRadius},
         {'card-border': cardBorder},
-        cardClasses ]" :style="cardStyles">
+        cardClasses ]" :style="cardStyles"
+        v-on="$listeners">
         <div class="vx-card__header" v-if="hasHeader">
 
             <!-- card title -->
@@ -58,7 +59,7 @@
 
         <div class="vx-card__code-container" ref="codeContainer" v-show="this.$slots.codeContainer" :style="codeContainerStyles" :class="{collapsed: !showCode}">
             <div class="code-content">
-                <prism :language="codeLanguage">
+                <prism :language="codeLanguage" :key="$vs.rtl">
                         <slot name="codeContainer"></slot>
                 </prism>
             </div>
@@ -174,7 +175,7 @@ export default{
             return { maxHeight: this.codeContainerMaxHeight }
         },
         cardClasses() {
-          let str = '';
+          let str = ''
 
           // Add bg class
           if(_color.isColor(this.cardBackground)) {
@@ -194,7 +195,7 @@ export default{
           }
         },
         titleClasses() {
-          let str = '';
+          let str = ''
 
           // add content color
           if(_color.isColor(this.titleColor)) {
@@ -210,7 +211,7 @@ export default{
           return obj
         },
         subtitleClasses() {
-          let str = '';
+          let str = ''
 
           // add content color
           if(_color.isColor(this.subtitleColor)) {
@@ -222,62 +223,62 @@ export default{
     },
     methods: {
         toggleContent() {
-            this.$refs.content.style.overflow = "hidden";
+            this.$refs.content.style.overflow = "hidden"
             let scrollHeight = this.$refs.content.scrollHeight
             if (this.maxHeight == '1.5rem') {
                 this.maxHeight = `${scrollHeight}px`
                 setTimeout(() => {
-                    this.maxHeight = 'none';
-                    this.$refs.content.style.overflow = "hidden";
+                    this.maxHeight = 'none'
+                    this.$refs.content.style.overflow = null
                 }, 300)
             } else {
                 this.maxHeight = `${scrollHeight}px`
                 setTimeout(() => {
-                    this.maxHeight = `1.5rem`;
-                    this.$refs.content.style.overflow = "hidden";
+                    this.maxHeight = `1.5rem`
+                    this.$refs.content.style.overflow = null
                 }, 50)
             }
-            this.isContentCollapsed = !this.isContentCollapsed;
-            this.$emit("toggleCollapse", this.isContentCollapsed);
+            this.isContentCollapsed = !this.isContentCollapsed
+            this.$emit("toggleCollapse", this.isContentCollapsed)
         },
         refreshcard() {
             this.$vs.loading({
                 container: this.$refs.content,
                 scale: 0.5,
-            });
-            this.tempHidden = true;
-            this.$emit("refresh", this);
+            })
+            this.tempHidden = true
+            this.$emit("refresh", this)
         },
         removeRefreshAnimation(time=100) {
             setTimeout( ()=> {
                 this.$vs.loading.close(this.$refs.content)
-                this.tempHidden = false;
+                this.tempHidden = false
             }, time)
         },
         removeCard() {
             let scrollHeight = this.$refs.card.scrollHeight
             this.cardMaxHeight = `${scrollHeight}px`
-            this.$el.style.overflow = "hidden";
+            this.$el.style.overflow = "hidden"
             setTimeout(() => {
                 this.cardMaxHeight = `0px`
             }, 50)
-            this.$emit("remove");
+            this.$emit("remove")
         },
         toggleCode() {
-            this.tempHidden = true;
-            this.showCode = !this.showCode;
+            this.tempHidden = true
+            this.showCode = !this.showCode
             let scrollHeight = this.$refs.codeContainer.scrollHeight
             if (this.codeContainerMaxHeight == '0px') {
                 this.codeContainerMaxHeight = `${scrollHeight}px`
                 setTimeout(() => {
                     this.codeContainerMaxHeight = 'none'
-                    this.tempHidden = false;
+                    this.tempHidden = false
                 }, 300)
             } else {
                 this.codeContainerMaxHeight = `${scrollHeight}px`
                 setTimeout(() => {
                     this.codeContainerMaxHeight = `0px`
-                    this.tempHidden = false;
+                    this.tempHidden = false
                 }, 150)
             }
         },
@@ -289,5 +290,5 @@ export default{
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/components/vxCard.scss";
+@import "@/assets/scss/vuexy/components/vxCard.scss"
 </style>

@@ -2,7 +2,7 @@
     File Name: ToolptipColor.vue
     Description: Change color of tooltip
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
+
         <p>To change the color of the tooltip, use the property color. You are able to use the Main Colors or <strong>RGB</strong> and <strong>HEX</strong> colors</p>
 
         <vs-alert icon="warning" active="true" color="warning" class="mt-5">
@@ -45,7 +45,7 @@
             <vx-tooltip color="rgb(42, 207, 133)" text="Tooltip RGB">
                 <vs-button color="rgb(42, 207, 133)" type="border">Color RGB</vs-button>
             </vx-tooltip>
-            
+
             <vx-tooltip color="#4a0d6b" text="Tooltip HEX">
                 <vs-button color="#4a0d6b" type="border">Color HEX</vs-button>
             </vx-tooltip>
@@ -80,7 +80,7 @@
   &lt;vx-tooltip color=&quot;rgb(42, 207, 133)&quot; text=&quot;Tooltip RGB&quot;&gt;
     &lt;vs-button color=&quot;rgb(42, 207, 133)&quot; type=&quot;border&quot;&gt;Color RGB&lt;/vs-button&gt;
   &lt;/vx-tooltip&gt;
-  
+
   &lt;vx-tooltip color=&quot;#4a0d6b&quot; text=&quot;Tooltip HEX&quot;&gt;
     &lt;vs-button color=&quot;#4a0d6b&quot; type=&quot;border&quot;&gt;Color HEX&lt;/vs-button&gt;
   &lt;/vx-tooltip&gt;

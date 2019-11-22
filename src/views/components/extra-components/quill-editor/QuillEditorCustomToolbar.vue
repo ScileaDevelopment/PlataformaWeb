@@ -2,7 +2,7 @@
     File Name: QuillEditorCustomToolbar.vue
     Description: Quill editor with custom toolbar
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -116,7 +116,7 @@ export default {
 }
 &lt;/script&gt;
         </template>
-        
+
     </vx-card>
 </template>
 

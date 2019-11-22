@@ -2,7 +2,7 @@
 	File Name: EchartsScatterChart.vue
 	Description: Create scatter chart
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -12,12 +12,12 @@
 	<vx-card title="Scatter Chart" class="mb-base" code-toggler>
 
 		<div class="mt-5">
-			<e-charts :options="scatter" ref="scatter" auto-resize />
+			<e-charts autoresize :options="scatter" ref="scatter" auto-resize />
 		</div>
 
 		<template slot="codeContainer">
 &lt;template&gt;
-  &lt;e-charts :options=&quot;scatter&quot; ref=&quot;scatter&quot; auto-resize /&gt;
+  &lt;e-charts autoresize :options=&quot;scatter&quot; ref=&quot;scatter&quot; auto-resize /&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
@@ -53,7 +53,7 @@ export default {
         [ 26424, 75.7, 57110117, 'United Kingdom', 1990 ],
         [ 37062, 75.4, 252847810, 'United States', 1990 ]
       ],
-      [ 
+      [
         [ 44056, 81.8, 23968973, 'Australia', 2015 ],
         [ 43294, 81.7, 35939927, 'Canada', 2015 ],
         [ 13334, 76.9, 1376048943, 'China', 2015 ],

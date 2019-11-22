@@ -2,7 +2,7 @@
     File Name: CheckboxArrayObjectValue.vue
     Description: Create array of objects using checked checkboxes
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -20,7 +20,7 @@
         </ul>
 
         <div class="op-block mt-5">{{form.regions}}</div>
-        
+
         <template slot="codeContainer">
 &lt;template&gt;
     &lt;ul class=&quot;centerx&quot;&gt;
@@ -29,7 +29,7 @@
       &lt;/li&gt;
     &lt;/ul&gt;
 
-    &lt;div class=&quot;modelx&quot;&gt;{{ "\{\{ form.regions \}\}" }}&lt;/div&gt; 
+    &lt;div class=&quot;modelx&quot;&gt;{{ "\{\{ form.regions \}\}" }}&lt;/div&gt;
 &lt;/template&gt;
 
 &lt;script&gt;

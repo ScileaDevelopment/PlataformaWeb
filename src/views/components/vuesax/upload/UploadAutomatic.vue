@@ -2,7 +2,7 @@
     File Name: UploadAutomatic.vue
     Description: Uploading files automatically
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Automatic" code-toggler>
-        
+
         <p>You can enable automatic submission with the <code>Automatic</code> property that executes the shipment by changing the value of the <code>input</code></p>
 
         <div class="mt-5">

@@ -2,7 +2,7 @@
     File Name: GridFlexLayout.vue
     Description: Align elements horizontally
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -40,7 +40,7 @@
                 </vs-col>
             </vs-row>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;vs-row vs-w=&quot;12&quot;&gt;
   &lt;vs-col :key=&quot;index&quot; v-for=&quot;col,index in 3&quot; vs-type=&quot;flex&quot; vs-justify=&quot;center&quot; vs-align=&quot;center&quot; vs-w=&quot;2&quot;&gt;

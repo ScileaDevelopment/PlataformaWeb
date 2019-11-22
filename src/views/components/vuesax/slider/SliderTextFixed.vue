@@ -2,7 +2,7 @@
     File Name: SliderTextFixed.vue
     Description: Add fixed text next to the value of slider
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Text Fixed" code-toggler>
-        
+
         <p>Determine the text that will be fixed next to the value with the property <code>text-fixed</code></p>
 
         <div class="mt-5">

@@ -2,7 +2,7 @@
     File Name: CarouselNavigation.vue
     Description: Carousel with navigations
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,35 +11,39 @@
 <template>
     <vx-card title="Navigations" class="carousel-example" code-toggler>
           <!-- swiper -->
-          <swiper :options="swiperOption">
-            <swiper-slide>Slide 1</swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
-            <swiper-slide>Slide 4</swiper-slide>
-            <swiper-slide>Slide 5</swiper-slide>
-            <swiper-slide>Slide 6</swiper-slide>
-            <swiper-slide>Slide 7</swiper-slide>
-            <swiper-slide>Slide 8</swiper-slide>
-            <swiper-slide>Slide 9</swiper-slide>
-            <swiper-slide>Slide 10</swiper-slide>
-            <div class="swiper-button-prev" slot="button-prev"></div>
-            <div class="swiper-button-next" slot="button-next"></div>
+          <swiper :options="swiperOption" :dir="$vs.rtl ? 'rtl' : 'ltr'" :key="$vs.rtl">
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-13.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-7.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-11.jpg" alt="banner">
+            </swiper-slide>
+            <swiper-slide>
+              <img class="responsive" src="@/assets/images/pages/carousel/banner-1.jpg" alt="banner">
+            </swiper-slide>
+            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
           </swiper>
 
           <template slot="codeContainer">
 &lt;template&gt;
     &lt;div class=&quot;carousel-example&quot;&gt;
-        &lt;swiper :options=&quot;swiperOption&quot;&gt;
-            &lt;swiper-slide&gt;Slide 1&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 2&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 3&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 4&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 5&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 6&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 7&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 8&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 9&lt;/swiper-slide&gt;
-            &lt;swiper-slide&gt;Slide 10&lt;/swiper-slide&gt;
+        &lt;swiper :options=&quot;swiperOption&quot; :dir=&quot;$vs.rtl ? 'rtl' : 'ltr'&quot; :key=&quot;$vs.rtl&quot;&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-13.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-7.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-11.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-1.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
             &lt;div class=&quot;swiper-button-prev&quot; slot=&quot;button-prev&quot;&gt;&lt;/div&gt;
             &lt;div class=&quot;swiper-button-next&quot; slot=&quot;button-next&quot;&gt;&lt;/div&gt;
         &lt;/swiper&gt;
@@ -64,28 +68,9 @@ export default{
   components: {
     swiper,
     swiperSlide
-  } 
+  }
 }
 &lt;/script&gt;
-
-&lt;style lang=&quot;scss&quot;&gt;
-.carousel-example .swiper-container .swiper-slide {
-    text-align: center;
-    font-size: 38px;
-    font-weight: 700;
-    background-color: #eee;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    min-height: 300px;
-}
-&lt;/style&gt;
           </template>
       </vx-card>
 </template>
@@ -108,6 +93,6 @@ export default{
     components: {
         swiper,
         swiperSlide
-    }   
+    }
 }
 </script>

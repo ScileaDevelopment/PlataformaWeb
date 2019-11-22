@@ -289,7 +289,10 @@ module.exports = {
     |
     */
 
-    textColor: theme => theme('colors'),
+    textColor: theme => ({
+      inherit: "inherit",
+      ...theme('colors'),
+    }),
 
 
     /*

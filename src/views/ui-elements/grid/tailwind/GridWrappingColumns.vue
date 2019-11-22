@@ -2,7 +2,7 @@
     File Name: GridWrappingColumns.vue
     Description: flexbox flex-wrap in action
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -22,7 +22,7 @@
                 <div class="w-1/3 mb-4 bg-grid-color-secondary h-12 flex"><span class="flex m-auto">w-1/3</span></div>
             </div>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;div class=&quot;flex flex-wrap -mb-4&quot;&gt;
   &lt;div class=&quot;w-1/3 mb-4 bg-grid-color-secondary h-12&quot;&gt;&lt;/div&gt;

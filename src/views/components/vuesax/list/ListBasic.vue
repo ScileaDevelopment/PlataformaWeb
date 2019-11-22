@@ -2,7 +2,7 @@
     File Name: ListBasic.vue
     Description: A basic list of items with title and subtitle
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Basic" code-toggler>
-        
+
         <p>A basic list of items with <code>title</code> and <code>subtitle</code></p>
 
         <div class="demo-alignment">

@@ -2,7 +2,7 @@
     File Name: DividerIcon.vue
     Description: Divider with icon
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,9 +10,9 @@
 
 <template>
     <vx-card title="Icon" code-toggler>
-        
+
         <p>To add an icon within the division we have the property <code>icon</code></p>
-        
+
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
             <p>Vuesax uses the Google Material Icons font library by default. For a list of all available icons, visit the official <a href="https://material.io/icons/" target="_blank">Material Icons page</a>.</p>
             <p>FontAwesome and other fonts library are supported. Simply use the icon-pack with fa or fas. You still need to include the Font Awesome icons in your project.</p>

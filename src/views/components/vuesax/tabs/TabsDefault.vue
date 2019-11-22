@@ -2,7 +2,7 @@
     File Name: TabsDefault.vue
     Description: Rendering of default Tabs
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>To implement a tabs, use the <code>vs-tabs</code> component. It must include <code>vs-tab</code> child components that represent each tab</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

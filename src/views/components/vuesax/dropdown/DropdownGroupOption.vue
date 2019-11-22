@@ -2,7 +2,7 @@
     File Name: DropdownGroupOption.vue
     Description: Group dropdown items using vs-dropdown-group
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Group Option">
-        
+
         <p>If you need to group the options you can use the subcomponent <code>vs-dropdown-group</code> which as a required parameter is <code>vs-label</code> to define the group title</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="my-5">

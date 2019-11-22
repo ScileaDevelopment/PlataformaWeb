@@ -2,7 +2,7 @@
     File Name: Autocomplete.vue
     Description: Autocomplete demo
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -52,7 +52,7 @@ export default {
 &lt;/script&gt;
 
 &lt;style lang=&quot;scss&quot;&gt;
-@import &quot;@/assets/scss/vuesax/extraComponents/autocomplete.scss&quot;;
+@import &quot;@/assets/scss/vuexy/extraComponents/autocomplete.scss&quot;;
 &lt;/style&gt;
       </template>
     </vx-card>
@@ -334,5 +334,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/extraComponents/autocomplete.scss";
+@import "@/assets/scss/vuexy/extraComponents/autocomplete.scss";
 </style>

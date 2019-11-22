@@ -2,7 +2,7 @@
     File Name: GoogleMapStreetView.vue
     Description: Google map Street view
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -46,7 +46,7 @@
     &lt;vs-list-item :title=&quot;` Pitch: ${ pov &amp;&amp; pov.pitch }`&quot;&gt;&lt;/vs-list-item&gt;
     &lt;vs-list-item :title=&quot;` Pano ID: ${ pano }`&quot;&gt;&lt;/vs-list-item&gt;
   &lt;/vs-list&gt;
-  
+
   &lt;div class=&quot;demo-alignment&quot;&gt;
     &lt;vs-button type=&quot;filled&quot; @click=&quot;pov.heading = Math.random() * 360&quot;&gt;Change Heading&lt;/vs-button&gt;
     &lt;vs-button type=&quot;filled&quot; @click=&quot;pov.pitch = Math.random() * 180 - 90&quot;&gt;Change Pitch&lt;/vs-button&gt;

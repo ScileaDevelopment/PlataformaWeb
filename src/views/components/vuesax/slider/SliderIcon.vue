@@ -2,7 +2,7 @@
     File Name: SliderIcon.vue
     Description: Rendering of Slider with Icon
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Icon" code-toggler>
-        
+
         <p>You can add an icon with the <code>icon</code> property to better representation the sliders to the user</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

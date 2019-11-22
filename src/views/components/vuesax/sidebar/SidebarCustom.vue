@@ -2,7 +2,7 @@
     File Name: SidebarCustom.vue
     Description: Rendering of custom sidebar with vx-sidebar(replaces vs-sidebar-item) and vx-sidebar-group(vs-sidebar-group)
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -18,18 +18,19 @@
 
         <template slot="codeContainer">
 &lt;template&gt;
-  &lt;vx-sidebar
+  &lt;v-nav-menu
     :sidebarItems=&quot;sidebarItems&quot;
     title=&quot;Custom&quot;
-    :logo=&quot;require('@/assets/images/logo/logo.png')&quot;
+    :logo=&quot;navMenuLogo&quot;&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
-import VxSidebar from &quot;@/layouts/components/vx-sidebar/VxSidebar.vue&quot;;
+import VNavMenu from &quot;@/layouts/components/vertical-nav-menu/VerticalNavMenu.vue&quot;;
 
 export default {
   data: () =&gt; ({
     showSidebar: false,
+    navMenuLogo: require('@/assets/images/logo/logo.png'),
     sidebarItems: [
       {
         url: &quot;/&quot;,
@@ -80,7 +81,7 @@ export default {
     ]
   }),
   components: {
-    VxSidebar
+    VNavMenu
   }
 }
 &lt;/script&gt;

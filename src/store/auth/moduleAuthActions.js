@@ -2,10 +2,12 @@
   File Name: moduleAuthActions.js
   Description: Auth Module Actions
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
+
+import jwt from "../../http/requests/auth/jwt/index.js"
 
 
 import firebase from 'firebase/app'
@@ -46,8 +48,8 @@ export default {
                         iconPack: 'feather',
                         icon: 'icon-alert-circle',
                         color: 'danger'
-                    });
-                });
+                    })
+                })
         } else {
             // Try to login
             dispatch('login', newPayload)
@@ -66,7 +68,7 @@ export default {
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'warning'
-            });
+            })
 
             return false
         }
@@ -77,18 +79,18 @@ export default {
             .then((result) => {
 
                 // Set FLAG username update required for updating username
-                let isUsernameUpdateRequired = false;
+                let isUsernameUpdateRequired = false
 
                 // if username is provided and updateUsername FLAG is true
                   // set local username update FLAG to true
                   // try to update username
-                if(payload.updateUsername && payload.userDetails.username) {
+                if(payload.updateUsername && payload.userDetails.displayName) {
 
-                    isUsernameUpdateRequired = true;
+                    isUsernameUpdateRequired = true
 
                     dispatch('updateUsername', {
                       user: result.user,
-                      username: payload.userDetails.username,
+                      username: payload.userDetails.displayName,
                       notify: payload.notify,
                       isReloadRequired: true
                     })
@@ -101,8 +103,8 @@ export default {
                   // just reload the page to get fresh data
                   // set new user data in localstorage
                 if(!isUsernameUpdateRequired) {
-                  router.push(router.currentRoute.query.to || '/');
-                  commit('UPDATE_AUTHENTICATED_USER', result.user.providerData[0])
+                  router.push(router.currentRoute.query.to || '/')
+                  commit('UPDATE_USER_INFO', result.user.providerData[0], {root: true})
                 }
             }, (err) => {
 
@@ -116,7 +118,7 @@ export default {
                     iconPack: 'feather',
                     icon: 'icon-alert-circle',
                     color: 'danger'
-                });
+                })
             })
     },
 
@@ -129,49 +131,25 @@ export default {
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'warning'
-            });
+            })
             return false
         }
-        const provider = new firebase.auth.GoogleAuthProvider();
+        const provider = new firebase.auth.GoogleAuthProvider()
 
         firebase.auth().signInWithPopup(provider)
-            .then((result) => {
-                router.push(router.currentRoute.query.to || '/');
-                commit('UPDATE_AUTHENTICATED_USER', result.user.providerData[0])
-            }).catch((err) => {
-                payload.notify({
-                    time: 2500,
-                    title: 'Error',
-                    text: err.message,
-                    iconPack: 'feather',
-                    icon: 'icon-alert-circle',
-                    color: 'danger'
-                });
-            })
-        // firebase.auth().onAuthStateChanged(function(user) {
-        //     if (user) {
-        //         user.updateProfile({
-        //             roles: ['admin'],
-        //         }).then(function() {
-        //             this.$vs.notify({
-        //                 title: 'Success',
-        //                 text: "done",
-        //                 iconPack: 'feather',
-        //                 icon: 'icon-check',
-        //                 color: 'success'
-        //             });
-        //         }, function(error) {
-        //             this.$vs.notify({
-        //                 title: 'Error',
-        //                 text: error.message,
-        //                 iconPack: 'feather',
-        //                 icon: 'icon-alert-circle',
-        //                 color: 'danger'
-        //             });
-        //         });
-
-        //     }
-        // });
+          .then((result) => {
+              router.push(router.currentRoute.query.to || '/')
+              commit('UPDATE_USER_INFO', result.user.providerData[0], {root: true})
+          }).catch((err) => {
+              payload.notify({
+                  time: 2500,
+                  title: 'Error',
+                  text: err.message,
+                  iconPack: 'feather',
+                  icon: 'icon-alert-circle',
+                  color: 'danger'
+              })
+          })
     },
 
     // Facebook Login
@@ -183,15 +161,15 @@ export default {
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'warning'
-            });
+            })
             return false
         }
-        const provider = new firebase.auth.FacebookAuthProvider();
+        const provider = new firebase.auth.FacebookAuthProvider()
 
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
-                router.push(router.currentRoute.query.to || '/');
-                commit('UPDATE_AUTHENTICATED_USER', result.user.providerData[0])
+                router.push(router.currentRoute.query.to || '/')
+                commit('UPDATE_USER_INFO', result.user.providerData[0], {root: true})
             }).catch((err) => {
                 payload.notify({
                     time: 2500,
@@ -200,7 +178,7 @@ export default {
                     iconPack: 'feather',
                     icon: 'icon-alert-circle',
                     color: 'danger'
-                });
+                })
             })
     },
 
@@ -213,15 +191,15 @@ export default {
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'warning'
-            });
+            })
             return false
         }
-        const provider = new firebase.auth.TwitterAuthProvider();
+        const provider = new firebase.auth.TwitterAuthProvider()
 
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
-                router.push(router.currentRoute.query.to || '/');
-                commit('UPDATE_AUTHENTICATED_USER', result.user.providerData[0])
+                router.push(router.currentRoute.query.to || '/')
+                commit('UPDATE_USER_INFO', result.user.providerData[0], {root: true})
             }).catch((err) => {
                 payload.notify({
                     time: 2500,
@@ -230,7 +208,7 @@ export default {
                     iconPack: 'feather',
                     icon: 'icon-alert-circle',
                     color: 'danger'
-                });
+                })
             })
     },
 
@@ -243,15 +221,15 @@ export default {
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'warning'
-            });
+            })
             return false
         }
-        const provider = new firebase.auth.GithubAuthProvider();
+        const provider = new firebase.auth.GithubAuthProvider()
 
         firebase.auth().signInWithPopup(provider)
             .then((result) => {
-                router.push(router.currentRoute.query.to || '/');
-                commit('UPDATE_AUTHENTICATED_USER', result.user.providerData[0])
+                router.push(router.currentRoute.query.to || '/')
+                commit('UPDATE_USER_INFO', result.user.providerData[0], {root: true})
             }).catch((err) => {
                 payload.notify({
                     time: 2500,
@@ -260,7 +238,7 @@ export default {
                     iconPack: 'feather',
                     icon: 'icon-alert-circle',
                     color: 'danger'
-                });
+                })
             })
     },
     registerUser({dispatch}, payload) {
@@ -274,7 +252,7 @@ export default {
                     iconPack: 'feather',
                     icon: 'icon-check',
                     color: 'success'
-                });
+                })
 
                 const newPayload = {
                     userDetails: payload.userDetails,
@@ -289,19 +267,19 @@ export default {
                     iconPack: 'feather',
                     icon: 'icon-alert-circle',
                     color: 'danger'
-                });
+                })
             })
     },
     updateUsername({ commit }, payload) {
         payload.user.updateProfile({
-            displayName: payload.username
+            displayName: payload.displayName
         }).then(() => {
 
             // If username update is success
               // update in localstorage
             let newUserData = Object.assign({}, payload.user.providerData[0])
-            newUserData.displayName = payload.username
-            commit('UPDATE_AUTHENTICATED_USER', newUserData)
+            newUserData.displayName = payload.displayName
+            commit('UPDATE_USER_INFO', newUserData, {root: true})
 
             // If reload is required to get fresh data after update
               // Reload current page
@@ -316,10 +294,69 @@ export default {
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'danger'
-            });
+            })
         })
     },
-    updateAuthenticatedUser({ commit }, payload) {
-        commit('UPDATE_AUTHENTICATED_USER', payload)
+
+
+    // JWT
+    loginJWT({ commit }, payload) {
+
+      return new Promise((resolve,reject) => {
+        jwt.login(payload.userDetails.email, payload.userDetails.password)
+          .then(response => {
+
+            // If there's user data in response
+            if(response.data.userData) {
+              // Navigate User to homepage
+              router.push(router.currentRoute.query.to || '/')
+
+              // Set accessToken
+              localStorage.setItem("accessToken", response.data.accessToken)
+
+              // Update user details
+              commit('UPDATE_USER_INFO', response.data.userData, {root: true})
+
+              // Set bearer token in axios
+              commit("SET_BEARER", response.data.accessToken)
+
+              resolve(response)
+            }else {
+              reject({message: "Wrong Email or Password"})
+            }
+
+          })
+          .catch(error => { reject(error) })
+      })
+    },
+    registerUserJWT({ commit }, payload) {
+
+      const { displayName, email, password, confirmPassword } = payload.userDetails
+
+      return new Promise((resolve,reject) => {
+
+        // Check confirm password
+        if(password !== confirmPassword) {
+          reject({message: "Password doesn't match. Please try again."})
+        }
+
+        jwt.registerUser(displayName, email, password)
+          .then(response => {
+            // Redirect User
+            router.push(router.currentRoute.query.to || '/')
+
+            // Update data in localStorage
+            localStorage.setItem("accessToken", response.data.accessToken)
+            commit('UPDATE_USER_INFO', response.data.userData, {root: true})
+
+            resolve(response)
+          })
+          .catch(error => { reject(error) })
+      })
+    },
+    fetchAccessToken() {
+      return new Promise((resolve) => {
+        jwt.refreshToken().then(response => { resolve(response) })
+      })
     }
 }

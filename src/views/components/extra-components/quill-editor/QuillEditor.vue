@@ -2,7 +2,7 @@
     File Name: EditorQuillEditor.vue
     Description: Quill editor
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
     <div id="extra-component-quill-editor-demo">
 
         <p class="mb-4"><a href="https://surmon-china.github.io/vue-quill-editor/" target="_blank" rel="nofollow">Vue-Quill-Editor</a> editor component for Vue, support SPA and SSR. Read full documnetation <a href="https://quilljs.com/docs/quickstart/" target="_blank" rel="nofollow">here</a></p>
-        
+
         <quill-editor-theme-snow></quill-editor-theme-snow>
         <quill-editor-theme-bubble></quill-editor-theme-bubble>
         <quill-editor-custom-toolbar></quill-editor-custom-toolbar>

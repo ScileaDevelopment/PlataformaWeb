@@ -2,7 +2,7 @@
 	File Name: SelectLabels.vue
 	Description: Add label to select element
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->

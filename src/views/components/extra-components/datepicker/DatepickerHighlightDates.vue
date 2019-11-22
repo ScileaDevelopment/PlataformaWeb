@@ -2,7 +2,7 @@
     File Name: DatepickerHighlightDates.vue
     Description: Highlight dates in datepicker with function
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
 <template>
     <vx-card title="Highlight Dates" code-toggler>
         <p>Highlight dates in datepicker using function with <code>highlighted</code> prop</p>
-        
+
         <div class="mt-5">
             <datepicker :highlighted="highlightedFn"></datepicker>
         </div>

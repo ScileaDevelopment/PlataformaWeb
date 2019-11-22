@@ -2,7 +2,7 @@
     File Name: UserProfile.vue
     Description: user profile sidebar
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,27 +10,28 @@
 <template>
     <div id="parentx-demo-2">
 
-        <vs-sidebar parent="#chat-app" :position-right="!isActiveUser" :hidden-background="false" v-model="activeLocal" id="chat-profile-sidebar" class="items-no-padding">
+        <vs-sidebar parent="#chat-app" :position-right="!isLoggedInUser" :hidden-background="false" v-model="activeLocal" id="chat-profile-sidebar" class="items-no-padding">
 
             <div class="header-sidebar relative flex flex-col p-0" slot="header">
                 <feather-icon icon="XIcon" svgClasses="m-2 cursor-pointer absolute top-0 right-0" @click="$emit('closeProfileSidebar', false)"></feather-icon>
 
 
                 <div class="relative inline-flex mx-auto mb-5 mt-6">
-                    <vs-avatar class="m-0 border-white border-2 border-solid shadow-md" :src="require(`@/assets/images/portrait/small/${userImg}`)" size="70px" />
-                    <div class="h-5 w-5 border-white border-2 border-solid rounded-full absolute right-0 bottom-0" :class="'bg-' + getStatusColor(isActiveUser)"></div>
+                    <vs-avatar class="m-0 border-white border-2 border-solid shadow-md" :src="chatUser.photoURL" size="70px" />
+                    <div class="h-5 w-5 border-white border-2 border-solid rounded-full absolute right-0 bottom-0" :class="'bg-' + statusColor"></div>
                 </div>
-                <h4 class="mr-2 self-center">{{ userName }}</h4>
+
+                <h4 class="mr-2 self-center">{{ chatUser.displayName }}</h4>
             </div>
 
-            <VuePerfectScrollbar class="scroll-area" :settings="settings">
+            <VuePerfectScrollbar class="scroll-area" :settings="settings" :key="$vs.rtl">
             <div class="p-8">
 
-                <h6 class="mb-2" :class="{'ml-4': isActiveUser}">About</h6>
-                <vs-textarea class="mb-10" counter="120" maxlength="120" :counter-danger.sync="counterDanger" v-model="about" rows="5" v-if="isActiveUser" />
-                <p v-else>{{ about }}</p>
+                <h6 class="mb-2" :class="{'ml-4': isLoggedInUser}">About</h6>
+                <vs-textarea class="mb-10" counter="120" maxlength="120" :counter-danger.sync="counterDanger" v-model="about" rows="5" v-if="isLoggedInUser" />
+                <p v-else>{{ chatUser.about }}</p>
 
-                <div class="userProfile__status" v-if="isActiveUser">
+                <div class="userProfile__status" v-if="isLoggedInUser">
                     <h6 class="mb-4">Status</h6>
                     <ul>
                         <li class="mb-2">
@@ -55,7 +56,6 @@
 
 <script>
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import contacts from './contacts.js'
 
 export default{
     props: {
@@ -66,11 +66,14 @@ export default{
         active: {
             type: Boolean,
             required: true,
+        },
+        isLoggedInUser: {
+          type: Boolean,
+          required: true,
         }
     },
     data() {
         return {
-            contacts: contacts,
             counterDanger: false,
             settings: { // perfectscrollbar settings
                 maxScrollbarLength: 60,
@@ -79,80 +82,45 @@ export default{
         }
     },
     computed: {
-        isActiveUser() {
-            return this.contactIndex === -1;
+        chatUser() {
+          return this.$store.getters['chat/chatUser'](this.userId)
         },
         activeLocal: {
             get() {
                 return this.active
             },
             set(value) {
-                this.$emit('closeProfileSidebar', value);
+                this.$emit('closeProfileSidebar', value)
             }
         },
         about: {
             get() {
-                if(this.contactIndex === -1) {
-                    return this.$store.state.AppActiveUser.about;
-                }else{
-                    return this.contacts[this.contactIndex].about;
-                }
+                return this.chatUser.about
             },
             set(value) {
-                if(value.length > 120) {
-                    value = value.substring(0, 120)
-                }
-                this.$store.dispatch('chat/updateAboutChat', value);
+                this.$store.dispatch('updateUserInfo', {about: value})
             }
-        },
-        contactIndex() {
-            return contacts.findIndex(contact => contact.id == this.userId);
         },
         status: {
             get() {
-                if(this.contactIndex === -1) {
-                    return this.$store.state.AppActiveUser.status;
-                }
+              return this.chatUser.status
             },
             set(value) {
-                if(this.contactIndex === -1) {
-                    this.$store.dispatch('chat/updateStatusChat', value);
-                }
+              this.$store.dispatch('updateUserInfo', {status: value})
             }
         },
-        userImg() {
-            if(this.contactIndex === -1) {
-                return this.$store.state.AppActiveUser.img;
-            }else{
-                return this.contacts[this.contactIndex].img;
-            }
-        },
-        userName() {
-            if(this.contactIndex === -1){
-                return this.$store.state.AppActiveUser.name;
-            }else{
-                return this.contacts[this.contactIndex].name;
-            }
-        },
-        getStatusColor() {
-            return (isActiveUser) => {
-                const userStatus = this.getUserStatus(isActiveUser)
+        statusColor() {
+            const userStatus = this.chatUser.status
 
-                if(userStatus == "online"){
-                    return "success"
-                }else if(userStatus == "do not disturb"){
-                    return "danger"
-                }else if(userStatus == "away"){
-                    return "warning"
-                }else{
-                    return "grey"
-                }
+            if(userStatus == "online"){
+                return "success"
+            }else if(userStatus == "do not disturb"){
+                return "danger"
+            }else if(userStatus == "away"){
+                return "warning"
+            }else{
+                return "grey"
             }
-        },
-    },
-    methods: {
-        getUserStatus(isActiveUser) {
-            return (isActiveUser) ? this.$store.state.AppActiveUser.status : this.contacts[this.contactIndex].status;
         },
     },
     components:{

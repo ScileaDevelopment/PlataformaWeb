@@ -2,7 +2,7 @@
     File Name: LockScreen.vue
     Description: Lock Screen Page
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -22,8 +22,8 @@
                                 <div class="vx-card__title mb-8">
                                     <h4 class="mb-4">Your Session is locked</h4>
                                 </div>
-                                <vs-input icon="icon icon-user" icon-pack="feather" label-placeholder="Username" v-model="value1" class="w-full mb-6 no-icon-border"/>
-                                <vs-input icon="icon icon-lock" icon-pack="feather" type="password" label-placeholder="Password" v-model="value2" class="w-full mb-6 no-icon-border" />
+                                <vs-input icon-no-border icon="icon icon-user" icon-pack="feather" label-placeholder="Username" v-model="value1" class="w-full mb-6"/>
+                                <vs-input icon-no-border icon="icon icon-lock" icon-pack="feather" type="password" label-placeholder="Password" v-model="value2" class="w-full mb-6" />
 
                                 <div class="flex justify-between flex-wrap">
                                     <router-link to="/pages/login" class="mb-4">Are you not John Doe?</router-link>

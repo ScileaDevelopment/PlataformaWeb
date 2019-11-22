@@ -2,7 +2,7 @@
     File Name: LoadingBackground.vue
     Description: Change background color of loading animation
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Background" code-toggler>
-        
+
         <p>If you need to change the background of the loading, you can use the property <code>background</code></p>
 
         <vs-alert icon="warning" active="true" color="warning" class="mt-5">

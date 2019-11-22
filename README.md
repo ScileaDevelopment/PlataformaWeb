@@ -1,6 +1,3 @@
-Este es un cambio 
-
-
 # modern
 
 ## Project setup
@@ -27,4 +24,3 @@ npm run test
 ```
 npm run lint
 ```
-# PlataformaWeb

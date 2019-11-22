@@ -2,7 +2,7 @@
     File Name: BreadcrumbSeparator.vue
     Description: Change separator using separator directive
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -22,7 +22,7 @@
             <vs-breadcrumb :items="items" separator="•"></vs-breadcrumb>
             <vs-breadcrumb :items="items" separator="-"></vs-breadcrumb>
             <vs-breadcrumb :items="items" separator="|"></vs-breadcrumb>
-            <vs-breadcrumb :items="items" separator="chevron_right"></vs-breadcrumb>
+            <vs-breadcrumb :items="items" :separator="$vs.rtl ? 'chevron_left' : 'chevron_right'"></vs-breadcrumb>
 
         </div>
 
@@ -30,7 +30,7 @@
 &lt;vs-breadcrumb :items=&quot;[{...}, {...}]&quot; separator=&quot;&bull;&quot;&gt;&lt;/vs-breadcrumb&gt;
 &lt;vs-breadcrumb :items=&quot;[{...}, {...}]&quot; separator=&quot;-&quot;&gt;&lt;/vs-breadcrumb&gt;
 &lt;vs-breadcrumb :items=&quot;[{...}, {...}]&quot; separator=&quot;|&quot;&gt;&lt;/vs-breadcrumb&gt;
-&lt;vs-breadcrumb :items=&quot;[{...}, {...}]&quot; separator=&quot;chevron_right&quot;&gt;&lt;/vs-breadcrumb&gt;
+&lt;vs-breadcrumb :items=&quot;[{...}, {...}]&quot; :separator=&quot;$vs.rtl ? 'chevron_left' : 'chevron_right'&quot;&lt;/vs-breadcrumb&gt;
         </template>
 
     </vx-card>

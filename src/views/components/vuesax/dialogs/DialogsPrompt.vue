@@ -2,7 +2,7 @@
 	File Name: DialogsPrompt.vue
 	Description: Add dialog of type prompt
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -118,7 +118,6 @@ export default {
   },
   methods:{
     acceptAlert(){
-      this.clearValMultiple();
       this.$vs.notify({
         color:'success',
         title:'Accept Selected',
@@ -164,7 +163,6 @@ export default {
   },
   methods:{
     acceptAlert(){
-      this.clearValMultiple();
       this.$vs.notify({
         color:'success',
         title:'Accept Selected',

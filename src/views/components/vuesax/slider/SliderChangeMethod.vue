@@ -2,7 +2,7 @@
     File Name: SliderChangeMethod.vue
     Description: Trigger function on change
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Change Method" code-toggler>
-        
+
         <p>You can add a function that will be triggered every time the value changes with <code>@change="MyFunction"</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

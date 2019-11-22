@@ -2,7 +2,7 @@
     File Name: AgGridTable.vue
     Description: Ag Grid table
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
     Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -48,6 +48,7 @@
         </div>
       </div>
       <ag-grid-vue
+        ref="agGridTable"
         :gridOptions="gridOptions"
         class="ag-theme-material w-100 my-4 ag-grid-table"
         :columnDefs="columnDefs"
@@ -59,13 +60,14 @@
         :floatingFilter="true"
         :pagination="true"
         :paginationPageSize="paginationPageSize"
-        :suppressPaginationPanel="true">
+        :suppressPaginationPanel="true"
+        :enableRtl="$vs.rtl">
       </ag-grid-vue>
       <vs-pagination
         :total="totalPages"
         :max="maxPageNumbers"
         v-model="currentPage" />
-      <!-- <VuePerfectScrollbar ref="agGridTablePs" class="scroll-area" :settings="psSettings" /> -->
+
     </vx-card>
   </div>
 </template>
@@ -73,14 +75,12 @@
 <script>
 import { AgGridVue } from "ag-grid-vue"
 import contacts from './data.json'
-// import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 
-import '@/assets/scss/vuesax/extraComponents/agGridStyleOverride.scss'
+import '@/assets/scss/vuexy/extraComponents/agGridStyleOverride.scss'
 
 export default {
   components: {
-    AgGridVue,
-    // VuePerfectScrollbar
+    AgGridVue
   },
   data() {
     return {
@@ -139,13 +139,13 @@ export default {
           headerName: 'State',
           field: 'state',
           filter: true,
-          width: 100,
+          width: 125,
         },
         {
           headerName: 'Zip',
           field: 'zip',
-          filter: 'agNumberColumnFilter',
-          width: 100,
+          filter: true,
+          width: 125,
         },
         {
           headerName: 'Followers',
@@ -155,19 +155,13 @@ export default {
         },
       ],
       contacts: contacts,
-      // perfectscrollbar settings
-      // psSettings: {
-      //     maxScrollbarLength: 60,
-      //     wheelSpeed: 1,
-      //     swipeEasing: true
-      // },
     }
   },
   watch: {
     '$store.state.windowWidth'(val) {
       if(val <= 576) {
-        this.maxPageNumbers = 4;
-        this.gridOptions.columnApi.setColumnPinned('email', null);
+        this.maxPageNumbers = 4
+        this.gridOptions.columnApi.setColumnPinned('email', null)
       }
       else this.gridOptions.columnApi.setColumnPinned('email', 'left')
     }
@@ -187,21 +181,27 @@ export default {
         else return 1
       },
       set(val) {
-        this.gridApi.paginationGoToPage(val - 1);
+        this.gridApi.paginationGoToPage(val - 1)
       }
     }
   },
   methods: {
     updateSearchQuery(val) {
-      this.gridApi.setQuickFilter(val);
+      this.gridApi.setQuickFilter(val)
     }
   },
   mounted() {
-    this.gridApi = this.gridOptions.api;
-    // const el = document.querySelector('.ag-body-viewport');
-    // console.log(this.$refs.agGridTablePs)
-    // this.$refs.agGridTablePs.__init(el)
-    // this.$refs.agGridTablePs.update()
+    this.gridApi = this.gridOptions.api
+
+    /* =================================================================
+      NOTE:
+      Header is not aligned properly in RTL version of agGrid table.
+      However, we given fix to this issue. If you want more robust solution please contact them at gitHub
+    ================================================================= */
+    if(this.$vs.rtl) {
+      const header = this.$refs.agGridTable.$el.querySelector(".ag-header-container")
+      header.style.left = "-" + String(Number(header.style.transform.slice(11,-3)) + 9) + "px"
+    }
   }
 }
 

@@ -2,7 +2,7 @@
     File Name: AvatarColor.vue
     Description: Change color of avatars
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
+
         <p>You can change the Avatar's color by using the property <code>color</code>. If needed you could also change the text's color with the property <code>text-color</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

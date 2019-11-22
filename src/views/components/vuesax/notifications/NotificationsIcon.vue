@@ -2,7 +2,7 @@
   File Name: NotificationsIcon.vue
   Description: Add Icons to notifications
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
   <vx-card title="Icon" code-toggler>
-    
+
     <p>Notifications can include icons to improve the user experience and to construct a more pleasant and intuitive notification. To make this, use the <code>icon</code> property. A practical example would be: <code>icon: 'chat'</code></p>
 
     <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
@@ -19,7 +19,7 @@
     </vs-alert>
 
     <div class="demo-alignment">
-      
+
       <vs-button color="primary" type="flat"
         @click="$vs.notify({
           title:'Icon mail',

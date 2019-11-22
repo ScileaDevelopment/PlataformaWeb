@@ -2,7 +2,7 @@
     File Name: DividerTextPosition.vue
     Description: Divider text with horizontal alignment
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Text Position" code-toggler>
-        
+
         <p>You can guide the text in 5 ways with property <code>position</code>:</p>
         <vx-list :list="['left', 'left-center', 'center(default)', 'right-center', 'right']" class="mt-3"></vx-list>
 

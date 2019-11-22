@@ -2,7 +2,7 @@
     File Name: InputIcon.vue
     Description: Add icon to input using icon prop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -22,23 +22,23 @@
         </vs-alert><br>
 
         <div class="demo-alignment">
-            <vs-input icon-pack="feather" icon="icon-search" label-placeholder="Search" v-model="value1" class="is-label-placeholder" />
-            <vs-input icon-pack="feather" icon="icon-edit-2" icon-after="true" label-placeholder="icon-after" vs-placeholder="Nombre" v-model="value2" />
+            <vs-input icon-pack="feather" icon="icon-search" placeholder="Search" v-model="value1" class="is-label-placeholder" />
+            <vs-input icon-pack="feather" icon="icon-edit-2" icon-after placeholder="icon-after" vs-placeholder="Nombre" v-model="value2" />
             <vs-input icon-pack="feather" icon="icon-plus" label-placeholder="Label-placeholder" v-model="value3" />
-            <vs-input icon-pack="feather" icon="icon-shopping-cart" vs-icon-after="true" label-placeholder="Label-placeholder" v-model="value4" />
+            <vs-input icon-pack="feather" icon="icon-shopping-cart" icon-after vs-icon-after="true" label-placeholder="Label-placeholder" v-model="value4" />
             <vs-input icon-pack="feather" icon="icon-alert-circle" label-placeholder="icon-disabled" disabled="true" v-model="value5" />
-            <vs-input icon-pack="feather" icon="icon-mail" label-placeholder="icon-no-border" v-model="value6" icon-no-border />
+            <vs-input icon-pack="feather" icon="icon-mail" placeholder="icon-no-border" v-model="value6" icon-no-border />
         </div>
 
         <template slot="codeContainer">
 &lt;template&gt;
     &lt;div class=&quot;centerx&quot;&gt;
-        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-search&quot; label-placeholder=&quot;Search&quot; v-model=&quot;value1&quot; class=&quot;is-label-placeholder&quot; /&gt;
-        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-edit-2&quot; icon-after=&quot;true&quot; label-placeholder=&quot;icon-after&quot; vs-placeholder=&quot;Nombre&quot; v-model=&quot;value2&quot; /&gt;
+        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-search&quot; placeholder=&quot;Search&quot; v-model=&quot;value1&quot; class=&quot;is-label-placeholder&quot; /&gt;
+        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-edit-2&quot; icon-after placeholder=&quot;icon-after&quot; vs-placeholder=&quot;Nombre&quot; v-model=&quot;value2&quot; /&gt;
         &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-plus&quot; label-placeholder=&quot;Label-placeholder&quot; v-model=&quot;value3&quot; /&gt;
-        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-shopping-cart&quot; vs-icon-after=&quot;true&quot; label-placeholder=&quot;Label-placeholder&quot; v-model=&quot;value4&quot; /&gt;
+        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-shopping-cart&quot; icon-after vs-icon-after=&quot;true&quot; label-placeholder=&quot;Label-placeholder&quot; v-model=&quot;value4&quot; /&gt;
         &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-alert-circle&quot; label-placeholder=&quot;icon-disabled&quot; disabled=&quot;true&quot; v-model=&quot;value5&quot; /&gt;
-        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-mail&quot; label-placeholder=&quot;icon-no-border&quot; v-model=&quot;value6&quot; icon-no-border /&gt;
+        &lt;vs-input icon-pack=&quot;feather&quot; icon=&quot;icon-mail&quot; placeholder=&quot;icon-no-border&quot; v-model=&quot;value6&quot; icon-no-border /&gt;
     &lt;/div&gt;
 &lt;/template&gt;
 

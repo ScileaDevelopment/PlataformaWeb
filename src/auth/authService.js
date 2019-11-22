@@ -1,6 +1,8 @@
-import auth0 from 'auth0-js';
-import EventEmitter from 'events';
-import authConfig from '../../auth_config.json';
+import auth0 from 'auth0-js'
+import EventEmitter from 'events'
+import authConfig from '@/../auth_config.json'
+
+import store from "@/store/store.js"
 
 // 'loggedIn' is used in other parts of application. So, Don't forget to change there also
 const localStorageKey = 'loggedIn';
@@ -51,13 +53,14 @@ class AuthService extends EventEmitter {
         this.tokenExpiry = new Date(this.profile.exp * 1000);
         localStorage.setItem(tokenExpiryKey, this.tokenExpiry);
         localStorage.setItem(localStorageKey, 'true');
-        localStorage.setItem('userInfo', JSON.stringify({
+
+        store.commit("UPDATE_USER_INFO", {
             displayName: this.profile.name,
             email: this.profile.email,
             photoURL: this.profile.picture,
             providerId: this.profile.sub.substr(0, this.profile.sub.indexOf('|')),
             uid: this.profile.sub
-        }));
+        })
 
         this.emit(loginEvent, {
             loggedIn: true,

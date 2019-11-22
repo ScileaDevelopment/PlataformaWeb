@@ -2,7 +2,7 @@
     File Name: ProgressHeight.vue
     Description: Change height of progressbar with height prop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,12 +10,12 @@
 
 <template>
     <vx-card title="Height" code-toggler>
-        
+
         <p>You can change the height of the loading bar with the property height</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
                 <p>By default the property <code>height</code> is <strong>5</strong>(5px)</p>
-            </vs-alert> 
+            </vs-alert>
 
         <div class="mt-5">
             <vs-progress :height="2" :percent="100" color="primary"></vs-progress>

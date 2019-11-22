@@ -2,7 +2,7 @@
     File Name: TableMiscellaneous.vue
     Description: Combine filter,sorter, pagination etc.
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Miscellaneous" code-toggler>
-        
+
         <p>You can add a <strong>filtered, sorted, paginated and multi selected</strong> table with combination of the <code>search</code>, <code>multiple</code> and <code>pagination</code> properties for example</p><br>
 
         <vs-table multiple v-model="selected" pagination max-items="3" search :data="users">
@@ -45,7 +45,7 @@
             </template>
         </vs-table>
 
-        <prism language="js" class="rounded-lg">            
+        <prism language="js" class="rounded-lg">
 {{ selected }}
         </prism>
 

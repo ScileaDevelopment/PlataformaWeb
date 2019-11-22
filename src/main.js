@@ -2,7 +2,7 @@
   File Name: main.js
   Description: main vue(js) file
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
@@ -19,8 +19,14 @@ Vue.use(Vuesax)
 
 
 // axios
-import axios from 'axios'
+import axios from "./axios.js"
 Vue.prototype.$http = axios
+
+// API Calls
+import "./http/requests"
+
+// mock
+import "./fake-db/index.js"
 
 // Theme Configurations
 import '../themeConfig.js'
@@ -48,7 +54,7 @@ import './assets/scss/main.scss'
 
 
 // Tailwind
-import '@/assets/css/main.css';
+import '@/assets/css/main.css'
 
 
 // Vue Router
@@ -63,7 +69,7 @@ import store from './store/store'
 import i18n from './i18n/i18n'
 
 
-// Vuesax Admin Filters
+// Vuexy Admin Filters
 import './filters/filters'
 
 

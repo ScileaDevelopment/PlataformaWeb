@@ -2,7 +2,7 @@
 	File Name: EchartsPieChart.vue
 	Description: Create bar chart
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -12,12 +12,12 @@
 	<vx-card title="Pie Chart" class="mb-base" code-toggler>
 
 		<div class="mt-5">
-			<e-charts :options="pie" ref="pie" auto-resize />
+			<e-charts autoresize :options="pie" ref="pie" auto-resize />
 		</div>
 
 		<template slot="codeContainer">
 &lt;template&gt;
-  &lt;e-charts :options=&quot;pie&quot; ref=&quot;pie&quot; auto-resize /&gt;
+  &lt;e-charts autoresize :options=&quot;pie&quot; ref=&quot;pie&quot; auto-resize /&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
@@ -61,7 +61,7 @@ export default {
               }
             }
           }
-        ]       
+        ]
       },
     }
   },

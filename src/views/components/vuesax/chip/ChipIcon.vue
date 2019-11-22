@@ -2,7 +2,7 @@
     File Name: ChipIcon.vue
     Description: Add a nice icon to the chip
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Icon" code-toggler>
-        
+
         <p>Add a nice icon to the chip</p>
 
         <div class="demo-alignment">
@@ -69,7 +69,7 @@
     &lt;vs-avatar icon-pack=&quot;feather&quot; icon=&quot;icon-battery&quot; /&gt;
     &lt;span&gt;Icon battery_alert&lt;/span&gt;
   &lt;/vs-chip&gt;
-  
+
   &lt;vs-chip color=&quot;dark&quot;&gt;
     &lt;vs-avatar icon-pack=&quot;feather&quot; icon=&quot;icon-edit&quot; /&gt;
     &lt;span&gt;Icon edit&lt;/span&gt;

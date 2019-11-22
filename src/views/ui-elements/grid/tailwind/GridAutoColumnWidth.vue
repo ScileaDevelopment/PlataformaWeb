@@ -2,7 +2,7 @@
     File Name: GridAutoColumnWidth.vue
     Description: Example of building grid layouts with Tailwind CSS
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -51,7 +51,7 @@
                 <div class="flex-1 bg-grid-color-secondary h-12 flex"><span class="sm:flex hidden m-auto">flex-1</span></div>
             </div>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;!-- Full width column --&gt;
 &lt;div class=&quot;flex mb-4&quot;&gt;

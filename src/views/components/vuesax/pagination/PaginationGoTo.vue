@@ -2,7 +2,7 @@
     File Name: PaginationGoTo.vue
     Description: with go to user can directly jump to that page
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,13 +10,13 @@
 
 <template>
     <vx-card title="GoTo" code-toggler>
-        
+
         <p>The <code>goto</code> directive will allow users to directly jump to a desired page</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
             <p>If the value given is lower than <strong>1</strong> it will jump to page <strong>1</strong>. However if the value is greater than total it will jump to the last page</p>
         </vs-alert>
-        
+
         <div class="mt-5">
             <vs-pagination :total="20" v-model="currentx" goto></vs-pagination>
         </div>

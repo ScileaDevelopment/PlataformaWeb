@@ -2,7 +2,7 @@
     File Name: SliderColor.vue
     Description: Change color of slider
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
+
         <p>You can change the slider's color with the property color. You can also add the main <code>colors</code> like: <code>primary</code>, <code>success</code>, <code>danger</code>, <code>warning</code>, <code>dark</code></p>
 
         <div class="mt-5">

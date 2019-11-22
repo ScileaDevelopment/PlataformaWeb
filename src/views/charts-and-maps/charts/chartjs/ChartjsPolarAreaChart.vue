@@ -2,7 +2,7 @@
     File Name: ChartPolarArea.vue
     Description: Create polar area chart
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -12,7 +12,7 @@
     <vx-card title="Polar Area Chart" class="mb-base" code-toggler>
 
         <div class="mt-5">
-            <chartjs-component-polar-area-chart :height=250 :data="data" :options="options"></chartjs-component-polar-area-chart>
+            <chartjs-component-polar-area-chart :height="250" :data="data" :options="options"></chartjs-component-polar-area-chart>
         </div>
 
         <template slot="codeContainer">

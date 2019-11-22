@@ -2,7 +2,7 @@
     File Name: TablePagination.vue
     Description: Add pagination to table for long data
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Pagination" code-toggler>
-        
+
         <p>You can add a paginated table with the pagination property</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="my-3">

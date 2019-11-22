@@ -2,7 +2,7 @@
     File Name: CheckboxArrayValue.vue
     Description: Create array using checked checkboxes
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -26,7 +26,7 @@
             <li>
                 <vs-checkbox v-model="checkBox1" vs-value="lyon">Lyon</vs-checkbox>
             </li>
-            
+
             <li class="op-block">
                 {{checkBox1}}
             </li>

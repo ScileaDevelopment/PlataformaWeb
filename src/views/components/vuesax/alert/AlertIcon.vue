@@ -2,7 +2,7 @@
     File Name: AlertIcon.vue
     Description: Change icon in alert
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Icon" code-toggler>
-        
+
         <p>You can add to the alert a descriptive icon with the property <code>icon</code> and as a value the icon name of the icon in the currently selected icon pack. (Default is <a href="https://material.io/icons/" target="_blank" rel="nofollow">Material Icons</a>)</p>
 
         <vs-alert active="true" class="mt-5" icon-pack="feather" icon="icon-star">

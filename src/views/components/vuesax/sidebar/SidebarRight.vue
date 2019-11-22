@@ -2,7 +2,7 @@
 	File Name: SidebarRight.vue
 	Description: Rendering of sidebar on right side(RTL)
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,13 +10,13 @@
 
 <template>
 	<vx-card title="Open on the right" code-toggler>
-		
+
 		<p>You can also choose where you'd like the sidebar to appear, right or left? By default, a sidebar will be located on the left of the screen but sometimes, a right-screened sidebar is really useful!</p>
 
 		<vs-alert icon="warning" active="true" color="warning" class="mb-1">
 			<span>A <code>static</code> sidebar will not appear on the right.</span>
 		</vs-alert>
-		
+
 		<div class="mt-5">
 
 			<div id="parentx-demo-5">

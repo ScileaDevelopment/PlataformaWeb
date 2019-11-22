@@ -2,7 +2,7 @@
     File Name: ColorsChangeColor.vue
     Description: Change theme's main colors - During execution
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Change Color" code-toggler>
-        
+
         <p>You can change the color of the application in process of execution with the function $vs.theme which as a parameter requires a json with the colors to change</p>
 
         <p>Imagine that in the middle of the application we want the primary color change would be something like this:</p>
@@ -21,7 +21,7 @@ this.$vs.theme({
 })
         </prism>
 
-        <p class="mt-5">By doing this, all <strong>Vuesax</strong> components in the application that use a primary color with change. Select one of the colors to change it and that all the components of this documentation have that color.</p>
+        <p class="mt-5">By doing this, all <strong>Vuesax</strong> components and other components which uses primary color in the application will change. Select one of the colors to change it and that all the components of this application will have that color.</p>
 
         <ul class="demo-alignment text-white">
             <li class="bg-primary">

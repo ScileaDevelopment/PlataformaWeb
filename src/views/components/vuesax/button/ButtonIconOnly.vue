@@ -2,7 +2,7 @@
     File Name: ButtonIconOnly.vue
     Description: Button with only icon
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Icon Only" code-toggler>
-        
+
         <p>You can have a button with only the icon you want with the property <code>icon</code> and not add any internal value to the button</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5 mb-3">

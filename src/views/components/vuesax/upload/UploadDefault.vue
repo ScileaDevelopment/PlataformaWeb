@@ -2,7 +2,7 @@
     File Name: UploadDefault.vue
     Description: Rendering of default Upload
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>You can upload files to the server with the <code>vs-upload</code> component, the requested parameter is <code>action</code> which is the URL of the server</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

@@ -2,7 +2,7 @@
     File Name: DropdownButton.vue
     Description: Create dropdown using button
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Button" code-toggler>
-        
+
         <p>You can customize the component or element that initialize the dropdown in this case, it is a Button that is the most common</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

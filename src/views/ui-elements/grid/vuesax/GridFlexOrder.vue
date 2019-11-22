@@ -2,7 +2,7 @@
     File Name: GridFlexOrder.vue
     Description: Change the order of the grid items
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -29,7 +29,7 @@
                 </vs-col>
             </vs-row>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;vs-row vs-type=&quot;flex&quot;&gt;
   &lt;vs-col

@@ -2,7 +2,7 @@
     File Name: ColorsGradient.vue.vue
     Description: Theme's main colors(primary, success etc.) with gradient
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Gradient Colors" code-toggler>
-        
+
         <p>We have make gradient color based on our default color:</p>
 
         <vx-list :list="defaultColors"></vx-list>

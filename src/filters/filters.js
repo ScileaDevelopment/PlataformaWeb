@@ -12,6 +12,19 @@ Vue.filter('capitalize', function (value) {
 	return capitalized_array.join(" ");
 })
 
+Vue.filter('title', function (value, replacer="_") {
+  if (!value) return ''
+  value = value.toString()
+
+  let arr = value.split(replacer)
+  let capitalized_array = []
+  arr.forEach((word) => {
+    let capitalized = word.charAt(0).toUpperCase() + word.slice(1)
+    capitalized_array.push(capitalized)
+  })
+  return capitalized_array.join(" ");
+})
+
 Vue.filter('truncate', function(value, limit) {
 	return value.substring(0, limit)
 })

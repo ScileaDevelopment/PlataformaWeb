@@ -2,7 +2,7 @@
     File Name: TabsPosition.vue
     Description: Rendering of default Tabs
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Position" code-toggler>
-        
+
         <p>You can change the position of the menu with the property <code>position</code> that as a value you can have: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

@@ -2,7 +2,7 @@
     File Name: DividerDefault.vue
     Description: Rendering of default divider
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>You can add a line to divide with the component <code>vs-divider</code></p>
 
         <div class="op-block mt-5">

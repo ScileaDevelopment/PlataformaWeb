@@ -2,7 +2,7 @@
     File Name: AlertTitle.vue
     Description: Alert with title
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Title" code-toggler>
-        
+
         <p>Add a title to the alert with the property <code>title</code></p>
 
         <vs-alert title="Lorem ipsum dolor sit amet" color="rgb(231, 154, 23)" active="true" class="mt-5 text-warning">

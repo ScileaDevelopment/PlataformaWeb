@@ -2,7 +2,7 @@
     File Name: ButtonRelief.vue
     Description: Button with edges
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Relief" code-toggler>
-        
+
         <p>To add a type of button with edges we change the value of <code>type</code> by: <code>relief</code></p>
 
         <div class="demo-alignment">

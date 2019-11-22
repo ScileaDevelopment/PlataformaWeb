@@ -2,7 +2,7 @@
     File Name: ChipClosable.vue
     Description: For making a chip closable
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Closable" code-toggler>
-        
+
         <p>For making a chip closable</p>
 
         <div class="demo-alignment">
@@ -39,7 +39,7 @@ export default {
         &apos;GitHub&apos;,
         &apos;Behance&apos;,
         &apos;Vuejs&apos;,
-        &apos;Vuesax&apos;,
+        &apos;Vuexy&apos;,
       ],
     }
   },
@@ -50,7 +50,7 @@ export default {
         &apos;GitHub&apos;,
         &apos;Behance&apos;,
         &apos;Vuejs&apos;,
-        &apos;Vuesax&apos;,
+        &apos;Vuexy&apos;,
       ]
     },
     remove (item) {
@@ -73,7 +73,7 @@ export default {
                 'GitHub',
                 'Behance',
                 'Vuejs',
-                'Vuesax',
+                'Vuexy',
             ],
         }
     },
@@ -84,7 +84,7 @@ export default {
                 'GitHub',
                 'Behance',
                 'Vuejs',
-                'Vuesax',
+                'Vuexy',
             ]
         },
         remove(item) {

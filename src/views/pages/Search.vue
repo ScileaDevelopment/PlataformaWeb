@@ -2,7 +2,7 @@
     File Name: Search.vue
     Description: Search Page
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,16 +11,16 @@
 <template>
     <div id="search-page">
         <div class="search-page__search-bar flex items-center">
-            <vs-input placeholder="Search" v-model="searchQuery" class="w-full input-rounded-full no-icon-border" icon="icon-search" icon-pack="feather" />
+            <vs-input icon-no-border placeholder="Search" v-model="searchQuery" class="w-full input-rounded-full" icon="icon-search" icon-pack="feather" />
         </div>
         <div class="search-page__serch-menu flex flex-wrap items-center md:justify-between mt-8">
             <div class="flex flex-wrap">
-                <span class="search-tab-filter">All</span>
-                <span class="search-tab-filter">Images</span>
-                <span class="search-tab-filter">Video</span>
-                <span class="search-tab-filter">Maps</span>
-                <span class="search-tab-filter">News</span>
-                <vs-dropdown vs-trigger-click class="search-tab-filter">
+                <span class="search-tab-filter shadow-drop">All</span>
+                <span class="search-tab-filter shadow-drop">Images</span>
+                <span class="search-tab-filter shadow-drop">Video</span>
+                <span class="search-tab-filter shadow-drop">Maps</span>
+                <span class="search-tab-filter shadow-drop">News</span>
+                <vs-dropdown vs-trigger-click class="search-tab-filter shadow-drop">
                     <span>More</span>
                     <vs-dropdown-menu class="search-page__more-dropdown">
                         <vs-dropdown-item>Shopping</vs-dropdown-item>
@@ -32,7 +32,7 @@
                 </vs-dropdown>
             </div>
             <div>
-                <vs-dropdown vs-trigger-click class="search-tab-filter">
+                <vs-dropdown vs-trigger-click class="search-tab-filter shadow-drop">
                     <span>Settings</span>
                     <vs-dropdown-menu class="search-page__settings-dropdown w-64">
                         <vs-dropdown-item>Search settings</vs-dropdown-item>
@@ -42,7 +42,7 @@
                         <vs-dropdown-item>Advanced Search</vs-dropdown-item>
                     </vs-dropdown-menu>
                 </vs-dropdown>
-                <span class="search-tab-filter mr-0">Tools</span>
+                <span class="search-tab-filter mr-0 shadow-drop">Tools</span>
             </div>
         </div>
         <div class="search-meta flex flex-wrap justify-between mt-6">
@@ -83,7 +83,7 @@
                 <vx-card class="search-page__search-results lg:p-2">
                     <div class="vx-row search-Page__search-result" v-for="(result, index) in searchResults" :key="index" :class="{ 'mt-8': index }">
                         <div class="vx-col mb-2" :class="result.resultImg || result.resultVideo ? 'lg:w-1/5 md:w-1/4 w-full' : 'w-full'" v-if="result.resultImg || result.resultVideo">
-                            <img :src="require(`@/assets/images/pages/${result.resultImg}`)" alt="result-img" class="responsive" v-if="result.resultImg">
+                            <img :src="result.resultImg" alt="result-img" class="responsive" v-if="result.resultImg">
                             <video-player ref="player" class="media-video-player" :options="playerOptions(result.resultVideo[0])" v-else-if="result.resultVideo" />
                         </div>
                         <div class="vx-col" :class="result.resultImg || result.resultVideo ? 'lg:w-4/5 md:w-3/4' : 'w-full'">
@@ -123,7 +123,7 @@
                 <vx-card card-border class="bg-transparent no-shadow">
                     <div class="search-page__search-img-gallery vx-row mb-4">
                         <div class="vx-col w-full">
-                            <img :src="require(`@/assets/images/pages/${knowledgePanel.img}`)" alt="gallery-img" class="responsive shadow-md rounded-lg">
+                            <img :src="knowledgePanel.img" alt="gallery-img" class="responsive shadow-md rounded-lg">
                         </div>
                     </div>
                     <h3>{{ knowledgePanel.title }}</h3>
@@ -148,7 +148,7 @@
                         <p class="text-lg font-medium mb-2">People also search for</p>
                         <div class="knowledge-panel__suggested-list flex flex-wrap">
                             <div class="knowledge-panel__suggestion mr-4 text-center" v-for="search in knowledgePanel.suggestedSearches" :key="search.name">
-                                <a :href="search.url" target="_blank" rel="nofollow"><img :src="require(`@/assets/images/pages/${search.img}`)" alt="suggested-search-img" class="mx-auto" height="40px" width="40px"></a>
+                                <a :href="search.url" target="_blank" rel="nofollow"><img :src="search.img" alt="suggested-search-img" class="mx-auto" height="40px" width="40px"></a>
                                 <a :href="search.url" target="_blank" rel="nofollow" class="text-sm">{{ search.name }}</a>
                             </div>
                         </div>
@@ -169,10 +169,10 @@ export default{
             searchQuery: 'Modern Admin',
             currentPage: 1,
             knowledgePanel: {
-                img: ['modern.jpg'],
-                title: 'Modern Admin - Clean Bootstrap 4 Dashboard HTML Template',
-                subtitle: 'Clean Bootstrap 4 Dashboard HTML Template',
-                description: 'Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard can be used for any type of web applications: Project Management, eCommerce backends, CRM, Analytics, Fitness or any custom admin panels.',
+                img         : require("@/assets/images/pages/modern.jpg"),
+                title       : 'Modern Admin - Clean Bootstrap 4 Dashboard HTML Template',
+                subtitle    : 'Clean Bootstrap 4 Dashboard HTML Template',
+                description : 'Clean Bootstrap 4 Dashboard HTML Template + Bitcoin Dashboard can be used for any type of web applications: Project Management, eCommerce backends, CRM, Analytics, Fitness or any custom admin panels.',
                 info: [
                     { title: '1,367', subtitle: 'Sales' },
                     { title: '74', subtitle: 'Comments' },
@@ -181,7 +181,7 @@ export default{
                 externalLink: {
                     title: 'View on Themeforest',
                     icon: 'ExternalLinkIcon',
-                    url: 'https://themeforest.net/item/modern-admin-clean-bootstrap-4-dashboard-html-template/21430660',
+                    url: 'https://1.envato.market/modern_admin',
                 },
                 resultMetaList: [
                     { name: 'Bootstrap', value: 'v4.13 updated' },
@@ -191,17 +191,33 @@ export default{
                     { name: 'Layout', value: 'Responsive' },
                 ],
                 suggestedSearches: [
-                    { name: 'Apex', img: '1-apex.png', url: 'https://themeforest.net/item/apex-angular-4-bootstrap-admin-template/20774875'},
-                    { name: 'Convex', img: '3-convex.png', url: 'https://themeforest.net/item/convex-angular-bootstrap-admin-dashboard-template/22424619'},
-                    { name: 'Materialize', img: '4-materialize.png', url: 'https://themeforest.net/item/materialize-material-design-admin-template/11446068'},
-                    { name: 'Stack', img: '2-stack.png', url: 'https://themeforest.net/item/stack-responsive-bootstrap-4-admin-template/20039431'},
+                    {
+                      name: 'Apex',
+                      img:  require("@/assets/images/pages/1-apex.png"),
+                      url:  'https://1.envato.market/apex_admin'
+                    },
+                    {
+                      name: 'Convex',
+                      img:  require("@/assets/images/pages/3-convex.png"),
+                      url:  'https://1.envato.market/convex_angular_admin'
+                    },
+                    {
+                      name: 'Materialize',
+                      img:  require("@/assets/images/pages/4-materialize.png"),
+                      url:  'https://1.envato.market/materialize_admin'
+                    },
+                    {
+                      name: 'Stack',
+                      img:  require("@/assets/images/pages/2-stack.png"),
+                      url:  'https://1.envato.market/stack_admin'
+                    },
                 ]
             },
             searchResults: [
                 {
                     title: 'Modern Admin - Clean Bootstrap 4 Dashboard HTML Template',
-                    linkUrl: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
-                    resultUrl: 'https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent',
+                    linkUrl: 'https://1.envato.market/modern_admin',
+                    resultUrl: 'https://1.envato.market/pixinvent_portfolio',
                     metaData: {
                         ratings: 5,
                         info: ['25 reviews', '25.00 USD', 'In Stock']
@@ -211,41 +227,41 @@ export default{
                     sitelinks: [
                         {
                             title: 'Dashboard',
-                            url: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
+                            url: 'https://1.envato.market/modern_admin',
                             description: 'Halvah marzipan icing chocolate caramels candy canes carrot cake dragée apple pie. Croissant oat cake gummies biscuit.'
                         },
                         {
                             title: 'UI Components',
-                            url: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
+                            url: 'https://1.envato.market/modern_admin',
                             description: 'Brownie lollipop chocolate bar chocolate cake macaroon. Bonbon chocolate tootsie roll chocolate.'
                         },
                         {
                             title: 'Form Elements',
-                            url: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
+                            url: 'https://1.envato.market/modern_admin',
                             description: 'Lollipop cake wafer. Candy chocolate toffee icing. Chocolate cake cupcake toffee chupa chups topping.'
                         },
                         {
                             title: 'Support',
-                            url: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
+                            url: 'https://1.envato.market/modern_admin',
                             description: 'Carrot cake sweet soufflé cake bear claw lollipop. Muffin sugar plum chupa chups liquorice cotton candy halvah danish cake.'
                         },
                         {
                             title: 'Charts',
-                            url: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
+                            url: 'https://1.envato.market/modern_admin',
                             description: 'Gingerbread chupa chups toffee jelly chocolate cake tiramisu marshmallow. Donut tiramisu chocolate marshmallow.'
                         },
                         {
                             title: 'Documentation',
-                            url: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
+                            url: 'https://1.envato.market/modern_admin',
                             description: 'Powder brownie candy toffee soufflé. Gingerbread sweet roll gingerbread icing macaroon.'
                         },
                     ]
                 },
                 {
                     title: 'Attire bench - Quick win shoot me an email',
-                    linkUrl: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
-                    resultUrl: 'https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent',
-                    resultImg: 'search-result.jpg',
+                    linkUrl: 'https://1.envato.market/modern_admin',
+                    resultUrl: 'https://1.envato.market/pixinvent_portfolio',
+                    resultImg: require("@/assets/images/pages/search-result.jpg"),
                     metaData: {
                         ratings: 4.5,
                         info: ['17 reviews', '12 votes', '28.00 USD', 'In Stock']
@@ -255,8 +271,8 @@ export default{
                 },
                 {
                     title: 'The Table - for what do you feel you would',
-                    linkUrl: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
-                    resultUrl: 'https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent',
+                    linkUrl: 'https://1.envato.market/modern_admin',
+                    resultUrl: 'https://1.envato.market/pixinvent_portfolio',
                     resultVideo: [{sources: [ { type: "video/mp4", src: "http://vjs.zencdn.net/v/oceans.mp4" } ], poster: 'https://surmon-china.github.io/vue-quill-editor/static/images/surmon-1.jpg'}],
                     metaData: {
                         info: ['1M Views', 'Uploaded by PlayStation']
@@ -266,21 +282,21 @@ export default{
                 },
                 {
                     title: 'Microdosing - deep v actually schlitz chia',
-                    linkUrl: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
-                    resultUrl: 'https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent',
+                    linkUrl: 'https://1.envato.market/modern_admin',
+                    resultUrl: 'https://1.envato.market/pixinvent_portfolio',
                     description: 'Wafer liquorice sweet roll jelly beans cake soufflé. Oat cake marzipan chocolate cake sesame snaps jujubes. Dragée biscuit dessert. Chocolate muffin wafer. Sugar plum icing tootsie roll gummi bears marzipan candy canes biscuit.',
                 },
                 {
                     title: 'Aesthetic neutra freegan, mlkshk literally',
-                    linkUrl: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html',
-                    resultUrl: 'https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent',
+                    linkUrl: 'https://1.envato.market/modern_admin',
+                    resultUrl: 'https://1.envato.market/pixinvent_portfolio',
                     time: 'Mon Jun 30 2017 10:30:00 GMT+0000 (GMT)',
                     description: 'Donut jelly cake chupa chups powder chocolate cake cheesecake. Wafer macaroon sweet roll gingerbread cheesecake gummi bears. Marzipan jujubes sweet roll tootsie roll cookie apple pie brownie bear claw jelly beans.',
                 },
                 {
                     title: 'iCell - disrupt butcher pitchfork.',
-                    linkUrl: 'https://pixinvent.com/modern-admin-clean-bootstrap-4-dashboard-html-template/html/ltr/vertical-modern-menu-template/search-website.html#',
-                    resultUrl: 'https://themeforest.net/user/pixinvent/portfolio?ref=pixinvent',
+                    linkUrl: 'https://1.envato.market/modern_admin#',
+                    resultUrl: 'https://1.envato.market/pixinvent_portfolio',
                     time: 'Mon DEC 12 2015 08:39:00 GMT+0000 (GMT)',
                     description: 'Cake fruitcake cake caramels jelly beans chocolate bar. Macaroon gingerbread pastry. Gummies ice cream chocolate lollipop brownie cotton candy. Topping cotton candy brownie. Cake tiramisu macaroon sugar plum. Sweet cotton candy powder tootsie roll candy gummies brownie lollipop. Sweet muffin pudding.',
                 },
@@ -312,5 +328,5 @@ export default{
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/vuesax/pages/search.scss";
+@import "@/assets/scss/vuexy/pages/search.scss";
 </style>

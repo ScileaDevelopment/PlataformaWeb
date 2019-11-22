@@ -3,7 +3,7 @@
     Description: Text Colors classes
     Note: If you added more colors then you can use it using 'text-{colorName}'
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -25,7 +25,7 @@
             <span class="text-black">black</span>
             <span class="text-transparent">transparent</span>
         </div>
-        
+
         <template slot="codeContainer">
 
 &lt;div class=&quot;demo-alignment&quot;&gt;

@@ -2,7 +2,7 @@
     File Name: NavbarType.vue
     Description: change navbar type - styles
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Type" code-toggler>
-        
+
         <p>If you want you can change the style of the buttons and the navbar by changing the property <code>type</code></p>
 
         <div class="mt-5">

@@ -2,32 +2,115 @@
   File Name: moduleEmailActions.js
   Description: Email Module Actions
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
+import axios from "@/axios.js"
 
 export default {
-    setMailSearchQuery({ commit }, query){
-        commit('SET_MAIL_SEARCH_QUERY', query)
+    setEmailSearchQuery({ commit }, query){
+        commit("SET_EMAIL_SEARCH_QUERY", query)
     },
-    updateMailFilter({ commit }, filterName){
-        commit('UPDATE_MAIL_FILTER', filterName)
+
+    // Fetch emails
+    fetchEmails({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        axios.get("/api/apps/email/mails", { params: {filter: payload.filter} })
+          .then((response) => {
+            commit("SET_MAILS", response.data)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
-    toggleIsMailStarred({ commit }, payload) {
-        commit('TOGGLE_IS_MAIL_STARRED', payload);
+
+    // Fetch Tags
+    fetchTags({ commit }) {
+      return new Promise((resolve, reject) => {
+        axios.get("/api/apps/email/tags")
+          .then((response) => {
+            commit("SET_TAGS", response.data)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
+
+    // Fetch Email Meta
+    fetchMeta({ commit }) {
+      return new Promise((resolve, reject) => {
+        axios.get("/api/apps/email/meta")
+          .then((response) => {
+            commit("SET_META", response.data)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
+    },
+
+    // Move mails to another folder
     moveMailsTo({ commit }, payload) {
-        commit('MOVE_MAILS_TO', payload);
+      return new Promise((resolve, reject) => {
+        axios.post("/api/apps/email/move-mails", { emailIds: payload.emailIds, mailFolder: payload.to })
+          .then((response) => {
+            commit("MOVE_MAILS_TO", payload)
+            commit("UPDATE_UNREAD_META_ON_MOVE", payload)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
-    updateMailUnread({ commit }, payload) {
-        commit('UPDATE_MAIL_UNREAD', payload);
+
+    // Update Mails label
+    updateLabels({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        axios.post("/api/apps/email/update-labels", { emailIds: payload.mails, label: payload.label })
+          .then((response) => {
+            commit("UPDATE_LABELS", payload)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
-    addLabelToMails({ commit }, payload) {
-        commit('ADD_LABEL_TO_MAILS', payload);
+
+    setLabels({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        axios.post("/api/apps/email/set-labels", { mailId: payload.mailId, labels: payload.labels })
+          .then((response) => {
+            commit("SET_LABELS", payload)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
-    updateMailLabels({ commit }, payload) {
-        commit('UPDATE_MAIL_LABELS', payload);
+
+    // Set mails flag unread to true
+    setUnread({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        axios.post("/api/apps/email/mark-unread", { emailIds: payload.emailIds, unreadFlag: payload.unreadFlag })
+          .then((response) => {
+            commit("SET_UNREAD", payload)
+
+            // Remove this if you are getting meta like us
+            // Use your own method to update email meta if you are fetching email meta
+            commit("UPDATE_UNREAD_META", payload)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
+    },
+
+    // Toggle isStarred flag in mail
+    toggleIsMailStarred({ commit }, payload) {
+      return new Promise((resolve, reject) => {
+        axios.post("/api/apps/email/set-starred", { mailId: payload.mailId, value: payload.value })
+          .then((response) => {
+            commit("TOGGLE_IS_MAIL_STARRED", payload)
+            resolve(response)
+          })
+          .catch((error) => { reject(error) })
+      })
     },
 }

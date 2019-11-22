@@ -11,7 +11,7 @@
                       pageTitle => Display title besides breadcrumb
                     }
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
@@ -53,7 +53,7 @@ const router = new Router({
                     name: 'dashboard-analytics',
                     component: () => import('./views/DashboardAnalytics.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'editor',
                     }
                 },
                 {
@@ -71,10 +71,16 @@ const router = new Router({
         // =============================================================================
                 {
                     path: '/apps/todo',
+                    redirect: '/apps/todo/all',
                     name: 'todo',
+                },
+                {
+                    path: '/apps/todo/:filter',
                     component: () => import('./views/apps/todo/Todo.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'editor',
+                        parent: "todo",
+                        no_scroll: true,
                     }
                 },
                 {
@@ -82,15 +88,22 @@ const router = new Router({
                     name: 'chat',
                     component: () => import('./views/apps/chat/Chat.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'editor',
+                        no_scroll: true,
                     }
                 },
                 {
                     path: '/apps/email',
+                    redirect: '/apps/email/inbox',
                     name: 'email',
+                },
+                {
+                    path: '/apps/email/:filter',
                     component: () => import('./views/apps/email/Email.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'editor',
+                        parent: 'email',
+                        no_scroll: true,
                     }
                 },
                 {
@@ -98,7 +111,8 @@ const router = new Router({
                     name: 'calendar-simple-calendar',
                     component: () => import('./views/apps/calendar/SimpleCalendar.vue'),
                     meta: {
-                        rule: 'editor'
+                        rule: 'editor',
+                        no_scroll: true,
                     }
                 },
                 {
@@ -142,6 +156,77 @@ const router = new Router({
                         pageTitle: 'Checkout',
                         rule: 'editor'
                     }
+                },
+                /*
+                  Below route is for demo purpose
+                  You can use this route in your app
+                    {
+                        path: '/apps/eCommerce/item/',
+                        name: 'ecommerce-item-detail-view',
+                        redirect: '/apps/eCommerce/shop',
+                    }
+                */
+                {
+                    path: '/apps/eCommerce/item/',
+                    redirect: '/apps/eCommerce/item/5546604',
+                },
+                {
+                    path: '/apps/eCommerce/item/:item_id',
+                    name: 'ecommerce-item-detail-view',
+                    component: () => import('./views/apps/eCommerce/ECommerceItemDetailView.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'eCommerce'},
+                            { title: 'Shop', url: {name: 'ecommerce-shop'} },
+                            { title: 'Item Details', active: true },
+                        ],
+                        parent: "ecommerce-item-detail-view",
+                        pageTitle: 'Item Details',
+                        rule: 'editor'
+                    }
+                },
+                {
+                    path: '/apps/user/user-list',
+                    name: 'app-user-list',
+                    component: () => import('@/views/apps/user/user-list/UserList.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'User' },
+                            { title: 'List', active: true },
+                        ],
+                        pageTitle: 'User List',
+                        rule: 'editor'
+                    },
+                },
+                {
+                    path: '/apps/user/user-view/:userId',
+                    name: 'app-user-view',
+                    component: () => import('@/views/apps/user/UserView.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'User' },
+                            { title: 'View', active: true },
+                        ],
+                        pageTitle: 'User View',
+                        rule: 'editor'
+                    },
+                },
+                {
+                    path: '/apps/user/user-edit/:userId',
+                    name: 'app-user-edit',
+                    component: () => import('@/views/apps/user/user-edit/UserEdit.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'User' },
+                            { title: 'Edit', active: true },
+                        ],
+                        pageTitle: 'User Edit',
+                        rule: 'editor'
+                    },
                 },
         // =============================================================================
         // UI ELEMENTS
@@ -805,6 +890,20 @@ const router = new Router({
                     },
                 },
                 {
+                    path: '/pages/user-settings',
+                    name: 'page-user-settings',
+                    component: () => import('@/views/pages/user-settings/UserSettings.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'Pages' },
+                            { title: 'User Settings', active: true },
+                        ],
+                        pageTitle: 'Settings',
+                        rule: 'editor'
+                    },
+                },
+                {
                     path: '/pages/faq',
                     name: 'page-faq',
                     component: () => import('@/views/pages/Faq.vue'),
@@ -1028,33 +1127,17 @@ const router = new Router({
                     },
                 },
                 {
-                    path: '/extensions/access-control-editor',
-                    name: 'extra-component-access-control-editor',
-                    component: () => import('@/views/components/extra-components/access-control/AccessControlEditor.vue'),
+                    path: '/extensions/access-control',
+                    name: 'extra-component-access-control',
+                    component: () => import('@/views/components/extra-components/access-control/AccessControl.vue'),
                     meta: {
                         breadcrumb: [
                             { title: 'Home', url: '/' },
                             { title: 'Extensions' },
-                            { title: 'Access Control' },
-                            { title: 'Editor View', active: true },
+                            { title: 'Access Control', active: true },
                         ],
-                        pageTitle: 'Editor View',
+                        pageTitle: 'Access Control',
                         rule: 'editor'
-                    },
-                },
-                {
-                    path: '/extensions/access-control-admin',
-                    name: 'extra-component-access-control-only-admin',
-                    component: () => import('@/views/components/extra-components/access-control/AccessControlAdmin.vue'),
-                    meta: {
-                        breadcrumb: [
-                            { title: 'Home', url: '/' },
-                            { title: 'Extensions' },
-                            { title: 'Access Control' },
-                            { title: 'Admin View', active: true },
-                        ],
-                        pageTitle: 'Admin View',
-                        rule: 'admin'
                     },
                 },
                 {
@@ -1155,6 +1238,51 @@ const router = new Router({
                         rule: 'editor'
                     },
                 },
+                {
+                    path: '/import-export/import',
+                    name: 'import-excel',
+                    component: () => import('@/views/components/extra-components/import-export/Import.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'Extensions' },
+                            { title: 'Import/Export' },
+                            { title: 'Import', active: true },
+                        ],
+                        pageTitle: 'Import Excel',
+                        rule: 'editor'
+                    },
+                },
+                {
+                    path: '/import-export/export',
+                    name: 'export-excel',
+                    component: () => import('@/views/components/extra-components/import-export/Export.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'Extensions' },
+                            { title: 'Import/Export' },
+                            { title: 'Export', active: true },
+                        ],
+                        pageTitle: 'Export Excel',
+                        rule: 'editor'
+                    },
+                },
+                {
+                    path: '/import-export/export-selected',
+                    name: 'export-excel-selected',
+                    component: () => import('@/views/components/extra-components/import-export/ExportSelected.vue'),
+                    meta: {
+                        breadcrumb: [
+                            { title: 'Home', url: '/' },
+                            { title: 'Extensions' },
+                            { title: 'Import/Export' },
+                            { title: 'Export Selected', active: true },
+                        ],
+                        pageTitle: 'Export Excel',
+                        rule: 'editor'
+                    },
+                },
             ],
         },
     // =============================================================================
@@ -1178,7 +1306,7 @@ const router = new Router({
                 {
                     path: '/pages/login',
                     name: 'page-login',
-                    component: () => import('@/views/pages/Login.vue'),
+                    component: () => import('@/views/pages/login/Login.vue'),
                     meta: {
                         rule: 'editor'
                     }
@@ -1186,7 +1314,7 @@ const router = new Router({
                 {
                     path: '/pages/register',
                     name: 'page-register',
-                    component: () => import('@/views/pages/Register.vue'),
+                    component: () => import('@/views/pages/register/Register.vue'),
                     meta: {
                         rule: 'editor'
                     }
@@ -1277,22 +1405,29 @@ router.beforeEach((to, from, next) => {
     firebase.auth().onAuthStateChanged(() => {
 
         // get firebase current user
-        const firebaseCurrentUser = firebase.auth().currentUser;
+        const firebaseCurrentUser = firebase.auth().currentUser
 
-        if (
-            to.path === "/pages/login" ||
-            to.path === "/pages/forgot-password" ||
-            to.path === "/pages/error-404" ||
-            to.path === "/pages/error-500" ||
-            to.path === "/pages/register" ||
-            to.path === "/callback" ||
-            to.path === "/pages/comingsoon" ||
-            (auth.isAuthenticated() || firebaseCurrentUser)
-        ) {
-            return next();
+        // if (
+        //     to.path === "/pages/login" ||
+        //     to.path === "/pages/forgot-password" ||
+        //     to.path === "/pages/error-404" ||
+        //     to.path === "/pages/error-500" ||
+        //     to.path === "/pages/register" ||
+        //     to.path === "/callback" ||
+        //     to.path === "/pages/comingsoon" ||
+        //     (auth.isAuthenticated() || firebaseCurrentUser)
+        // ) {
+        //     return next();
+        // }
+
+        // If auth required, check login. If login fails redirect to login page
+        if(to.meta.authRequired) {
+          if (!(auth.isAuthenticated() || firebaseCurrentUser)) {
+            router.push({ path: '/pages/login', query: { to: to.path } })
+          }
         }
 
-        router.push({ path: '/pages/login', query: { to: to.path } })
+        return next()
         // Specify the current path as the customState parameter, meaning it
         // will be returned to the application after auth
         // auth.login({ target: to.path });

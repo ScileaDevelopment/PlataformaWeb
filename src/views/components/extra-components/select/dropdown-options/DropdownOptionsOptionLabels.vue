@@ -2,7 +2,7 @@
     File Name: DropdownOptionsOptionLabels.vue
     Description: When option array have objects pass lable prop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -13,12 +13,12 @@
 
         <div>
             <p class="mb-3">When the options array contains objects, vue-select looks for the label key to display by default. You can set your own label to match your source data using the label prop</p>
-            <v-select label="countryName" :options="countries"></v-select>
+            <v-select label="countryName" :options="countries" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
         </div>
-        
+
         <template slot="codeContainer">
 &lt;template&gt;
-  &lt;v-select label=&quot;countryName&quot; :options=&quot;countries&quot;&gt;&lt;/v-select&gt;
+  &lt;v-select label=&quot;countryName&quot; :options=&quot;countries&quot; :dir=&quot;$vs.rtl ? 'rtl' : 'ltr'&quot; /&gt;
 &lt;/template&gt;
 
 &lt;script&gt;
@@ -29,8 +29,8 @@ export default{
     return {
       countries: [
         {
-          countryCode: &quot;INR&quot;,
-          countryName: &quot;India&quot;,
+          countryCode: &quot;DE&quot;,
+          countryName: &quot;Germany&quot;,
         },
         {
           countryCode: &quot;AUS&quot;,
@@ -60,8 +60,8 @@ export default{
         return {
             countries: [
                 {
-                    countryCode: "INR",
-                    countryName: "India",
+                    countryCode: "DE",
+                    countryName: "Germany",
                 },
                 {
                     countryCode: "AUS",
@@ -77,6 +77,6 @@ export default{
     components: {
         'v-select': vSelect,
         Prism
-    }   
+    }
 }
 </script>

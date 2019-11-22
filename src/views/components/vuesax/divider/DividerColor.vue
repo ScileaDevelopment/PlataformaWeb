@@ -2,7 +2,7 @@
     File Name: DividerColor.vue
     Description: Change Divider line color
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
+
         <p>You can change the color of the divider line with the property <code>color</code>, you can use the main colors or <strong>RGB</strong> and <strong>HEX</strong>.</p>
 
         <vs-alert icon="warning" active="true" color="warning" class="mt-5">

@@ -2,7 +2,7 @@
 	File Name: analyticsData.vue
 	Description: Data shown by charts
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
@@ -191,18 +191,25 @@ export default {
         }
     },
     revenueComparisonLine: {
-        series: [{
-                name: "This Month",
-                data: [45000, 47000, 44800, 47500, 45500, 48000, 46500, 48600]
-            },
-            {
-                name: "Last Month",
-                data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000]
-            }
-        ],
+        // series: [{
+        //         name: "This Month",
+        //         data: [45000, 47000, 44800, 47500, 45500, 48000, 46500, 48600]
+        //     },
+        //     {
+        //         name: "Last Month",
+        //         data: [46000, 48000, 45500, 46600, 44500, 46500, 45000, 47000]
+        //     }
+        // ],
         chartOptions: {
             chart: {
                 toolbar: { show: false },
+                dropShadow: {
+                  enabled: true,
+                  top: 5,
+                  left: 0,
+                  blur: 4,
+                  opacity: 0.10,
+                },
             },
             stroke: {
                 curve: 'smooth',
@@ -501,10 +508,10 @@ export default {
     },
     // BAR CHART
     salesBar: {
-        series: [{
-            name: 'Sessions',
-            data: [75, 125, 225, 175, 125, 75, 25]
-        }],
+        // series: [{
+        //     name: 'Sessions',
+        //     data: [75, 125, 225, 175, 125, 75, 25]
+        // }],
         chartOptions: {
             grid: {
                 show: false,
@@ -523,7 +530,7 @@ export default {
                     filter: 'none'
                 }
             },
-            colors: ['#e6edf7', '#e6edf7', '#7367f0', '#e6edf7', '#e6edf7', '#e6edf7'],
+            colors: ['rgba(115,103,240,0.15)', 'rgba(115,103,240,0.15)', '#7367f0', 'rgba(115,103,240,0.15)', 'rgba(115,103,240,0.15)', 'rgba(115,103,240,0.15)'],
             plotOptions: {
                 bar: {
                     columnWidth: '45%',
@@ -539,7 +546,7 @@ export default {
     },
     // RADIAL BAR
     goalOverviewRadialBar: {
-        series: [83],
+        // series: [83],
         chartOptions: {
             plotOptions: {
                 radialBar: {
@@ -597,17 +604,17 @@ export default {
         }
     },
     supportTrackerRadialBar: {
-        chartData: {
-            totalTickets: 163,
-            openTickets: 103,
-            lastResponse: '1d',
-        },
-        series: [83],
+        // chartData: {
+        //     totalTickets: 163,
+        //     openTickets: 103,
+        //     lastResponse: '1d',
+        // },
+        // series: [83],
         chartOptions: {
             plotOptions: {
                 radialBar: {
-                    size: 150,
-                    offsetY: -40,
+                    size: 158,
+                    offsetY: -30,
                     startAngle: -150,
                     endAngle: 150,
                     hollow: {
@@ -654,13 +661,13 @@ export default {
     },
     // RADAR
     statisticsRadar: {
-        series: [{
-            name: 'Visits',
-            data: [90, 50, 86, 40, 100, 20],
-        }, {
-            name: 'Sales',
-            data: [70, 75, 70, 76, 20, 85],
-        }],
+        // series: [{
+        //     name: 'Visits',
+        //     data: [90, 50, 86, 40, 100, 20],
+        // }, {
+        //     name: 'Sales',
+        //     data: [70, 75, 70, 76, 20, 85],
+        // }],
         chartOptions: {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
             dataLabels: {
@@ -718,13 +725,13 @@ export default {
     },
     // SessionsByDevice
     sessionsByDeviceDonut: {
-        analyticsData: [
-            { device: 'Dekstop', icon: 'MonitorIcon', color: 'primary', sessionsPercentgae: 58.6, comparedResultPercentage: 2 },
-            { device: 'Mobile', icon: 'SmartphoneIcon', color: 'warning', sessionsPercentgae: 34.9, comparedResultPercentage: 8 },
-            { device: 'Tablet', icon: 'TabletIcon', color: 'danger', sessionsPercentgae: 6.5, comparedResultPercentage: -5 },
-        ],
-        comparedResult: [2, -3, 8],
-        series: [58.6, 34.9, 6.5],
+        // analyticsData: [
+        //     { device: 'Dekstop', icon: 'MonitorIcon', color: 'primary', sessionsPercentgae: 58.6, comparedResultPercentage: 2 },
+        //     { device: 'Mobile', icon: 'SmartphoneIcon', color: 'warning', sessionsPercentgae: 34.9, comparedResultPercentage: 8 },
+        //     { device: 'Tablet', icon: 'TabletIcon', color: 'danger', sessionsPercentgae: 6.5, comparedResultPercentage: -5 },
+        // ],
+        // comparedResult: [2, -3, 8],
+        // series: [58.6, 34.9, 6.5],
         chartOptions: {
             labels: ['Desktop', 'Mobile', 'Tablet'],
             dataLabels: {
@@ -750,18 +757,18 @@ export default {
     },
     // Product Orders
     productOrdersRadialBar: {
-        analyticsData: [
-            { 'orderType': 'Finished', 'counts': 23043, color: 'primary' },
-            { 'orderType': 'Pending', 'counts': 14658, color: 'warning' },
-            { 'orderType': 'Rejected ', 'counts': 4758, color: 'danger' },
-        ],
-        series: [70, 52, 26],
+        // analyticsData: [
+        //     { 'orderType': 'Finished', 'counts': 23043, color: 'primary' },
+        //     { 'orderType': 'Pending', 'counts': 14658, color: 'warning' },
+        //     { 'orderType': 'Rejected ', 'counts': 4758, color: 'danger' },
+        // ],
+        // series: [70, 52, 26],
         chartOptions: {
             labels: ['Finished', 'Pending', 'Rejected'],
             plotOptions: {
                 radialBar: {
                     size: 165,
-                    offsetY: -25,
+                    offsetY: -5,
                     hollow: {
                         size: '20%'
                     },
@@ -827,6 +834,7 @@ export default {
                 lineCap: 'round'
             },
             chart: {
+                height: 355,
                 dropShadow: {
                     enabled: true,
                     blur: 3,
@@ -839,12 +847,12 @@ export default {
     },
     // Customers
     customersPie: {
-        analyticsData: [
-            { 'customerType': 'New', 'counts': 890, color: 'primary' },
-            { 'customerType': 'Returning', 'counts': 258, color: 'warning' },
-            { 'customerType': 'Referrals ', 'counts': 149, color: 'danger' },
-        ],
-        series: [690, 258, 149],
+        // analyticsData: [
+        //     { 'customerType': 'New', 'counts': 890, color: 'primary' },
+        //     { 'customerType': 'Returning', 'counts': 258, color: 'warning' },
+        //     { 'customerType': 'Referrals ', 'counts': 149, color: 'danger' },
+        // ],
+        // series: [690, 258, 149],
         chartOptions: {
             labels: ['New', 'Returning', 'Referrals'],
             dataLabels: {
@@ -879,10 +887,10 @@ export default {
     },
     // Sales monthly
     salesLine: {
-        series: [{
-            name: "Sales",
-            data: [140, 180, 150, 205, 160, 295, 125, 255, 205, 305, 240, 295]
-        }],
+        // series: [{
+        //     name: "Sales",
+        //     data: [140, 180, 150, 205, 160, 295, 125, 255, 205, 305, 240, 295]
+        // }],
         chartOptions: {
             chart: {
                 toolbar: { show: false },
@@ -956,13 +964,13 @@ export default {
     },
     // ClientRetention Bar Chart
     clientRetentionBar: {
-        series: [{
-            name: 'New Clients',
-            data: [175, 125, 225, 175, 160, 189, 206, 134, 159, 216, 148, 123]
-        }, {
-            name: 'Retained Clients',
-            data: [-144, -155, -141, -167, -122, -143, -158, -107, -126, -131, -140, -137]
-        }],
+        // series: [{
+        //     name: 'New Clients',
+        //     data: [175, 125, 225, 175, 160, 189, 206, 134, 159, 216, 148, 123]
+        // }, {
+        //     name: 'Retained Clients',
+        //     data: [-144, -155, -141, -167, -122, -143, -158, -107, -126, -131, -140, -137]
+        // }],
         chartOptions: {
             grid: {
                 borderColor: '#ebebeb',

@@ -2,7 +2,7 @@
     File Name: GridMixedColumnSizes.vue
     Description: Create columns of different sizes
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -26,7 +26,7 @@
                 <div class="w-1/5 bg-grid-color h-12 flex"><span class="flex m-auto">w-1/5</span></div>
             </div>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;!-- Narrower side column --&gt;
 &lt;div class=&quot;flex mb-4&quot;&gt;

@@ -2,7 +2,7 @@
 	File Name: SidebarStatic.vue
 	Description: Rendering of static sidebar
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -13,13 +13,13 @@
 
 		<p>You can also use the sidebar in static mode with the property static</p>
 
-		<vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
+		<vs-alert color="primary" icon="new_releases" active="true" class="mt-5 mb-base">
 			<p>when putting the sidebar in static mode its position becomes relative for better manipulation</p>
 		</vs-alert>
 
 		<div>
 
-			<div class="parentx-static relative" style="height: 500px;">
+			<div class="parentx-static relative" style="height: 435px;">
 				<vs-sidebar static-position default-index="1" color="primary" class="sidebarx sidebarpage bordered-sidebar" spacer v-model="active">
 					<div class="header-sidebar" slot="header">
 						<vs-avatar size="70px" src="https://randomuser.me/api/portraits/men/85.jpg" />

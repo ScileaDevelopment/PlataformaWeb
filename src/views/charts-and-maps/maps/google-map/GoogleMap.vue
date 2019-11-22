@@ -2,7 +2,7 @@
     File Name: GoogleMao.vue
     Description: Google Map (third-party) - Imports page portions
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -15,7 +15,7 @@
         <google-map-basic></google-map-basic>
         <google-map-info-window></google-map-info-window>
         <google-map-street-view></google-map-street-view>
-        
+
         <div class="content-area__content">
         </div>
     </div>

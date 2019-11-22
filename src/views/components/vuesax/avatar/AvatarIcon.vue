@@ -2,7 +2,7 @@
     File Name: AvatarIcon.vue
     Description: Change icon of avatar
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Icon" code-toggler>
-        
+
         <p>You can change the main icon of the Avatar with the property <code>icon</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

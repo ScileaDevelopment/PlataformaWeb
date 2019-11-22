@@ -2,7 +2,7 @@
     File Name: GridColumnSpacing.vue
     Description: Add space between columns
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        
+
         <template slot="codeContainer">
 &lt;div class=&quot;px-2&quot;&gt;
   &lt;div class=&quot;flex -mx-2&quot;&gt;

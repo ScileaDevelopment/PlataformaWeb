@@ -2,7 +2,7 @@
     File Name: TodoAddNew.vue
     Description: Add new todo component
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -13,10 +13,10 @@
 
         <!-- all -->
         <div class="px-6 py-4">
-            <div class="flex cursor-pointer" :class="{'text-primary': todoFilter == 'all'}" @click="applyTodoFilter('all')">
-                <feather-icon icon="MailIcon" :svgClasses="[{'text-primary stroke-current': todoFilter == 'all'}, 'h-6 w-6']"></feather-icon>
+            <router-link tag="span" class="flex cursor-pointer" :class="{'text-primary': todoFilter == 'all'}" :to="`${baseUrl}/all`">
+                <feather-icon icon="LayersIcon" :svgClasses="[{'text-primary stroke-current': todoFilter == 'all'}, 'h-6 w-6']"></feather-icon>
                 <span class="text-lg ml-3">All</span>
-            </div>
+            </router-link>
         </div>
 
         <vs-divider></vs-divider>
@@ -26,10 +26,10 @@
             <h5>Filters</h5>
 
             <template v-for="filter in todoFilters">
-                <div class="flex mt-6 cursor-pointer" :class="{'text-primary': todoFilter == filter.filter}" @click="applyTodoFilter(filter.filter)" :key="filter.filter">
+                <router-link tag="span" class="flex mt-6 cursor-pointer" :class="{'text-primary': todoFilter == filter.filter}" :to="`${baseUrl}/${filter.filter}`" :key="filter.filter">
                     <feather-icon :icon="filter.icon" :svgClasses="[{'text-primary stroke-current': todoFilter == filter.filter}, 'h-6 w-6']"></feather-icon>
                     <span class="text-lg ml-3">{{ filter.filterName }}</span>
-                </div>
+                </router-link>
             </template>
 
         </div>
@@ -39,10 +39,10 @@
         <div class="px-6 py-4">
             <h5>Labels</h5>
             <div class="todo__lables-list">
-                <div class="todo__label flex items-center mt-6 cursor-pointer" v-for="(tag, index) in todoTags" :key="index" @click="applyTodoFilter(tag.value)">
-                    <div class="h-4 w-4 rounded-full mr-4" :class="'bg-' + tag.color"></div>
+                <router-link tag="span" class="todo__label flex items-center mt-6 cursor-pointer" v-for="(tag, index) in taskTags" :key="index" :to="`${baseUrl}/${tag.value}`">
+                    <div class="ml-1 h-3 w-3 rounded-full mr-4" :class="'border-2 border-solid border-' + tag.color" />
                     <span class="text-lg" :class="{'text-primary': todoFilter == tag.value}">{{ tag.text }}</span>
-                </div>
+                </router-link>
             </div>
         </div>
 
@@ -57,24 +57,22 @@ export default{
             todoFilters: [
                 { filterName: 'Starred', filter: 'starred', icon: 'StarIcon' },
                 { filterName: 'Important', filter: 'important', icon: 'InfoIcon' },
-                { filterName: 'Done', filter: 'done', icon: 'CheckIcon' },
+                { filterName: 'Completed', filter: 'completed', icon: 'CheckIcon' },
                 { filterName: 'Trashed', filter: 'trashed', icon: 'TrashIcon' },
             ]
         }
     },
     computed: {
-        todoTags() {
-            return this.$store.state.todo.todoTags;
+        taskTags() {
+            return this.$store.state.todo.taskTags;
         },
         todoFilter() {
-            return this.$store.state.todo.todoFilter;
-        }
-    },
-    methods: {
-        applyTodoFilter(filterName) {
-            this.$store.dispatch('todo/applyTodoFilter', filterName);
-            this.$emit('closeSidebar', false);
+            return this.$route.params.filter
         },
-    },
+        baseUrl() {
+          const path = this.$route.path
+          return path.slice(0, path.lastIndexOf("/"))
+        }
+    }
 }
 </script>

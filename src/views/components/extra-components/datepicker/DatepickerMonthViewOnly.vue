@@ -2,7 +2,7 @@
     File Name: DatepickerMonthViewOnly.vue
     Description: Create datepicker with only day view
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -11,7 +11,7 @@
 <template>
     <vx-card title="Month View Only" code-toggler>
         <p>Rendering default DatePicker with Month view only</p>
-        
+
         <div class="mt-5">
             <datepicker :minimumView="'month'" :maximumView="'month'"></datepicker>
         </div>

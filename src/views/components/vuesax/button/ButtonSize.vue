@@ -2,7 +2,7 @@
     File Name: ButtonSize.vue
     Description: Change size of button
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Size" code-toggler>
-        
+
         <p>To define the size of button the directive is used <code>size</code>. there are three type of size: <code>large</code>, <code>default</code>, <code>small</code>. It is not important to specify the size when the button is of type <code>default</code></p>
 
         <div class="demo-alignment">

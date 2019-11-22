@@ -2,7 +2,7 @@
     File Name: ProgressColor.vue
     Description: Change color of progress with color prop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,8 +10,8 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
-        <p>Nice colors for your progress bar</p>    
+
+        <p>Nice colors for your progress bar</p>
 
         <div class="mt-5">
             <vs-progress :percent="100" color="primary"></vs-progress>

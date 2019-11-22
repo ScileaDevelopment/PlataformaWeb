@@ -2,7 +2,7 @@
     File Name: TableSingleSelected.vue
     Description: Add functionality on selecting row
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Single Selected" code-toggler>
-        
+
         <p>You can add the functionality of select a specific <strong>tr</strong> to do this add the property <code>data</code> with the value to be selected, it is usually the triterated</p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-3">
@@ -51,7 +51,7 @@
 
         <br>
 
-        <prism language="js" class="rounded-lg">            
+        <prism language="js" class="rounded-lg">
 {{ selected }}
         </prism>
 

@@ -2,7 +2,7 @@
     File Name: DropdownGroupCollapse.vue
     Description: Option 2 - Collapse groups
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -47,7 +47,7 @@
                 <vs-dropdown-item divider> Option 3 </vs-dropdown-item>
             </vs-dropdown-menu>
         </vs-dropdown>
-        
+
         <template slot="codeContainer">
 &lt;template&gt;
 
@@ -83,7 +83,7 @@
             &lt;/vs-dropdown-group&gt;
           &lt;/vs-dropdown-group&gt;
         &lt;/vs-dropdown-group&gt;
-        
+
         &lt;vs-dropdown-item divider&gt; Option 3 &lt;/vs-dropdown-item&gt;
       &lt;/vs-dropdown-menu&gt;
     &lt;/vs-dropdown&gt;

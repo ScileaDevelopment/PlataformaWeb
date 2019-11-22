@@ -2,7 +2,7 @@
     File Name: ChipColor.vue
     Description: Change background color of chips using color prop
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Color" code-toggler>
-        
+
         <p>Change the background color of the chip</p>
 
         <vs-alert icon="warning" active="true" color="warning" class="my-3">

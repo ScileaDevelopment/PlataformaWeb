@@ -2,24 +2,28 @@
   File Name: moduleTodoGetters.js
   Description: Todo Module Getters
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
 
 export default {
-    todoArrayLength: state => state.todoArray.length,
-    todoList: state => state.todoArray.filter((todoItem) => {
-        if (state.todoFilter == 'all') return !todoItem.isTrashed && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'starred') return !todoItem.isTrashed && todoItem.isStarred && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'important') return !todoItem.isTrashed && todoItem.isImportant && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'done') return !todoItem.isTrashed && todoItem.isDone && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'trashed') return todoItem.isTrashed && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'frontend') return !todoItem.isTrashed && todoItem.tags.includes('frontend') && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'backend') return !todoItem.isTrashed && todoItem.tags.includes('backend') && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'doc') return !todoItem.isTrashed && todoItem.tags.includes('doc') && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-        if (state.todoFilter == 'bug') return !todoItem.isTrashed && todoItem.tags.includes('bug') && (todoItem.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || todoItem.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()));
-    }).reverse(),
-    getTodosBySection: state => (sectionId) => state.todoArray.filter((todoItem) => todoItem.sectionId == sectionId),
+    queriedTasks: state => state.tasks.filter((task) => {
+        let isItemOfCurrentFilter = false
+
+        if(
+             state.todoFilter === 'all' && !task.isTrashed
+          || state.todoFilter === 'important' && !task.isTrashed && task.isImportant
+          || state.todoFilter === "starred" && !task.isTrashed && task.isStarred
+          || state.todoFilter === "completed" && !task.isTrashed && task.isCompleted
+          || state.todoFilter === "trashed" && task.isTrashed
+          || task.tags.includes(state.todoFilter)
+
+        ) { isItemOfCurrentFilter = true }
+
+        return isItemOfCurrentFilter && (task.title.toLowerCase().includes(state.todoSearchQuery.toLowerCase()) || task.desc.toLowerCase().includes(state.todoSearchQuery.toLowerCase()))
+    }),
+    getTask: state => taskId => state.tasks.find((task) => task.id == taskId)
+    // getTodosBySection: state => (sectionId) => state.todoArray.filter((task) => task.sectionId == sectionId),
 }

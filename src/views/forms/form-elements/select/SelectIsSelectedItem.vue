@@ -2,7 +2,7 @@
 	File Name: SelectIsSelectedItem.vue
 	Description: Display/Validate on selecting option
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
 	<vx-card title="Is Selected Item" code-toggler>
-		
+
 		<p>You can validate if an option is selected with the property <code>is-selected.sync</code> and do with it multiple variants with changing the text of the selected options</p>
 
 		<div class="demo-alignment">

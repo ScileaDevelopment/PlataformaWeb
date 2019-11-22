@@ -2,7 +2,7 @@
     File Name: NotificationsPosition.vue
     Description: Change position of apperance of notification
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Position" code-toggler>
-        
+
         <p>We can change the place where the notification appears with the property position. A practical example would be: position: 'top-right'. The supported values are</p>
 
         <vx-list :list="listPosition" class="mt-3"></vx-list>

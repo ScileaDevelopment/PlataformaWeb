@@ -2,7 +2,7 @@
     File Name: ColorDefault.vue
     Description: Theme's main colors(primary, success etc.)
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default Colors" code-toggler>
-        
+
         <p>We have a series of colors that are used by default. They include:</p>
 
         <vx-list :list="defaultColors"></vx-list>

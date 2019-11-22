@@ -2,7 +2,7 @@
     File Name: NotificationsDefault.vue
     Description: Rendering of default notifications
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>To add a notification we have the global function <code>$vs.notify</code>. The first parameter is a <code>json</code> with all the necessary attributes, or if we only want the standard notification we can only add a string with the text of the notification</p>
 
         <div class="demo-alignment">

@@ -2,7 +2,7 @@
 	File Name: LoadingContained.vue
 	Description: Create loading animation inside container
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -13,16 +13,16 @@
 
 		<p>To add a loading within a container, call the <code>$vs.loading()</code> global function passing the <code>container</code> and the <code>scale</code> parameters. When you want to remove it we have <code>$vs.loading.close()</code>, passing the same <code>container</code> parameter</p>
 
-		<vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
+		<vs-alert icon="new_releases" active="true" class="mt-5">
 			<p>For the examples, the request or the delay is simulated with <code>setTimeout</code></p>
 		</vs-alert>
 
 		<div class="demo-alignment mt-3">
 
-			<vs-button ref="loadableButton" id="button-with-loading" class="vs-con-loading__container" @click="openLoadingContained" type="relief" vslor="primary">
+			<vs-button ref="loadableButton" id="button-with-loading" class="vs-con-loading__container" @click="openLoadingContained" type="relief">
 				Button with Loading
 			</vs-button>
-			<vs-button @click="openLoadingInDiv" type="relief" vslor="primary">Div with Loading</vs-button>
+			<vs-button @click="openLoadingInDiv" type="relief">Div with Loading</vs-button>
 
 			<div class="contained-example-container">
 				<div id="div-with-loading" class="vs-con-loading__container">Load Me!</div>
@@ -31,10 +31,10 @@
 
 		<template slot="codeContainer">
 &lt;template&gt;
-  &lt;vs-button ref=&quot;loadableButton&quot; id=&quot;button-with-loading&quot; class=&quot;vs-con-loading__container&quot; @click=&quot;openLoadingContained&quot; type=&quot;relief&quot; vslor=&quot;primary&quot;&gt;
+  &lt;vs-button ref=&quot;loadableButton&quot; id=&quot;button-with-loading&quot; class=&quot;vs-con-loading__container&quot; @click=&quot;openLoadingContained&quot; type=&quot;relief&quot;&gt;
     Button with Loading
   &lt;/vs-button&gt;
-  &lt;vs-button @click=&quot;openLoadingInDiv&quot; type=&quot;relief&quot; vslor=&quot;primary&quot;&gt;Div with Loading&lt;/vs-button&gt;
+  &lt;vs-button @click=&quot;openLoadingInDiv&quot; type=&quot;relief&quot;&gt;Div with Loading&lt;/vs-button&gt;
 
   &lt;div class=&quot;contained-example-container&quot;&gt;
     &lt;div id=&quot;div-with-loading&quot; class=&quot;vs-con-loading__container&quot;&gt;Load Me!&lt;/div&gt;

@@ -2,7 +2,7 @@
 	File Name: ECommerceWishList.vue
 	Description: eCommerce Wish List Page
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -45,7 +45,7 @@
 
         <!-- IF NO ITEMS IN CART -->
         <vx-card title="You don't have any items in your wish list." v-else>
-            <vs-button @click="$router.push('/apps/eCommerce/shop')">Browse Shop</vs-button>
+            <vs-button @click="$router.push('/apps/eCommerce/shop').catch(() => {})">Browse Shop</vs-button>
         </vx-card>
   </div>
 </template>
@@ -73,7 +73,7 @@ export default {
             this.$store.dispatch('eCommerce/toggleItemInWishList', item)
         },
         cartButtonClicked(item) {
-            if (this.isInCart(item.objectID)) this.$router.push('/apps/eCommerce/checkout')
+            if (this.isInCart(item.objectID)) this.$router.push('/apps/eCommerce/checkout').catch(() => {})
             else {
                 this.additemInCart(item);
                 this.removeItemFromWishList(item);

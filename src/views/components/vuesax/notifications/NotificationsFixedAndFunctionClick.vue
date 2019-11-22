@@ -2,7 +2,7 @@
     File Name: NotificationsFixedAndFunctionClick.vue
     Description: Rendering of default notifications
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Fixed and function click" code-toggler>
-        
+
         <p>Sometimes we need to execute a function when the user clicks on the notification. For this, pass a function to the click property. Example: <code>click:()=>{ ... }</code></p>
 
         <vs-button @click="myFunction()" type="gradient" color="success" class="mt-4">Run Example</vs-button>

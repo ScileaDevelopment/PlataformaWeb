@@ -2,7 +2,7 @@
 	File Name: EchartsRadarChart.vue
 	Description: Create Radar chart
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -12,12 +12,12 @@
 	<vx-card title="Radar Chart" class="" code-toggler>
 
 		<div class="mt-5">
-			<e-charts :options="radar" ref="radar" auto-resize />
+			<e-charts autoresize :options="radar" ref="radar" auto-resize />
 		</div>
 
 		<template slot="codeContainer">
 &lt;template&gt;
-  &lt;e-charts :options=&quot;radar&quot; ref=&quot;radar&quot; auto-resize /&gt;
+  &lt;e-charts autoresize :options=&quot;radar&quot; ref=&quot;radar&quot; auto-resize /&gt;
 &lt;/template&gt;
 
 &lt;script&gt;

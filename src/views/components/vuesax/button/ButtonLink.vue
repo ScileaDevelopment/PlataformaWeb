@@ -2,7 +2,7 @@
     File Name: ButtonLink.vue
     Description: Button with link
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Link" code-toggler>
-        
+
         <p>You can specify for <code>window.location.href</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

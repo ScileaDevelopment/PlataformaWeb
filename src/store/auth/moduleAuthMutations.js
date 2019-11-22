@@ -2,15 +2,15 @@
   File Name: moduleAuthMutations.js
   Description: Auth Module Mutations
   ----------------------------------------------------------------------------------------
-  Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
   Author: Pixinvent
   Author URL: http://www.themeforest.net/user/pixinvent
 ==========================================================================================*/
 
+import axios from "../../http/axios/index.js"
 
 export default {
-	UPDATE_AUTHENTICATED_USER(state, user) {
-		localStorage.setItem('userInfo', JSON.stringify(user));
-		localStorage.setItem('userRole', 'admin');
-	},
+  SET_BEARER(state, accessToken) {
+    axios.defaults.headers.common['Authorization'] = 'Bearer ' + accessToken
+  }
 }

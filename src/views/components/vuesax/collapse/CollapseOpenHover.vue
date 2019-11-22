@@ -2,7 +2,7 @@
     File Name: CollapseOpenHover.vue
     Description: Open collapse on hover
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Open Hover" code-toggler>
-        
+
         <p>If you want the items to open when you hover in, add the <code>open-hover</code> property in the component</p>
 
         <div class="mt-5">
@@ -70,7 +70,7 @@
       &lt;/div&gt;
       Suspendisse...eu
     &lt;/vs-collapse-item&gt;
-    
+
     &lt;vs-collapse-item&gt;
       &lt;div slot=&quot;header&quot;&gt;
         Collapse item 4

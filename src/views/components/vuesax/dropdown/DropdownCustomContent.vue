@@ -2,7 +2,7 @@
     File Name: DropdownCustomContent.vue
     Description: Display custom content inside dropdown item
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Custom Content" code-toggler>
-        
+
         <p>Sometimes when we need something more personalized and not necessarily a menu for it you can add any content and have the dropdown functionality with the property <code>vs-custom-content</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

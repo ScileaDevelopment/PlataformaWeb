@@ -2,7 +2,7 @@
     File Name: ChipCustomizeCloseClearChipIcon.vue
     Description: Change icon used for close and clear button
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -22,13 +22,14 @@
         <div class="mt-5">
 
             <div class="op-block mb-5"> {{ chips }} </div>
-            <vs-chips color="rgb(145, 32, 159)" placeholder="New Element" v-model="chips" remove-icon="delete_forever">
+            <vs-chips color="rgb(145, 32, 159)" placeholder="New Element" v-model="chips" icon-pack="feather" remove-icon="icon-trash-2">
                 <vs-chip
                     :key="`${chip}-${index}`"
                     @click="remove(chip)"
                     v-for="(chip, index) in chips"
                     closable
-                    close-icon="delete">
+                    icon-pack="feather"
+                    close-icon="icon-trash-2">
                     {{ chip }}
                 </vs-chip>
             </vs-chips>
@@ -38,13 +39,14 @@
         <template slot="codeContainer">
 &lt;template&gt;
   &lt;div class=&quot;op-block mb-4&quot;&gt; {{ "\{\{ chips \}\}" }} &lt;/div&gt;
-  &lt;vs-chips color=&quot;rgb(145, 32, 159)&quot; placeholder=&quot;New Element&quot; v-model=&quot;chips&quot; remove-icon=&quot;delete_forever&quot;&gt;
+  &lt;vs-chips color=&quot;rgb(145, 32, 159)&quot; placeholder=&quot;New Element&quot; v-model=&quot;chips&quot; icon-pack=&quot;feather&quot; remove-icon=&quot;icon-trash-2&quot;&gt;
     &lt;vs-chip
       :key=&quot;chip&quot;
       @click=&quot;remove(chip)&quot;
       v-for=&quot;chip in chips&quot;
       closable
-      close-icon=&quot;delete&quot;&gt;
+      icon-pack=&quot;feather&quot;
+      close-icon=&quot;icon-trash-2&quot;&gt;
       {{ "\{\{ chip \}\}" }}
     &lt;/vs-chip&gt;
   &lt;/vs-chips&gt;
@@ -59,7 +61,7 @@ export default {
         &apos;GitHub&apos;,
         &apos;Behance&apos;,
         &apos;Vuejs&apos;,
-        &apos;Vuesax&apos;,
+        &apos;Vuexy&apos;,
       ],
     }
   },
@@ -84,7 +86,7 @@ export default {
                 'GitHub',
                 'Behance',
                 'Vuejs',
-                'Vuesax',
+                'Vuexy',
             ],
         }
     },

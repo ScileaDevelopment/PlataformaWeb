@@ -2,7 +2,7 @@
     File Name: SwitchState.vue
     Description: Add Switch element using vs-switch
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -31,7 +31,7 @@
                 <vs-switch disabled="true" v-model="switch4" />
             </li>
         </ul>
-        
+
         <template slot="codeContainer">
 &lt;template lang=&quot;html&quot;&gt;
   &lt;ul class=&quot;switch-container&quot;&gt;

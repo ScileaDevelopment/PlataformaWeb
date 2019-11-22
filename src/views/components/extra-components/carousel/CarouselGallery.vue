@@ -2,7 +2,7 @@
     File Name: CarouselGallery.vue
     Description: Gallery Carousel demo
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,25 +10,39 @@
 
 <template>
     <vx-card title="Gallery" class="carousel-example-gallery" code-toggler>
-        <div style="height: 500px">
+        <div>
             <!-- swiper1 -->
-            <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
-                <swiper-slide class="slide-1"></swiper-slide>
-                <swiper-slide class="slide-2"></swiper-slide>
-                <swiper-slide class="slide-3"></swiper-slide>
-                <swiper-slide class="slide-4"></swiper-slide>
-                <swiper-slide class="slide-5"></swiper-slide>
+            <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop" :dir="$vs.rtl ? 'rtl' : 'ltr'" :key="$vs.rtl + ' gallery'">
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-10.jpg" alt="banner">
+                </swiper-slide>
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-16.jpg" alt="banner">
+                </swiper-slide>
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-15.jpg" alt="banner">
+                </swiper-slide>
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-13.jpg" alt="banner">
+                </swiper-slide>
                 <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
                 <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
             </swiper>
 
             <!-- swiper2 Thumbs -->
-            <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs">
-                <swiper-slide class="slide-1"></swiper-slide>
-                <swiper-slide class="slide-2"></swiper-slide>
-                <swiper-slide class="slide-3"></swiper-slide>
-                <swiper-slide class="slide-4"></swiper-slide>
-                <swiper-slide class="slide-5"></swiper-slide>
+            <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs" :dir="$vs.rtl ? 'rtl gallery' : 'ltr gallery'" :key="$vs.rtl + ' thumbs'">
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-10.jpg" alt="banner">
+                </swiper-slide>
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-16.jpg" alt="banner">
+                </swiper-slide>
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-15.jpg" alt="banner">
+                </swiper-slide>
+                <swiper-slide>
+                  <img class="responsive" src="@/assets/images/pages/carousel/banner-13.jpg" alt="banner">
+                </swiper-slide>
             </swiper>
         </div>
 
@@ -37,24 +51,38 @@
   &lt;div style=&quot;height: 500px&quot;&gt;
 
     &lt;!-- swiper1 --&gt;
-    &lt;swiper :options=&quot;swiperOptionTop&quot; class=&quot;gallery-top&quot; ref=&quot;swiperTop&quot;&gt;
-      &lt;swiper-slide class=&quot;slide-1&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-2&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-3&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-4&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-5&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;div class=&quot;swiper-button-next swiper-button-white&quot; slot=&quot;button-next&quot;&gt;&lt;/div&gt;
-      &lt;div class=&quot;swiper-button-prev swiper-button-white&quot; slot=&quot;button-prev&quot;&gt;&lt;/div&gt;
-    &lt;/swiper&gt;
-    
-    &lt;!-- swiper2 Thumbs --&gt;
-    &lt;swiper :options=&quot;swiperOptionThumbs&quot; class=&quot;gallery-thumbs&quot; ref=&quot;swiperThumbs&quot;&gt;
-      &lt;swiper-slide class=&quot;slide-1&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-2&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-3&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-4&quot;&gt;&lt;/swiper-slide&gt;
-      &lt;swiper-slide class=&quot;slide-5&quot;&gt;&lt;/swiper-slide&gt;
-    &lt;/swiper&gt;
+        &lt;swiper :options=&quot;swiperOptionTop&quot; class=&quot;gallery-top&quot; ref=&quot;swiperTop&quot; :dir=&quot;$vs.rtl ? 'rtl' : 'ltr'&quot; :key=&quot;$vs.rtl&quot;&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-10.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-16.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-15.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-13.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;div class=&quot;swiper-button-next swiper-button-white&quot; slot=&quot;button-next&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;swiper-button-prev swiper-button-white&quot; slot=&quot;button-prev&quot;&gt;&lt;/div&gt;
+        &lt;/swiper&gt;
+
+        &lt;!-- swiper2 Thumbs --&gt;
+        &lt;swiper :options=&quot;swiperOptionThumbs&quot; class=&quot;gallery-thumbs&quot; ref=&quot;swiperThumbs&quot; :dir=&quot;$vs.rtl ? 'rtl' : 'ltr'&quot; :key=&quot;$vs.rtl&quot;&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-10.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-16.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-15.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+            &lt;swiper-slide&gt;
+              &lt;img class=&quot;responsive&quot; src=&quot;@/assets/images/pages/carousel/banner-13.jpg&quot; alt=&quot;banner&quot;&gt;
+            &lt;/swiper-slide&gt;
+        &lt;/swiper&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 
@@ -100,25 +128,6 @@ export default {
 &lt;style lang=&quot;scss&quot; scoped&gt;
   .swiper-container {
     background-color: #000;
-  }
-  .swiper-slide {
-    background-size: cover;
-    background-position: center;
-    &amp;.slide-1 {
-      background-image: url('../../../../assets/images/slider/01.jpg');
-    }
-    &amp;.slide-2 {
-      background-image: url('../../../../assets/images/slider/02.jpg');
-    }
-    &amp;.slide-3 {
-      background-image: url('../../../../assets/images/slider/03.jpg');
-    }
-    &amp;.slide-4 {
-      background-image: url('../../../../assets/images/slider/04.jpg');
-    }
-    &amp;.slide-5 {
-      background-image: url('../../../../assets/images/slider/05.jpg');
-    }
   }
   .gallery-top {
     height: 80%!important;
@@ -184,25 +193,6 @@ export default {
 <style lang="scss" scoped>
   .swiper-container {
     background-color: #000;
-  }
-  .swiper-slide {
-    background-size: cover;
-    background-position: center;
-    &.slide-1 {
-      background-image: url('../../../../assets/images/slider/01.jpg');
-    }
-    &.slide-2 {
-      background-image: url('../../../../assets/images/slider/02.jpg');
-    }
-    &.slide-3 {
-      background-image: url('../../../../assets/images/slider/03.jpg');
-    }
-    &.slide-4 {
-      background-image: url('../../../../assets/images/slider/04.jpg');
-    }
-    &.slide-5 {
-      background-image: url('../../../../assets/images/slider/05.jpg');
-    }
   }
   .gallery-top {
     height: 80%!important;

@@ -2,7 +2,7 @@
     File Name: ButtonTextColor.vue
     Description: Change color of text displayed on button
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Text Color" code-toggler>
-        
+
         <p>You can change the font color of buttons, need only set the prop <code>text-color</code> with your color</p>
 
         <div class="demo-alignment">

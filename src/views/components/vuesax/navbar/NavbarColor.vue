@@ -2,7 +2,7 @@
     File Name: NavbarColor.vue
     Description: Chnage background color of navbar
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -89,7 +89,7 @@
 &lt;script&gt;
 export default {
   data: ()=&gt;({
-    colorx:'#7367F0',
+    colorx:'#5A8DEE',
     indexActive: 0
   })
 }
@@ -102,7 +102,7 @@ export default {
 <script>
 export default {
     data: () => ({
-        colorx: '#7367F0',
+        colorx: '#5A8DEE',
         indexActive: 0
     })
 }

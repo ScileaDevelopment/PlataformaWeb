@@ -2,7 +2,7 @@
 	File Name: SidebarGroupCollapsed.vue
 	Description: give sidebaritems group using vs-sidebar-group
 	----------------------------------------------------------------------------------------
-	Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
 	Author: Pixinvent
 	Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,13 +10,13 @@
 
 <template>
 	<vx-card title="Group Collapsed" code-toggler>
-		
+
 		<p>You can have groups of sub menus with the component <code>vs-sidebar-group</code> that as a required parameter we have the <code>title</code>, you can add as many groups as you need, including internally from the same component</p>
 
 		<vs-alert color="primary" icon="new_releases" active="true" class="mt-5">
 			<p>By default the component is closed but if you need to initialize open you can use the property <code>open</code></p>
 		</vs-alert>
-		
+
 		<div class="mt-5">
 
 			<div id="parentx-demo-4">

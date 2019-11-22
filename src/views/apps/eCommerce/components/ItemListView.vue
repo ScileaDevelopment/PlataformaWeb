@@ -2,43 +2,40 @@
     File Name: ItemListView.vue
     Description: Item Component - List VIew
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 <template>
-    <vx-card class="list-view-item mb-base overflow-hidden">
+    <vx-card class="list-view-item overflow-hidden" v-on="$listeners">
 
         <template slot="no-body">
             <div class="vx-row item-details no-gutter">
 
                 <!-- IMG COL -->
-                <div class="vx-col sm:w-1/4 w-full item-img-container bg-white flex items-center justify-center">
-                    <img
-                        :src="item.image"
-                        :alt="item.name"
-                        class="grid-view-img p-4">
+                <div class="vx-col sm:w-1/4 w-full item-img-container bg-white flex items-center justify-center cursor-pointer" @click="navigate_to_detail_view">
+                    <img :src="item.image" :alt="item.name" class="grid-view-img p-4">
                 </div>
 
                 <!-- ITEM NAME & DESC COL -->
                 <div class="vx-col sm:w-1/2">
                     <div class="p-4 pt-6">
                         <slot name="item-meta">
-                            <h6 class="item-name font-semibold mb-1">{{ item.name }}</h6>
-                            <p class="text-sm mb-4 cursor-pointer">By <span class="text-primary font-semibold">{{ item.brand }}</span></p>
+                            <h6 class="item-name font-semibold mb-1 hover:text-primary cursor-pointer" @click="navigate_to_detail_view">{{ item.name }}</h6>
+                            <p class="text-sm mb-4">By <span class="font-semibold cursor-pointer">{{ item.brand }}</span></p>
                             <p class="item-description text-sm">{{ item.description }}</p>
                         </slot>
                     </div>
                 </div>
 
                 <!-- PURCHASE COL -->
-                <div class="vx-col sm:w-1/4 w-full flex items-center">
+                <div class="vx-col sm:w-1/4 w-full flex items-center sm:border border-0 border-solid d-theme-border-grey-light border-r-0 border-t-0 border-b-0">
 
-                    <div class="p-4 flex flex-col w-full border border-solid d-theme-border-grey-light border-r-0 border-t-0 border-b-0">
+                    <div class="p-4 flex flex-col w-full">
 
-                        <div class="bg-primary flex self-end text-white py-1 px-2 rounded">
-                            <span class="text-sm mr-2">{{ item.rating }}</span>
+                        <div class="text-warning flex self-end border border-solid border-warning py-1 px-2 rounded">
+                            <span class="text-sm mr-1">{{ item.rating }}</span>
                             <feather-icon icon="StarIcon" svgClasses="h-4 w-4" />
                         </div>
 
@@ -84,8 +81,11 @@ export default{
             this.$store.dispatch('eCommerce/additemInCart', item)
         },
         cartButtonClicked(item) {
-            if(this.isInCart(item.objectID)) this.$router.push('/apps/eCommerce/checkout')
-            else this.additemInCart(item)
+            this.isInCart(item.objectID) ? this.$router.push('/apps/eCommerce/checkout').catch(() => {}) : this.additemInCart(item)
+        },
+        navigate_to_detail_view() {
+          this.$router.push({name: 'ecommerce-item-detail-view', params: {item_id: this.item.objectID }})
+            .catch(() => {})
         }
     }
 }

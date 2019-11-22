@@ -2,7 +2,7 @@
     File Name: LoadingDefault.vue
     Description: Add default loading to your application
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -10,7 +10,7 @@
 
 <template>
     <vx-card title="Default" code-toggler>
-        
+
         <p>To add a loading in any part of your application we have the global function <code>$vs.loading()</code>, and then when you want to remove it we have <code>$vs.loading.close()</code></p>
 
         <vs-alert color="primary" icon="new_releases" active="true" class="mt-5">

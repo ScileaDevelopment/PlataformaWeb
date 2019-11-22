@@ -2,7 +2,7 @@
     File Name: SelectingValuesSingleMultipleSelection.vue
     Description: Selecting single and multiple values
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -15,13 +15,13 @@
 
             <p class="mb-3">By default, vue-select supports choosing a single value. If you need multiple values, use the multiple prop</p>
 
-            <v-select multiple :closeOnSelect="false" v-model="selected" :options="options"></v-select><br>
+            <v-select multiple :closeOnSelect="false" v-model="selected" :options="options" :dir="$vs.rtl ? 'rtl' : 'ltr'" /><br>
 
         </div>
 
         <template slot="codeContainer">
 &lt;template&gt;
-  &lt;v-select multiple v-model=&quot;selected&quot; :options=&quot;options&quot;&gt;&lt;/v-select&gt;&lt;br&gt;
+  &lt;v-select multiple :closeOnSelect=&quot;false&quot; v-model=&quot;selected&quot; :options=&quot;options&quot; :dir=&quot;$vs.rtl ? 'rtl' : 'ltr'&quot; /&gt;&lt;br&gt;
 &lt;/template&gt;
 
 &lt;script&gt;

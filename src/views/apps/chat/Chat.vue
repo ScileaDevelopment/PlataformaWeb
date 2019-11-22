@@ -2,7 +2,7 @@
     File Name: Chat.vue
     Description: Chat Application - Stay connected
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -13,25 +13,27 @@
         <vs-sidebar class="items-no-padding" parent="#chat-app" :click-not-close="clickNotClose" :hidden-background="clickNotClose" v-model="isChatSidebarActive" id="chat-list-sidebar">
 
             <!-- USER PROFILE SIDEBAR -->
-            <user-profile :active="activeProfileSidebar" :userId="userProfileId" class="user-profile-container" @closeProfileSidebar="closeProfileSidebar"></user-profile>
+            <user-profile :active="activeProfileSidebar" :userId="userProfileId" class="user-profile-container" :isLoggedInUser="isLoggedInUserProfileView" @closeProfileSidebar="closeProfileSidebar"></user-profile>
 
             <div class="chat__profile-search flex p-4">
                 <div class="relative inline-flex">
-                    <vs-avatar class="m-0 border-2 border-solid border-white" :src="require(`@/assets/images/portrait/small/${activeUserImg}`)" size="40px" @click="showProfileSidebar(activeUserId)" />
+                    <vs-avatar v-if="activeUser.photoURL" class="m-0 border-2 border-solid border-white" :src="activeUser.photoURL" size="40px" @click="showProfileSidebar(Number(activeUser.uid), true)" />
                     <div class="h-3 w-3 border-white border border-solid rounded-full absolute right-0 bottom-0" :class="'bg-' + getStatusColor(true)"></div>
                 </div>
-                <vs-input icon="icon-search" icon-pack="feather" class="w-full mx-5 input-rounded-full no-icon-border" placeholder="Search or start a new chat" v-model="searchQuery"/>
+                <vs-input icon-no-border icon="icon-search" icon-pack="feather" class="w-full mx-5 input-rounded-full" placeholder="Search or start a new chat" v-model="searchQuery"/>
+
+                <feather-icon class="md:inline-flex lg:hidden -ml-3 cursor-pointer" icon="XIcon" @click="toggleChatSidebar(false)" />
             </div>
 
             <vs-divider class="d-theme-border-grey-light m-0" />
-            <VuePerfectScrollbar class="chat-scroll-area pt-4" :settings="settings">
+            <VuePerfectScrollbar class="chat-scroll-area pt-4" :settings="settings" :key="$vs.rtl">
 
                 <!-- ACTIVE CHATS LIST -->
                 <div class="chat__chats-list mb-8">
                     <h3 class="text-primary mb-5 px-4">Chats</h3>
                     <ul class="chat__active-chats bordered-items">
-                        <li class="cursor-pointer" v-for="(contact, index) in sorted" :key="index" @click="updateActiveChatUser(contact.id)">
-                            <chat-contact :contact="contact" :lastMessaged="chatLastMessaged(contact.id).time" :unseenMsg="chatUnseenMessages(contact.id)" :isActiveChatUser="isActiveChatUser(contact.id)"></chat-contact>
+                        <li class="cursor-pointer" v-for="(contact, index) in chatContacts" :key="index" @click="updateActiveChatUser(contact.uid)">
+                            <chat-contact showLastMsg :contact="contact" :lastMessaged="chatLastMessaged(contact.uid).time" :unseenMsg="chatUnseenMessages(contact.uid)" :isActiveChatUser="isActiveChatUser(contact.uid)"></chat-contact>
                         </li>
                     </ul>
                 </div>
@@ -41,7 +43,7 @@
                 <div class="chat__contacts">
                     <h3 class="text-primary mb-5 px-4">Contacts</h3>
                     <ul class="chat__contacts bordered-items">
-                        <li class="cursor-pointer" v-for="contact in chatContacts" :key="contact.id" @click="updateActiveChatUser(contact.id)">
+                        <li class="cursor-pointer" v-for="contact in contacts" :key="contact.uid" @click="updateActiveChatUser(contact.uid)">
                             <chat-contact :contact="contact"></chat-contact>
                         </li>
                     </ul>
@@ -50,12 +52,12 @@
         </vs-sidebar>
 
         <!-- RIGHT COLUMN -->
-        <div class="chat__bg app-fixed-height chat-content-area border border-solid d-theme-border-grey-light border-t-0 border-r-0 border-b-0" :class="{'sidebar-spacer--wide': clickNotClose, 'flex items-center justify-center': activeChatUser === null}">
+        <div class="chat__bg no-scroll-content chat-content-area border border-solid d-theme-border-grey-light border-t-0 border-r-0 border-b-0" :class="{'sidebar-spacer--wide': clickNotClose, 'flex items-center justify-center': activeChatUser === null}">
             <template v-if="activeChatUser">
                 <div class="chat__navbar">
-                    <chat-navbar :isSidebarCollapsed="!clickNotClose" :user-id="activeChatUser" :isPinnedProp="isChatPinned" @openContactsSidebar="toggleChatSidebar(true)" @showProfileSidebar="updateUserProfileId" @toggleIsChatPinned="toggleIsChatPinned"></chat-navbar>
+                    <chat-navbar :isSidebarCollapsed="!clickNotClose" :user-id="activeChatUser" :isPinnedProp="isChatPinned" @openContactsSidebar="toggleChatSidebar(true)" @showProfileSidebar="showProfileSidebar" @toggleIsChatPinned="toggleIsChatPinned"></chat-navbar>
                 </div>
-                <VuePerfectScrollbar class="chat-content-scroll-area border border-solid d-theme-border-grey-light" :settings="settings" ref="chatLogPS">
+                <VuePerfectScrollbar class="chat-content-scroll-area border border-solid d-theme-border-grey-light" :settings="settings" ref="chatLogPS" :key="$vs.rtl">
                     <div class="chat__log" ref="chatLog">
                         <chat-log :userId="activeChatUser" v-if="activeChatUser"></chat-log>
                     </div>
@@ -76,176 +78,167 @@
 </template>
 
 <script>
+import ChatContact         from "./ChatContact.vue"
+import ChatLog             from './ChatLog.vue'
+import ChatNavbar          from './ChatNavbar.vue'
+import UserProfile         from "./UserProfile.vue"
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import contacts from './contacts'
-import ChatContact from "./ChatContact.vue"
-import UserProfile from "./UserProfile.vue"
-import ChatNavbar from './ChatNavbar.vue'
-import ChatLog from './ChatLog.vue'
+import moduleChat          from '@/store/chat/moduleChat.js'
 
-export default{
-    name: 'vx-sidebar',
-    data() {
-        return {
-            active: true,
-            isHidden: false,
-            contacts: contacts,
-            searchContact: "",
-            activeProfileSidebar: false,
-            activeChatUser: null,
-            userProfileId: -1,
-            typedMessage: "",
-            isChatPinned: false,
-            settings: {
-                maxScrollbarLength: 60,
-                wheelSpeed: 0.70,
-            },
-            clickNotClose: true,
-            isChatSidebarActive: true,
-            windowWidth: window.innerWidth,
-        }
+export default {
+  data() {
+    return {
+      active               : true,
+      isHidden             : false,
+      searchContact        : "",
+      activeProfileSidebar : false,
+      activeChatUser       : null,
+      userProfileId        : -1,
+      typedMessage         : "",
+      isChatPinned         : false,
+      settings             : {
+        maxScrollbarLength : 60,
+        wheelSpeed         : 0.70,
+      },
+      clickNotClose        : true,
+      isChatSidebarActive  : true,
+      isLoggedInUserProfileView: false,
+    }
+  },
+  watch: {
+    windowWidth() {
+      this.setSidebarWidth()
+    }
+  },
+  computed: {
+    chatLastMessaged() {
+      return (userId) => this.$store.getters['chat/chatLastMessaged'](userId)
     },
-    computed: {
-        chatLastMessaged() {
-            return (userId) => this.$store.getters['chat/chatLastMessaged'](userId);
-        },
-        chatUnseenMessages() {
-            return (userId) => {
-                const unseenMsg = this.$store.getters['chat/chatUnseenMessages'](userId);
-                if(unseenMsg) return unseenMsg
-            };
-        },
-        sorted() {
-            return this.chats.slice().sort((x,y) => {
-                const xId = x.id;
-                const yId = y.id;
-                const chatDataX = this.$store.getters['chat/chatDataOfUser'](xId);
-                const chatDataY = this.$store.getters['chat/chatDataOfUser'](yId);
-                return (chatDataY.isPinned - chatDataX.isPinned)
-            })
-        },
-        activeUserId() {
-            return this.$store.state.AppActiveUser.id;
-        },
-        activeUserImg() {
-            return this.$store.state.AppActiveUser.img;
-        },
-        activeUserStatus() {
-            return this.$store.state.AppActiveUser.status;
-        },
-        getStatusColor() {
-            return (isActiveUser) => {
-                const userStatus = this.getUserStatus(isActiveUser)
+    chatUnseenMessages() {
+      return (userId) => {
+        const unseenMsg = this.$store.getters['chat/chatUnseenMessages'](userId)
+        if (unseenMsg) return unseenMsg
+      }
+    },
+    activeUser() {
+      return this.$store.state.AppActiveUser
+    },
+    getStatusColor() {
+      return (isActiveUser) => {
+        const userStatus = this.getUserStatus(isActiveUser)
 
-                if(userStatus == "online"){
-                    return "success"
-                }else if(userStatus == "do not disturb"){
-                    return "danger"
-                }else if(userStatus == "away"){
-                    return "warning"
-                }else{
-                    return "grey"
-                }
-            }
-        },
-        chats() {
-            return this.$store.getters['chat/chats'];
-        },
-        chatContacts() {
-            return this.$store.getters['chat/chatcontacts'];
-        },
-        searchQuery: {
-            get() {
-                return this.$store.state.chat.chatSearchQuery;
-            },
-            set(val) {
-                this.$store.dispatch('chat/setChatSearchQuery', val);
-            }
-        },
-        isActiveChatUser() {
-            return (userId) => userId == this.activeChatUser
+        if (userStatus == "online") {
+          return "success"
+        } else if (userStatus == "do not disturb") {
+          return "danger"
+        } else if (userStatus == "away") {
+          return "warning"
+        } else {
+          return "grey"
         }
+      }
     },
-    methods: {
-        getUserStatus(isActiveUser) {
-            return (isActiveUser) ? this.$store.state.AppActiveUser.status : this.contacts[this.activeChatUser].status;
-        },
-        closeProfileSidebar(value) {
-            this.activeProfileSidebar = value
-        },
-        updateUserProfileId(userId) {
-            this.userProfileId = userId;
-            this.activeProfileSidebar = !this.activeProfileSidebar;
-        },
-        updateActiveChatUser(contactId) {
-            this.activeChatUser = contactId;
-            if(this.$store.getters['chat/chatDataOfUser'](this.activeChatUser)) {
-                this.$store.dispatch('chat/markSeenAllMessages', contactId)
-            }
-            let chatData = this.$store.getters['chat/chatDataOfUser'](this.activeChatUser);
-            if(chatData) this.isChatPinned = chatData.isPinned;
-            else this.isChatPinned = false
-            this.toggleChatSidebar();
-            this.typedMessage = '';
-        },
-        showProfileSidebar(userId) {
-            this.userProfileId = userId;
-            this.activeProfileSidebar = !this.activeProfileSidebar;
-        },
-        sendMsg() {
-            if(!this.typedMessage) return
-            const payload = {
-                isPinned: this.isChatPinned,
-                'msg': {
-                    'textContent': this.typedMessage,
-                    'time': String(new Date()),
-                    'isSent': true,
-                    'isSeen': false,
-                },
-                'id': this.activeChatUser
-            }
-            this.$store.dispatch('chat/sendChatMessage', payload)
-            this.typedMessage = '';
-            this.$refs.chatLogPS.$el.scrollTop = this.$refs.chatLog.scrollHeight;
-        },
-        toggleIsChatPinned(value) {
-            this.isChatPinned = value;
-        },
-        handleWindowResize(event) {
-            this.windowWidth = event.currentTarget.innerWidth;
-            this.setSidebarWidth();
-        },
-        setSidebarWidth() {
-            if(this.windowWidth < 1200) {
-                this.isChatSidebarActive = this.clickNotClose = false;
-            }else {
-                this.isChatSidebarActive = this.clickNotClose = true;
-            }
-        },
-        toggleChatSidebar(value = false) {
-            if(!value && this.clickNotClose) return
-            this.isChatSidebarActive = value;
-        }
+    chatContacts() {
+      return this.$store.getters['chat/chatContacts']
     },
-    components: {
-        VuePerfectScrollbar,
-        ChatContact,
-        UserProfile,
-        ChatNavbar,
-        ChatLog,
+    contacts() {
+      return this.$store.getters['chat/contacts']
     },
-    created() {
-        this.$nextTick(() => {
-            window.addEventListener('resize', this.handleWindowResize);
-        })
-        this.setSidebarWidth();
+    searchQuery: {
+      get() {
+        return this.$store.state.chat.chatSearchQuery
+      },
+      set(val) {
+        this.$store.dispatch('chat/setChatSearchQuery', val)
+      }
     },
-    beforeDestroy: function () {
-        window.removeEventListener('resize', this.handleWindowResize)
+    isActiveChatUser() {
+      return (userId) => userId == this.activeChatUser
     },
+    windowWidth() {
+      return this.$store.state.windowWidth
+    }
+  },
+  methods: {
+    getUserStatus(isActiveUser) {
+      // return "active"
+      return (isActiveUser) ? this.$store.state.AppActiveUser.status : this.contacts[this.activeChatUser].status
+    },
+    closeProfileSidebar(value) {
+      this.activeProfileSidebar = value
+    },
+    updateActiveChatUser(contactId) {
+      this.activeChatUser = contactId
+      if (this.$store.getters['chat/chatDataOfUser'](this.activeChatUser)) {
+        this.$store.dispatch('chat/markSeenAllMessages', contactId)
+      }
+      let chatData = this.$store.getters['chat/chatDataOfUser'](this.activeChatUser)
+      if (chatData) this.isChatPinned = chatData.isPinned
+      else this.isChatPinned = false
+      this.toggleChatSidebar()
+      this.typedMessage = ''
+    },
+    showProfileSidebar(userId, openOnLeft = false) {
+      this.userProfileId = userId
+      this.isLoggedInUserProfileView = openOnLeft
+      this.activeProfileSidebar = !this.activeProfileSidebar
+    },
+    sendMsg() {
+      if (!this.typedMessage) return
+      const payload = {
+        isPinned: this.isChatPinned,
+        'msg': {
+          'textContent' : this.typedMessage,
+          'time'        : String(new Date()),
+          'isSent'      : true,
+          'isSeen'      : false,
+        },
+        'id': this.activeChatUser
+      }
+      this.$store.dispatch('chat/sendChatMessage', payload)
+      this.typedMessage = ''
+      this.$refs.chatLogPS.$el.scrollTop = this.$refs.chatLog.scrollHeight
+    },
+    toggleIsChatPinned(value) {
+      this.isChatPinned = value
+    },
+    setSidebarWidth() {
+      if (this.windowWidth < 1200) {
+        this.isChatSidebarActive = this.clickNotClose = false
+      } else {
+        this.isChatSidebarActive = this.clickNotClose = true
+      }
+    },
+    toggleChatSidebar(value = false) {
+      if (!value && this.clickNotClose) return
+      this.isChatSidebarActive = value
+    }
+  },
+  components: {
+    VuePerfectScrollbar,
+    ChatContact,
+    UserProfile,
+    ChatNavbar,
+    ChatLog,
+  },
+  created() {
+    this.$store.registerModule('chat', moduleChat)
+    this.$store.dispatch('chat/fetchContacts')
+    this.$store.dispatch('chat/fetchChatContacts')
+    this.$store.dispatch('chat/fetchChats')
+    this.setSidebarWidth()
+  },
+  beforeDestroy: function() {
+    this.$store.unregisterModule('chat')
+  },
+  mounted() {
+    this.$store.dispatch("chat/setChatSearchQuery", "")
+  }
 }
+
 </script>
 
+
 <style lang="scss">
-@import "@/assets/scss/vuesax/apps/chat.scss";
+@import "@/assets/scss/vuexy/apps/chat.scss";
 </style>

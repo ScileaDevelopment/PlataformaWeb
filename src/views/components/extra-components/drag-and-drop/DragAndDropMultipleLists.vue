@@ -2,7 +2,7 @@
     File Name: DragAndDropMultipleLists.vue
     Description: Drag and Drop to multiple lists
     ----------------------------------------------------------------------------------------
-    Item Name: Vuesax Admin - VueJS Dashboard Admin Template
+    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
       Author: Pixinvent
     Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
@@ -23,7 +23,7 @@
                 </vs-list>
             </div>
             <div class="vx-col w-full md:w-1/2">
-                <vs-list class="mt-5">
+                <vs-list>
                     <vs-list-header title="People Group 2" color="primary"></vs-list-header>
                     <draggable :list="list2" group="people" class="p-2 cursor-move">
                     <vs-list-item v-for="(listItem, index) in list2" :key="index" :title="listItem.name" :subtitle="listItem.email"><vs-avatar slot="avatar" :text="listItem.name" /></vs-list-item>
