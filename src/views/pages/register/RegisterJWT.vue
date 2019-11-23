@@ -16,7 +16,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
       data-vv-validate-on="blur"
       label-placeholder="Name"
       name="displayName"
-      placeholder="Nombre"
+      placeholder="Name"
       v-model="displayName"
       class="w-full" />
     <span class="text-danger text-sm">{{ errors.first('displayName') }}</span>
@@ -27,7 +27,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
       data-vv-validate-on="blur"
       label-placeholder="LastName"
       name="displayLastName"
-      placeholder="Apellido"
+      placeholder="Last name"
       v-model="displayLastName"
       class="w-full" />
     <span class="text-danger text-sm">{{ errors.first('displayLastName') }}</span>
@@ -63,7 +63,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
       v-validate="'required|min:6|max:12'"
       name="password"
       label-placeholder="Password"
-      placeholder="Contraseña"
+      placeholder="Password"
       v-model="password"
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
@@ -76,7 +76,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
       data-vv-as="password"
       name="confirm_password"
       label-placeholder="Confirm Password"
-      placeholder="Confirmar contraseña"
+      placeholder="Confirm Password"
       v-model="confirm_password"
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('confirm_password') }}</span>
