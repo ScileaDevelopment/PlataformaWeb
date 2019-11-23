@@ -24,22 +24,23 @@
               <div class="px-8 pt-8 login-tabs-container">
 
                 <div class="vx-card__title mb-4">
-                  <h4 class="mb-4">Login</h4>
-                  <p>Welcome back, please login to your account.</p>
+                  <p>Que bueno tenerte de vuelta, bienvenido.</p>
                 </div>
 
                 <vs-tabs>
-                  <vs-tab label="JWT">
+                  <vs-tab label="Iniciar sesión">
                     <login-jwt></login-jwt>
                   </vs-tab>
 
-                  <vs-tab label="Firebase">
+<!-- Login con Google y Facebook -->
+                  <!-- <vs-tab label="Firebase">
                     <login-firebase></login-firebase>
-                  </vs-tab>
+                  </vs-tab> -->
 
-                  <vs-tab label="Auth0">
+<!-- Login con Github -->
+                  <!-- <vs-tab label="Auth0">
                     <login-auth0></login-auth0>
-                  </vs-tab>
+                  </vs-tab> -->
                 </vs-tabs>
 
               </div>
