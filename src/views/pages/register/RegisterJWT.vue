@@ -38,7 +38,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
       data-vv-validate-on="blur"
       label-placeholder="Username"
       name="username"
-      placeholder="Nombre de usuario"
+      placeholder="Username"
       v-model="username"
       class="w-full" />
     <span class="text-danger text-sm">{{ errors.first('username') }}</span>
