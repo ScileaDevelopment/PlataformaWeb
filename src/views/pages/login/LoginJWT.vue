@@ -7,7 +7,7 @@
         icon-no-border
         icon="icon icon-user"
         icon-pack="feather"
-        label-placeholder="Email"
+        v-bind:label-placeholder="$t('Email')"
         v-model="email"
         class="w-full"/>
     <span class="text-danger text-sm">{{ errors.first('email') }}</span>
@@ -20,18 +20,18 @@
         icon-no-border
         icon="icon icon-lock"
         icon-pack="feather"
-        label-placeholder="Password"
+        v-bind:label-placeholder="$t('Password')"
         v-model="password"
         class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
 
     <div class="flex flex-wrap justify-between my-5">
-        <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Remember Me</vs-checkbox>
-        <router-link to="/pages/forgot-password">Forgot Password?</router-link>
+        <vs-checkbox v-model="checkbox_remember_me" class="mb-3">{{$t('RememberMe')}}</vs-checkbox>
+        <router-link to="/pages/forgot-password">{{$t('ForgotPassword')}}</router-link>
     </div>
     <div class="flex flex-wrap justify-between mb-3">
-      <vs-button  type="border" @click="registerUser">Register</vs-button>
-      <vs-button :disabled="!validateForm" @click="loginJWT">Login</vs-button>
+      <vs-button  type="border" @click="registerUser">{{$t('GetRegister')}}</vs-button>
+      <vs-button :disabled="!validateForm" @click="loginJWT">{{$t('Login')}}</vs-button>
     </div>
   </div>
 </template>

@@ -139,6 +139,8 @@ import TheNavbarVertical   from '@/layouts/components/navbar/TheNavbarVertical.v
 import TheFooter           from '@/layouts/components/TheFooter.vue'
 import themeConfig         from '@/../themeConfig.js'
 import VNavMenu            from '@/layouts/components/vertical-nav-menu/VerticalNavMenu.vue'
+// Traducciones
+import i18nData from "../../i18n/i18nData";
 
 const VxTour = () => import('@/components/VxTour.vue')
 

@@ -127,7 +127,20 @@ export default {
 		Documentation: 'Documentation',
 		RaiseSupport: 'Raise Support',
 		demoTitle: 'Card Title',
-		demoText: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.'
+		demoText: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.',
+	// Registro de usuario
+	Name: 'Name',
+	Email: 'Email',
+	Password: 'Password',
+	ConfirmPassword: 'Confirm password',
+	TermsConditions: 'I accept the terms & conditions.',
+	CreateAccount: 'Create Account',
+	FillRegister: 'Fill the below form to create a new account.',
+	// Login
+	WelcomeUser: 'Welcome back, please login to your account.',
+	GetRegister: 'Register',
+	ForgotPassword: 'Forgot Password?',
+	RememberMe: 'Remember Me'
 	},
 	de: {
 		Dashboard: 'Instrumententafel',
@@ -587,8 +600,8 @@ export default {
     FormInputGroup: 'Grupo de entrada de formulario',
 		Pages: 'Paginas',
 		Authentication: 'Autentificacion',
-		Login: 'Inicio de sesion',
-		Register: 'Registro',
+		Login: 'Iniciar sesión',
+		Register: 'Registrar',
 		ForgotPassword: 'Se olvidó su contraseña',
 		ResetPassword: 'Restablecer contraseña',
 		LockScreen: 'Bloquear pantalla',
@@ -643,6 +656,19 @@ export default {
 		Documentation: 'Documentacion',
 		RaiseSupport: 'Raise Support',
 		demoTitle: 'Titulo de tarjeta',
-		demoText: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.'
+		demoText: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.',
+	// Registro de usuario
+	Name: 'Nombre',
+	Email: 'Correo electronico',
+	Password: 'Contraseña',
+	ConfirmPassword: 'Confirmar contraseña',
+	TermsConditions: 'He leído y acepto los terminos y condiciones.',
+	CreateAccount: 'Crear nueva cuenta',
+	FillRegister: 'Llene todos los campos para crear una nueva cuenta.',
+	// Login
+	WelcomeUser: 'Bienvenido! Inicie sesión con su cuenta para ingresar.',
+	GetRegister: 'Registrarse',
+	ForgotPassword: '¿Olvidó su contraseña?',
+	RememberMe: 'Recuérdame'
 	}
 }
