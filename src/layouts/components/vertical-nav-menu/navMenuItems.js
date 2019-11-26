@@ -20,14 +20,14 @@
 
 
 export default [
-  // {
-  //   url: "/apps/email",
-  //   name: "Email",
-  //   slug: "email",
-  //   icon: "MailIcon",
-  //   i18n: "Email",
-  // },
   {
+    url: "/apps/email",
+    name: "Email",
+    slug: "email",
+    icon: "MailIcon",
+    i18n: "Email",
+  },
+  /*{
     url: null,
     name: "Dashboard",
     tag: "2",
@@ -848,6 +848,6 @@ export default [
         ]
       },
     ]
-  },
+  },*/
 ]
 
