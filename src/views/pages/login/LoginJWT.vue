@@ -30,7 +30,7 @@
         <router-link to="/pages/forgot-password">{{$t('ForgotPassword')}}</router-link>
     </div>
     <div class="flex flex-wrap justify-between mb-3">
-      <vs-button  type="border" @click="registerUser">{{$t('GetRegister')}}</vs-button>
+      <vs-button  type="border" @click="registerUser">{{$t('Register')}}</vs-button>
       <vs-button :disabled="!validateForm" @click="loginJWT">{{$t('Login')}}</vs-button>
     </div>
   </div>

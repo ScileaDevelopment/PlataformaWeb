@@ -73,7 +73,7 @@ export default {
 		Authentication: 'Authentication',
 		Login: 'Login',
 		Register: 'Register',
-		ForgotPassword: 'Forgot Password',
+		ForgotPassword: 'Forgot Password?',
 		ResetPassword: 'Reset Password',
 		LockScreen: 'Lock Screen',
     Miscellaneous: 'Miscellaneous',
@@ -130,7 +130,6 @@ export default {
 		demoText: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.',
 	// Registro de usuario
 	Name: 'Name',
-	Email: 'Email',
 	Password: 'Password',
 	ConfirmPassword: 'Confirm password',
 	TermsConditions: 'I accept the terms & conditions.',
@@ -139,7 +138,6 @@ export default {
 	// Login
 	WelcomeUser: 'Welcome back, please login to your account.',
 	GetRegister: 'Register',
-	ForgotPassword: 'Forgot Password?',
 	RememberMe: 'Remember Me'
 	},
 	de: {
@@ -535,7 +533,7 @@ export default {
 		Apps: 'Aplicaciones',
 		Todo: 'Por hacer',
 		Chat: 'Chat',
-		Email: 'Email',
+		Email: 'Correo electronico',
 		Calendar: 'Calendario',
     FullCalendar: 'Calendario completo',
     SimpleCalendar: 'Calendario simple',
@@ -601,8 +599,8 @@ export default {
 		Pages: 'Paginas',
 		Authentication: 'Autentificacion',
 		Login: 'Iniciar sesión',
-		Register: 'Registrar',
-		ForgotPassword: 'Se olvidó su contraseña',
+		Register: 'Registrarse',
+		ForgotPassword: '¿Olvidó su contraseña?',
 		ResetPassword: 'Restablecer contraseña',
 		LockScreen: 'Bloquear pantalla',
     Miscellaneous: 'Varios',
@@ -659,7 +657,6 @@ export default {
 		demoText: 'Cake sesame snaps cupcake gingerbread danish I love gingerbread. Apple pie pie jujubes chupa chups muffin halvah lollipop. Chocolate cake oat cake tiramisu marzipan sugar plum. Donut sweet pie oat cake dragée fruitcake cotton candy lemon drops.',
 	// Registro de usuario
 	Name: 'Nombre',
-	Email: 'Correo electronico',
 	Password: 'Contraseña',
 	ConfirmPassword: 'Confirmar contraseña',
 	TermsConditions: 'He leído y acepto los terminos y condiciones.',
@@ -667,8 +664,6 @@ export default {
 	FillRegister: 'Llene todos los campos para crear una nueva cuenta.',
 	// Login
 	WelcomeUser: 'Bienvenido! Inicie sesión con su cuenta para ingresar.',
-	GetRegister: 'Registrarse',
-	ForgotPassword: '¿Olvidó su contraseña?',
 	RememberMe: 'Recuérdame'
 	}
 }
