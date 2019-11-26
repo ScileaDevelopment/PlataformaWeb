@@ -81,10 +81,10 @@ Author URL: http://www.themeforest.net/user/pixinvent
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('confirm_password') }}</span>
 
-    <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">He leído y acepto los términos y condiciones.</vs-checkbox>
-    <vs-button  type="border" to="/pages/login" class="mt-6">Iniciar sesión</vs-button>
-    <vs-button class="float-right mt-6" @click="registerUserJWt" :disabled="!validateForm">Regístrate</vs-button>
-  </div>
+    <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">I accept the terms & conditions.</vs-checkbox>
+    <vs-button  type="border" to="/pages/login" class="mt-6">Login</vs-button>
+    <vs-button class="float-right mt-6" @click="registerUserJWt" :disabled="!validateForm">Register</vs-button>
+    </div>
 </template>
 
 <script>
