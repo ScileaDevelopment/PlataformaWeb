@@ -9,6 +9,7 @@
       <vs-dropdown-item @click="updateLocale('fr')"><img class="h-4 w-5 mr-1" src="@/assets/images/flags/fr.png" alt="fr" /> &nbsp;French</vs-dropdown-item>
       <vs-dropdown-item @click="updateLocale('de')"><img class="h-4 w-5 mr-1" src="@/assets/images/flags/de.png" alt="de" /> &nbsp;German</vs-dropdown-item>
       <vs-dropdown-item @click="updateLocale('pt')"><img class="h-4 w-5 mr-1" src="@/assets/images/flags/pt.png" alt="pt" /> &nbsp;Portuguese</vs-dropdown-item>
+      <vs-dropdown-item @click="updateLocale('es')"><img class="h-4 w-5 mr-1" src="@/assets/images/flags/en.png" alt="es" /> &nbsp;Spanish</vs-dropdown-item>
     </vs-dropdown-menu>
   </vs-dropdown>
 </template>
@@ -25,6 +26,7 @@ export default {
         else if (locale == "pt") return { flag: "br", lang: 'Portuguese' }
         else if (locale == "fr") return { flag: "fr", lang: 'French'     }
         else if (locale == "de") return { flag: "de", lang: 'German'     }
+        else if (locale == "es") return { flag: "us", lang: 'Spanish'    }
     },
   },
   methods: {
