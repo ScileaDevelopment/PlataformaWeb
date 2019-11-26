@@ -21,11 +21,51 @@
 
 export default [
   {
-    url: "/apps/email",
-    name: "Email",
-    slug: "email",
-    icon: "MailIcon",
-    i18n: "Email",
+    url: '/pages/knowledge-base',
+    slug: 'page-knowledge-base',
+    name: "Knowledge Base",
+    icon: "InfoIcon",
+    i18n: "KnowledgeBase",
+  },
+  {
+    header: "Pages",
+    icon: "FileIcon",
+    i18n: "Pages",
+    items: [
+      {
+        url: '/pages/profile',
+        slug: 'page-profile',
+        name: "Profile",
+        icon: "UserIcon",
+        i18n: "Profile",
+      }
+    ]
+  },
+  {
+    url: null,
+    name: "User",
+    icon: "UserIcon",
+    i18n: "User",
+    submenu: [
+      {
+        url: '/apps/user/user-list',
+        name: "List",
+        slug: "app-user-list",
+        i18n: "List",
+      },
+      {
+        url: '/apps/user/user-view/268',
+        name: "View",
+        slug: "app-user-view",
+        i18n: "View",
+      },
+      {
+        url: '/apps/user/user-edit/268',
+        name: "Edit",
+        slug: "app-user-edit",
+        i18n: "Edit",
+      },
+    ]
   },
   /*{
     url: null,
