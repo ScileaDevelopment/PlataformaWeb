@@ -10,8 +10,9 @@ Author URL: http://www.themeforest.net/user/pixinvent
 
 <template>
   <div class="clearfix">
+    <!-- Nombre -->
     <vs-input
-      v-validate="'required|alpha_dash|min:3'"
+      v-validate="'required|alpha_spaces|min:3'"
       data-vv-validate-on="blur"
       label-placeholder="Name"
       name="displayName"
@@ -20,6 +21,29 @@ Author URL: http://www.themeforest.net/user/pixinvent
       class="w-full" />
     <span class="text-danger text-sm">{{ errors.first('displayName') }}</span>
 
+<!-- Apellido -->
+    <vs-input
+      v-validate="'required|alpha_spaces|min:3'"
+      data-vv-validate-on="blur"
+      label-placeholder="LastName"
+      name="displayLastName"
+      placeholder="Last name"
+      v-model="displayLastName"
+      class="w-full" />
+    <span class="text-danger text-sm">{{ errors.first('displayLastName') }}</span>
+
+<!-- Nombre de usuario -->
+    <vs-input
+      v-validate="'required|alpha_dash|min:3'"
+      data-vv-validate-on="blur"
+      label-placeholder="Username"
+      name="username"
+      placeholder="Username"
+      v-model="username"
+      class="w-full" />
+    <span class="text-danger text-sm">{{ errors.first('username') }}</span>
+
+<!-- Correo electronico -->
     <vs-input
       v-validate="'required|email'"
       data-vv-validate-on="blur"
@@ -31,11 +55,12 @@ Author URL: http://www.themeforest.net/user/pixinvent
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('email') }}</span>
 
+<!-- Contraseña -->
     <vs-input
       ref="password"
       type="password"
       data-vv-validate-on="blur"
-      v-validate="'required|min:6|max:10'"
+      v-validate="'required|min:6|max:12'"
       name="password"
       label-placeholder="Password"
       placeholder="Password"
@@ -43,9 +68,10 @@ Author URL: http://www.themeforest.net/user/pixinvent
       class="w-full mt-6" />
     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
 
+<!-- Confirmar contraseña -->
     <vs-input
       type="password"
-      v-validate="'min:6|max:10|confirmed:password'"
+      v-validate="'min:6|max:12|confirmed:password'"
       data-vv-validate-on="blur"
       data-vv-as="password"
       name="confirm_password"

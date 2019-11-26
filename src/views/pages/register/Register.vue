@@ -28,13 +28,15 @@
                                     <register-jwt></register-jwt>
                                   </vs-tab>
 
-                                  <vs-tab label="Firebase">
+                              <!-- Aqui entra los registros con Google/Facebook -->
+                                  <!-- <vs-tab label="Firebase">
                                     <register-firebase></register-firebase>
-                                  </vs-tab>
-
-                                  <vs-tab label="Auth0">
+                                  </vs-tab> -->
+                              <!-- Aqui entra los registros con Github -->
+                                  <!-- <vs-tab label="Auth0">
                                     <register-auth0></register-auth0>
-                                  </vs-tab>
+                                  </vs-tab> -->
+
                                 </vs-tabs>
                             </div>
                         </div>
