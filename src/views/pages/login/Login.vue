@@ -24,8 +24,8 @@
               <div class="px-8 pt-8 login-tabs-container">
 
                 <div class="vx-card__title mb-4">
-                  <h4 class="mb-4">Login</h4>
-                  <p>Welcome back, please login to your account.</p>
+                  <h4 class="mb-4">{{$t('Login')}}</h4>
+                  <p>{{$t('WelcomeUser')}}</p>
                 </div>
 
                 <vs-tabs>
