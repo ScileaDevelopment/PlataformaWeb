@@ -84,7 +84,7 @@ Author URL: http://www.themeforest.net/user/pixinvent
     <vs-checkbox v-model="isTermsConditionAccepted" class="mt-6">I accept the terms & conditions.</vs-checkbox>
     <vs-button  type="border" to="/pages/login" class="mt-6">Login</vs-button>
     <vs-button class="float-right mt-6" @click="registerUserJWt" :disabled="!validateForm">Register</vs-button>
-    </div>
+  </div>
 </template>
 
 <script>

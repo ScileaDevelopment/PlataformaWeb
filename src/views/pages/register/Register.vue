@@ -21,7 +21,8 @@
                             <div class="px-8 pt-8 register-tabs-container">
                                 <div class="vx-card__title mb-4">
                                     <h4 class="mb-4">Create Account</h4>
-                                    <p>Fill the below form to create a new account.</p></div>
+                                    <p>Fill the below form to create a new account.</p>
+                                </div>
                                 <vs-tabs>
                                   <vs-tab label="JWT">
                                     <register-jwt></register-jwt>
